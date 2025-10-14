@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Profilo di Vincé</title>
+  <title>Profilo di Vincenzo</title>
   <style>
     body { font-family: Arial, sans-serif; margin: 0; background:#f7f7f7; color:#333; }
     header { background:#0d6efd; color:#fff; padding:24px; text-align:center; }
@@ -30,7 +30,7 @@
       <div class="top">
         <img src="https://placekitten.com/240/240" alt="Foto profilo">
         <div>
-          <h2>Ciao! Sono Vincé</h2>
+          <h2>Ciao! Sono Vincenzo</h2>
           <p>Sto costruendo il mio portfolio: design con Figma, HTML/CSS, JavaScript e React.</p>
           <div class="tags">
             <span>HTML</span><span>CSS</span><span>UX</span><span>Figma</span>
@@ -58,6 +58,6 @@
     </section>
   </main>
 
-  <footer>© 2025 Vincé</footer>
+  <footer>© 2025 Vincenzo</footer>
 </body>
 </html>
