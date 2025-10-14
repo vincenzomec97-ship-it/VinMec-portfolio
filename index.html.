@@ -5,16 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Profilo di Vincenzo</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; background:#f7f7f7; color:#333; }
-    header { background:#0d6efd; color:#fff; padding:24px; text-align:center; }
+    body { font-family: Arial, sans-serif; margin: 0; background:#f4f6f8; color:#333; }
+    header { background:#0056d6; color:#fff; padding:24px; text-align:center; }
     main { max-width:900px; margin:24px auto; padding:0 16px; }
     .card { background:#fff; border-radius:12px; padding:24px; box-shadow:0 2px 10px rgba(0,0,0,.08); }
-    .top { display:flex; gap:16px; align-items:center; }
+    .top { display:flex; gap:16px; align-items:center; flex-wrap:wrap; }
     .top img { width:120px; height:120px; border-radius:50%; object-fit:cover; }
     h1 { margin:0 0 8px 0; }
-    .tags span { display:inline-block; margin:6px 6px 0 0; padding:6px 10px; border-radius:999px; background:#eef2ff; }
+    .tags span { display:inline-block; margin:6px 6px 0 0; padding:6px 10px; border-radius:999px; background:#e0ecff; font-size:14px; }
     .section { margin-top:24px; }
-    a.button { display:inline-block; margin-top:12px; padding:10px 16px; background:#0d6efd; color:#fff; text-decoration:none; border-radius:8px; }
+    a.button { display:inline-block; margin-top:12px; padding:10px 16px; background:#0056d6; color:#fff; text-decoration:none; border-radius:8px; font-weight:bold; }
+    a.button:hover { background:#003f9e; }
     footer { text-align:center; padding:24px; color:#777; }
     @media (max-width:640px){ .top { flex-direction:column; text-align:center; } .top img{ width:96px; height:96px; } }
   </style>
@@ -31,9 +32,9 @@
         <img src="https://placekitten.com/240/240" alt="Foto profilo">
         <div>
           <h2>Ciao! Sono Vincenzo</h2>
-          <p>Sto costruendo il mio portfolio: design con Figma, HTML/CSS, JavaScript e React.</p>
+          <p>Sto costruendo il mio portfolio per diventare Web Designer e Frontend Developer. Amo unire creatività e tecnologia per creare esperienze digitali semplici e belle.</p>
           <div class="tags">
-            <span>HTML</span><span>CSS</span><span>UX</span><span>Figma</span>
+            <span>HTML</span><span>CSS</span><span>UX</span><span>Figma</span><span>JavaScript</span>
           </div>
           <a class="button" href="mailto:tuoemail@example.com">Contattami</a>
         </div>
@@ -42,22 +43,23 @@
       <div class="section">
         <h3>Progetti recenti</h3>
         <ul>
-          <li>Sito vetrina “C.M. Pulizie” – mockup in Figma</li>
-          <li>Mini pagina “I miei film preferiti” – HTML</li>
+          <li>Mockup sito “C.M. Pulizie” – realizzato in Figma</li>
+          <li>Mini pagina “I miei film preferiti” – HTML base</li>
+          <li>Portfolio personale – in costruzione</li>
         </ul>
       </div>
 
       <div class="section">
-        <h3>Link</h3>
+        <h3>Link utili</h3>
         <p>
-          <a href="#" target="_blank">Portfolio (presto online)</a> ·
           <a href="#" target="_blank">LinkedIn</a> ·
-          <a href="#" target="_blank">GitHub</a>
+          <a href="#" target="_blank">GitHub</a> ·
+          <a href="#" target="_blank">Portfolio (prossimamente)</a>
         </p>
       </div>
     </section>
   </main>
 
-  <footer>© 2025 Vincenzo</footer>
+  <footer>© 2025 Vincenzo | Tutti i diritti riservati</footer>
 </body>
 </html>
