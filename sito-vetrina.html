@@ -3,68 +3,137 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Sito Vetrina - Esempio</title>
+<title>C.M. Pulizie – Servizi professionali</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
 <style>
-  body{margin:0;font-family:Poppins,Arial,sans-serif;background:#f9f9f9;color:#333}
-  header{background:#d62828;color:#fff;padding:16px;text-align:center}
-  nav a{color:#fff;text-decoration:none;margin:0 10px;font-weight:600}
-  .hero{padding:50px 20px;text-align:center;background:#fff}
-  .hero h1{color:#d62828;margin-bottom:10px}
-  .hero p{color:#666}
-  .grid{display:flex;justify-content:center;flex-wrap:wrap;gap:20px;padding:30px}
-  .card{background:#fff;border:1px solid #eee;border-radius:12px;padding:20px;box-shadow:0 2px 10px rgba(0,0,0,.05);width:280px}
-  .card h3{color:#d62828;margin-top:0}
-  footer{text-align:center;color:#777;padding:20px;border-top:1px solid #eee}
+  :root{
+    --primary:#0056b3;      /* Blu principale */
+    --primary-dark:#003d80; /* Blu scuro per hover */
+    --bg:#f5f7fa;
+    --text:#333;
+    --muted:#666;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Poppins,Arial,sans-serif;background:var(--bg);color:var(--text)}
+  .container{max-width:1100px;margin:auto;padding:0 16px}
+
+  /* Header e menu */
+  header{background:var(--primary);color:#fff;box-shadow:0 2px 6px rgba(0,0,0,0.1)}
+  header .container{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+  .logo{font-weight:700;font-size:20px}
+  nav a{color:#fff;text-decoration:none;margin-left:18px;font-weight:600;transition:0.3s}
+  nav a:hover{color:#cce0ff}
+
+  /* Sezione iniziale */
+  .hero{background:#fff;text-align:center;padding:70px 20px}
+  .hero h1{color:var(--primary);margin-bottom:12px}
+  .hero p{color:var(--muted);font-size:17px;margin-bottom:24px}
+  .btn{display:inline-block;background:var(--primary);color:#fff;text-decoration:none;
+       padding:12px 20px;border-radius:8px;font-weight:600;transition:0.3s}
+  .btn:hover{background:var(--primary-dark);transform:scale(1.05)}
+
+  /* Sezione servizi */
+  .ribbon{background:#fff;border-top:1px solid #eee;border-bottom:1px solid #eee;
+          text-align:center;padding:12px;color:var(--muted);font-size:15px}
+  .grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+        padding:50px 0}
+  .card{background:#fff;border-radius:12px;padding:24px;box-shadow:0 2px 10px rgba(0,0,0,.05)}
+  .card h3{color:var(--primary);margin-bottom:10px}
+
+  /* Sezione chi siamo */
+  .twoCol{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}
+  .twoCol img{width:100%;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,.05)}
+  .quote{border-left:5px solid var(--primary);background:#fff;padding:12px 16px;border-radius:8px;margin-top:14px}
+
+  /* Contatti */
+  form{background:#fff;border:1px solid #eee;border-radius:12px;padding:24px;box-shadow:0 2px 10px rgba(0,0,0,.05)}
+  input,textarea{width:100%;padding:12px;border:1px solid #ddd;border-radius:8px;margin-bottom:12px;font-family:inherit}
+  button{background:var(--primary);color:#fff;border:0;padding:12px 18px;border-radius:8px;font-weight:600;cursor:pointer;transition:0.3s}
+  button:hover{background:var(--primary-dark);transform:scale(1.03)}
+
+  /* Footer */
+  footer{text-align:center;color:#888;padding:30px;font-size:14px}
+
+  @media(max-width:900px){.twoCol{grid-template-columns:1fr}}
 </style>
 </head>
+
 <body>
 
 <header>
-  <h1>🧼 C.M. Pulizie</h1>
-  <section class="vetrina">
-  <h1>C.M. Pulizie</h1>
-  <p>Pulizia che si vede, fiducia che resta.</p>
-  <img src="assets/cm-pulizie.png" alt="Sito C.M. Pulizie" style="max-width:100%; border-radius:10px;">
-</section>
-  <nav>
-    <a href="#servizi">Servizi</a>
-    <a href="#chi-siamo">Chi siamo</a>
-    <a href="#contatti">Contatti</a>
-  </nav>
+  <div class="container">
+    <div class="logo">🧼 C.M. Pulizie</div>
+    <nav>
+      <a href="#servizi">Servizi</a>
+      <a href="#chi-siamo">Chi siamo</a>
+      <a href="#contatti">Contatti</a>
+    </nav>
+  </div>
 </header>
 
 <section class="hero">
-  <h1>Pulizia che si vede, fiducia che resta</h1>
-  <p>Ogni giorno al tuo servizio con ordine e professionalità.</p>
-</section>
-
-<section id="servizi">
-  <div class="grid">
-    <div class="card"><h3>🏠 Case e Appartamenti</h3><p>Pulizie domestiche e post-ristrutturazione.</p></div>
-    <div class="card"><h3>🏢 Uffici</h3><p>Servizi per aziende e spazi professionali.</p></div>
-    <div class="card"><h3>🌿 Giardinaggio</h3><p>Manutenzione aree verdi e potature leggere.</p></div>
+  <div class="container">
+    <h1>Pulizia che si vede, fiducia che resta</h1>
+    <p>Servizi per case e aziende con risultati garantiti e materiali professionali.</p>
+    <a href="#contatti" class="btn">Richiedi preventivo</a>
   </div>
 </section>
-<p style="text-align:center;margin-top:10px;">
-  <a class="btn" href="sito-vetrina.html" target="_blank">🌐 Guarda il sito vetrina</a>
-  <img src="assets/cm-pulizie.png" alt="Anteprima sito C.M. Pulizie" width="400">
-<section class="vetrina">
-  <h1>C.M. Pulizie</h1>
-  <p>Pulizia che si vede, fiducia che resta.</p>
-  <img src="assets/cm-pulizie.png" alt="Sito C.M. Pulizie" style="max-width:100%; border-radius:10px;">
 
-  <a href="https://cm-pulizie.it" target="_blank" 
-     style="display:inline-block; margin-top:20px; padding:10px 20px; background-color:#d32f2f; color:white; 
-            text-decoration:none; border-radius:6px; font-weight:bold;">
+<div class="ribbon">Preventivi in 24h • Operativi 7/7 • Personale qualificato</div>
+
+<section id="servizi" class="container">
+  <h2 style="text-align:center;margin:40px 0 20px;color:var(--primary)">I nostri servizi</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>🏠 Pulizie domestiche</h3>
+      <p>Appartamenti, ville, post-ristrutturazione o pulizie stagionali.</p>
+    </div>
+    <div class="card">
+      <h3>🏢 Uffici e negozi</h3>
+      <p>Servizi regolari o straordinari per ambienti di lavoro impeccabili.</p>
+    </div>
+    <div class="card">
+      <h3>🧽 Trattamenti speciali</h3>
+      <p>Sanificazione, vetri, pavimenti, tappeti, post-cantiere.</p>
+    </div>
+  </div>
+</section>
+
+<section id="chi-siamo" class="container" style="padding:40px 0;">
+  <div class="twoCol">
+    <div>
+      <h2 style="color:var(--primary)">Chi siamo</h2>
+      <p>Un team affidabile, con procedure chiare e attenzione ai dettagli. Ogni intervento è seguito da un controllo qualità.</p>
+      <div class="quote">
+        “Professionali e veloci, il mio ufficio non è mai stato così pulito!”<br>
+        <span style="color:var(--muted)">— Marco R., cliente dal 2023</span>
+      </div>
+    </div>
+    <img src="assets/cm-pulizie-vetrina.png" alt="Squadra C.M. Pulizie al lavoro">
+  </div>
+</section>
+
+<section id="contatti" class="container" style="padding:40px 0;">
+  <h2 style="text-align:center;color:var(--primary)">Richiedi preventivo</h2>
+  <form onsubmit="event.preventDefault();window.location='mailto:info@cmpulizie.it'">
+    <input type="text" name="nome" placeholder="Nome e cognome" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="tel" name="telefono" placeholder="Telefono" required>
+    <textarea name="messaggio" rows="4" placeholder="Descrivi il servizio richiesto"></textarea>
+    <button type="submit">Invia richiesta</button>
+  </form>
+</section>
+
+<footer>
+  © 2025 C.M. Pulizie — info@cmpulizie.it • Via Esempio 10, Napoli  
+  <br><br>
+  <a href="https://cm-pulizie.it" target="_blank" class="btn" style="background:var(--primary);text-decoration:none;">
     🔗 Visita il sito completo
   </a>
-</section>
-</p>
-<footer>
-    © 2025 C.M. Pulizie – info@cmpulizie.it
+  <p style="margin-top:10px;color:#aaa;">Realizzato da <strong>Vincenzo Meccariello</strong></p>
 </footer>
 
 </body>
 </html>
-Aggiunto sito-vetrina.html
