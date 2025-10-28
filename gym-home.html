@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IronFit - Costruisci la tua versione migliore</title>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f6b81a;
+      color: #fff;
+    }
+
+    /* --- NAVBAR --- */
+    header {
+      background-color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      padding: 15px 40px;
+      border-radius: 0 0 25px 25px;
+    }
+
+    header img {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      border: 2px solid #f6b81a;
+      margin-right: 40px;
+    }
+
+    header a {
+      color: #f6b81a;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    header a:hover {
+      color: #fff;
+    }
+
+    /* --- SEZIONE PRINCIPALE --- */
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 60px 10%;
+      background-color: #f6b81a;
+    }
+
+    .text {
+      width: 50%;
+    }
+
+    .text h1 {
+      font-family: 'Anton', sans-serif;
+      font-size: 48px;
+      line-height: 1.1;
+      color: #000;
+      margin-bottom: 20px;
+    }
+
+    .text p {
+      color: #111;
+      margin-bottom: 25px;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .btn {
+      background-color: #000;
+      color: #f6b81a;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 25px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-right: 15px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #222;
+    }
+
+    .video-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #000;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .video-btn span {
+      background-color: #000;
+      color: #f6b81a;
+      border-radius: 50%;
+      padding: 5px 9px;
+      font-size: 14px;
+    }
+
+    /* --- RECENSIONI --- */
+    .reviews {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 25px;
+    }
+
+    .avatars {
+      display: flex;
+    }
+
+    .avatars img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #000;
+      margin-left: -6px;
+    }
+
+    .avatars img:first-child {
+      margin-left: 0;
+    }
+
+    .stars {
+      color: #000;
+      font-size: 18px;
+      letter-spacing: 2px;
+      margin-left: 8px;
+    }
+
+    .count {
+      color: #111;
+      font-weight: 600;
+      margin-left: 4px;
+    }
+
+    /* --- IMMAGINE --- */
+    .image {
+      width: 45%;
+      display: flex;
+      justify-content: center;
+      position: relative;
+    }
+
+    .image img {
+      width: 370px;
+      height: 370px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 6px solid #000;
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
+    }
+
+    /* --- RESPONSIVE --- */
+    @media (max-width: 900px) {
+      .container {
+        flex-direction: column;
+        text-align: center;
+      }
+      .text, .image {
+        width: 100%;
+      }
+      .text h1 {
+        font-size: 38px;
+      }
+      .image img {
+        width: 280px;
+        height: 280px;
+        margin-top: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header>
+    <img src="assets/palestra-site.png" alt="Logo IronFit">
+    <a href="#">Home</a>
+    <a href="#">Corsi</a>
+    <a href="#">Coach</a>
+    <a href="#">Prezzi</a>
+    <a href="#">Orari</a>
+    <a href="#">Contatti</a>
+  </header>
+
+  <!-- SEZIONE PRINCIPALE -->
+  <div class="container">
+    <div class="text">
+      <h1>COSTRUISCI LA TUA VERSIONE MIGLIORE</h1>
+      <p>Ogni obbiettivo inizia con un passo. Fallo con noi. Allenamenti personalizzati, istruttori qualificati e orari flessibili.</p>
+      <button class="btn">Inizia ora</button>
+      <a href="#" class="video-btn"><span>▶</span> Guarda il video</a>
+
+      <!-- RECENSIONI -->
+      <div class="reviews">
+        <div class="avatars">
+          <img src="assets/u1.jpg" alt="">
+          <img src="assets/u2.jpg" alt="">
+          <img src="assets/u3.jpg" alt="">
+          <img src="assets/u4.jpg" alt="">
+        </div>
+        <div class="stars">★★★★★</div>
+        <small class="count">2,7k recensioni</small>
+      </div>
+    </div>
+
+    <div class="image">
+      <img src="assets/palestra-site.png" alt="Atleta in palestra">
+    </div>
+  </div>
+
+</body>
+</html>
