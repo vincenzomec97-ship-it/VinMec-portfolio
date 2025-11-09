@@ -181,4 +181,31 @@ button[type="submit"]:hover::after {
 input:hover {
   border -color: var(--yellow);
 }
+/* --- Checkbox gialla con spunta classica --- */
+input[type="checkbox"] {
+  appearance: none;              /* Nasconde quella di default */
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--yellow);
+  border-radius: 4px;
+  background: transparent;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Spunta visibile quando selezionata */
+input[type="checkbox"]:checked::after {
+  content: "✔";
+  position: absolute;
+  top: -2px;
+  left: 2px;
+  font-size: 16px;
+  color: var(--yellow);
+}
+
+/* Effetto al passaggio */
+input[type="checkbox"]:hover {
+  box-shadow: 0 0 6px var(--yellow);
+}
 
