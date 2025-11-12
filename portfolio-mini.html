@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Vincé • Mini Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#0f1115;--card:#161b22;--txt:#e9edf1;--muted:#a9b2c0;--brand:#3b82f6;--r:14px}
+  *{box-sizing:border-box} html{scroll-behavior:smooth}
+  body{margin:0;font-family:Poppins,system-ui;-webkit-font-smoothing:antialiased;background:var(--bg);color:var(--txt)}
+  .wrap{max-width:1000px;margin:auto;padding:24px}
+  /* nav */
+  .nav{position:sticky;top:0;background:#0c0f15cc;backdrop-filter:blur(10px);border-bottom:1px solid #ffffff14}
+  .nav .inner{max-width:1000px;margin:auto;display:flex;gap:16px;align-items:center;padding:12px 24px}
+  .nav a{color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:10px}
+  .nav a:hover{color:var(--txt)}
+  .btn{margin-left:auto;background:linear-gradient(90deg,#3b82f6,#60a5fa);color:#0b1220;border:0;border-radius:12px;padding:10px 14px;font-weight:700}
+  /* sezioni */
+  section{padding:56px 0;border-bottom:1px solid #ffffff10}
+  h1{font-size:40px;margin:0 0 12px} .lead{color:var(--muted);margin:0 0 18px}
+  /* progetti */
+  .grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+  .card{background:var(--card);border:1px solid #ffffff10;border-radius:var(--r);padding:16px}
+  .card img{width:100%;height:150px;object-fit:cover;border-radius:10px;margin-bottom:10px}
+  /* contatto */
+  form{display:grid;gap:12px;max-width:520px;background:var(--card);border:1px solid #ffffff10;border-radius:var(--r);padding:16px}
+  input,textarea{background:#0b1220;border:1px solid #ffffff14;color:var(--txt);border-radius:10px;padding:12px}
+  textarea{min-height:120px;resize:vertical}
+  footer{padding:28px;text-align:center;color:var(--muted)}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="inner">
+    <strong>Vincé</strong>
+    <a href="#about">Chi sono</a>
+    <a href="#projects">Progetti</a>
+    <a href="#contact">Contatto</a>
+    <a class="btn" href="#contact">Scrivimi</a>
+  </div>
+</nav>
+
+<main class="wrap">
+  <!-- CHI SONO -->
+  <section id="about">
+    <h1>Ciao, sono Vincé 👋</h1>
+    <p class="lead">Front-end in formazione. Mi concentro su HTML/CSS puliti, layout responsive e UX semplice.</p>
+    <p>Obiettivo: creare interfacce chiare e veloci. Sto studiando ogni giorno e costruendo progetti reali.</p>
+  </section>
+
+  <!-- PROGETTI -->
+  <section id="projects">
+    <h2>Progetti</h2>
+    <p class="lead">Piccola selezione:</p>
+
+    <div class="grid">
+      <article class="card">
+        <img src="assets/palestra-site.png" alt="FitZone – Home palestra">
+        <h3>FitZone – Home palestra</h3>
+        <p>Hero giallo/nero, nav arrotondata e rating.</p>
+        <p><a href="gym-home.html" target="_blank">Apri →</a></p>
+      </article>
+
+      <article class="card">
+        <img src="assets/cm-pulizie.png" alt="Sito vetrina C.M. Pulizie">
+        <h3>CM Pulizie – Vetrina</h3>
+        <p>Landing semplice con CTA e griglia servizi.</p>
+        <p><a href="sito-vetrina.html" target="_blank">Apri →</a></p>
+      </article>
+
+      <article class="card">
+        <img src="assets/registration-cover.png" alt="Form registrazione">
+        <h3>Form registrazione</h3>
+        <p>Nome, email, password con validazioni HTML5.</p>
+        <p><a href="registration.html" target="_blank">Apri →</a></p>
+      </article>
+    </div>
+  </section>
+
+  <!-- CONTATTO -->
+  <section id="contact">
+    <h2>Contatto</h2>
+    <p class="lead">Scrivimi per collaborazioni o feedback.</p>
+
+    <!-- Usa mailto per semplicità -->
+    <form action="mailto:vincenzomec97@gmail.com" method="post" enctype="text/plain">
+      <label>Nome
+        <input type="text" name="Nome" placeholder="Il tuo nome" required>
+      </label>
+      <label>Email
+        <input type="email" name="Email" placeholder="nome@email.com" required>
+      </label>
+      <label>Messaggio
+        <textarea name="Messaggio" placeholder="Dimmi pure tutto 😊" required></textarea>
+      </label>
+      <button class="btn" type="submit">Invia</button>
+    </form>
+  </section>
+</main>
+
+<footer>© <span id="y"></span> Vincé</footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>
