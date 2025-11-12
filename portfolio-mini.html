@@ -57,6 +57,33 @@
   .footer .social a:hover {
     color: #ffffff;
   }
+  .skill{
+    display: flex;
+    flex-wrap: wrap;
+    gap:12px 16px;
+    margin: 18px 0 8px;
+  }
+  .skill-pill{
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #3a4550;
+    background: #ffffffcc;
+    border: 1px solid #d8dee5;
+    box-shadow: 0 2px 6px rgba(0,0,0,.06);
+    transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease;
+  }
+  .skill-pill:hover{
+    transform: translateY(-1px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+    background: fff;
+  }
+  @media (max-width: 600px){
+    .skil-pill{ font-size: 13px; padding: 7px 12px; 
+  }
 </style>
 </head>
 <body>
@@ -79,8 +106,12 @@
     <p class="lead">Front-end in formazione. Mi concentro su HTML/CSS puliti, layout responsive e UX semplice.</p>
     <p>Amo unire creatività e tecnologia per creare esperienze digitali semplici e belle.</p>
     <p>Obiettivo: creare interfacce chiare e veloci. Sto studiando ogni giorno e costruendo progetti reali.</p>
-     <div class="tags">
-            <span>HTML</span><span>CSS</span><span>UX</span><span>Figma</span><span>JavaScript</span>
+     <div class="skills">
+            <span class="skill-pill">HTML</span>
+            <span class="skill-pill">CSS</span>
+            <span class="skill-pill">UX</span>
+            <span class="skill-pill">Figma</span> 
+            <span class="skill-pill">JavaScript</span>
           </div>
     
   </section>
