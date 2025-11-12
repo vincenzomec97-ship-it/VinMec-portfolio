@@ -8,7 +8,7 @@
 <style>
   :root{--bg:#0f1115;--card:#161b22;--txt:#e9edf1;--muted:#a9b2c0;--brand:#3b82f6;--r:14px}
   *{box-sizing:border-box} html{scroll-behavior:smooth}
-  body{margin:0;font-family:Poppins,system-ui;-webkit-font-smoothing:antialiased;background:var(--bg);color:var(--txt)}
+  body{margin:0;font-family:Poppins,system-ui;-webkit-font-smoothing:antialiased;background: linear-gradient(180deg, #0f1115 0%, #121826 100%);color:var(--txt)}
   .wrap{max-width:1000px;margin:auto;padding:24px}
   body {
     background: linear-gradient(180deg, #0f1115 0%, #121826 100%);
@@ -37,6 +37,28 @@
   .card:hover {
     transform: translateY(-6px);
     box-shadow: 0 8px 20px rgba(59,130,246,25) 
+  }
+  .footer {
+    margin-top: 60px;
+    padding: 30px 0;
+    text-align: center;
+    background: #0f1115;
+    border-top: 1px solid #1f2937;
+    color: #9ca3af;
+    font-size: 14px;
+  }
+  .footer .social {
+    margin-top: 10px;
+  }
+  .footer .social a {
+    margin: 0 12px;
+    color: #f9ba4e;
+    text-decoration: none;
+    front-weight: 600;
+    transition: color 0.3s;
+  }
+  .footer .social a:hover {
+    color: #ffffff;
   }
 </style>
 </head>
@@ -106,12 +128,20 @@
       <label>Messaggio
         <textarea name="Messaggio" placeholder="Dimmi pure tutto 😊" required></textarea>
       </label>
-      <button class="btn" type="submit">Invia</button>
+      <button class="btn" type="submit">💬 Invia Messaggio</button>
     </form>
   </section>
 </main>
 
 <footer>© <span id="y"></span> Vincenzo</footer>
 <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+<footer class="footer">
+  <p>© 2025 Vincenzo - Realizzato con cuore e tanta passione</p>
+  <div class="social">
+    <a href="https://github.com/vincenzomec97" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/vincenzo-meccariello-4140b9386/" target="_blank>LinkedIn</a>
+    <a href="https://www.instagram.com/vincenzo.meccariello/" target="_blank">Instagram</a>
+  </div>
+</footer>
 </body>
 </html>
