@@ -3,13 +3,16 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Vincé • Mini Portfolio</title>
+<title>Vincenzo • Mini Portfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
   :root{--bg:#0f1115;--card:#161b22;--txt:#e9edf1;--muted:#a9b2c0;--brand:#3b82f6;--r:14px}
   *{box-sizing:border-box} html{scroll-behavior:smooth}
   body{margin:0;font-family:Poppins,system-ui;-webkit-font-smoothing:antialiased;background:var(--bg);color:var(--txt)}
   .wrap{max-width:1000px;margin:auto;padding:24px}
+  body {
+    background: linear-gradient(180deg, #0f1115 0%, #121826 100%);
+  }
   /* nav */
   .nav{position:sticky;top:0;background:#0c0f15cc;backdrop-filter:blur(10px);border-bottom:1px solid #ffffff14}
   .nav .inner{max-width:1000px;margin:auto;display:flex;gap:16px;align-items:center;padding:12px 24px}
@@ -34,7 +37,7 @@
 
 <nav class="nav">
   <div class="inner">
-    <strong>Vincé</strong>
+    <strong>Vincenzo</strong>
     <a href="#about">Chi sono</a>
     <a href="#projects">Progetti</a>
     <a href="#contact">Contatto</a>
@@ -45,7 +48,8 @@
 <main class="wrap">
   <!-- CHI SONO -->
   <section id="about">
-    <h1>Ciao, sono Vincé 👋</h1>
+    <h1>Ciao, sono Vincenzo 👋</h1>
+    <img src="assets/foto-profilo.png" alt="Vincenzo" style="width:140px;border-radius:50%;border:2px solid #3b82f6;margin-top:10px;">
     <p class="lead">Front-end in formazione. Mi concentro su HTML/CSS puliti, layout responsive e UX semplice.</p>
     <p>Obiettivo: creare interfacce chiare e veloci. Sto studiando ogni giorno e costruendo progetti reali.</p>
   </section>
@@ -100,7 +104,7 @@
   </section>
 </main>
 
-<footer>© <span id="y"></span> Vincé</footer>
+<footer>© <span id="y"></span> Vincenzo</footer>
 <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 </body>
 </html>
