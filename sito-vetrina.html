@@ -284,8 +284,11 @@
     /* Colonna destra – immagine rettangolare grande */
     .hero-right img{
       width:100%;
+      height:100%;
       border-radius:34px;
       object-fit:cover;
+      object-position:center;
+      max-height:520px;
       box-shadow:0 24px 50px rgba(0,0,0,.25);
     }
 
@@ -322,9 +325,14 @@
         margin-top:0;
       }
       .hero::before{
+        content:"";
+        positio:absolute;
+        inset:0;
         background:
-          linear-gradient(180deg, rgba(255,255,255,.96) 0%, rgba(255,255,255,.9) 40%, rgba(255,255,255,.7) 100%),
+          linear-gradient(90deg, rgba(255,255,255,.96) 0%, rgba(255,255,255,.85) 40%, rgba(255,255,255,0) 80%),
           url("assets/bg-pulizie.jpg") center/cover no-repeat;
+        opacity:0.9;
+        z-index:-1;
       }
       .hero-grid{
         grid-template-columns:1fr;
