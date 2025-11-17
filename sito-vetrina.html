@@ -282,14 +282,20 @@
     }
 
     /* Colonna destra – immagine rettangolare grande */
+    .hero-right{
+      background: var(--white);
+      padding:22px;
+      border-radius:32px;
+      box-shadow:0 18px 40px rgba(0,0,0,.18);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
     .hero-right img{
       width:100%;
       height:100%;
-      border-radius:34px;
+      border-radius:22px;
       object-fit:cover;
-      object-position:center;
-      max-height:520px;
-      box-shadow:0 24px 50px rgba(0,0,0,.25);
     }
 
     /* Sezione chi siamo placeholder */
@@ -335,8 +341,10 @@
         z-index:-1;
       }
       .hero-grid{
-        grid-template-columns:1fr;
-        gap:26px;
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        gap:40px;
+        align-items:stretch;
       }
       .title{font-size:36px}
     }
@@ -428,7 +436,6 @@
 
             <div class="cta">
               <button class="btn" type="submit">Invia richiesta</button>
-              <span class="watch"><i class="fa-solid fa-play"></i> Guarda il video</span>
             </div>
           </form>
         </div>
