@@ -172,11 +172,9 @@
 
     .pills{
       display:flex;
-      flex-wrap:wrap;
       justify-content:center;
-      gap:16px 22px;
-      margin:30px auto 0;
-      max-width:700px;
+      gap:16px;
+      margin-top:26px;
     }
     .pill{
       background:var(--pill);
@@ -185,8 +183,9 @@
       border-radius:12px;
       box-shadow:var(--shadow);
       font-weight:700;
-      border-bottom:4px solid rgba(0,0,0,.15);
       font-size:15px;
+      white-space:nowrap;
+      
     }
 
     /* Colonna centrale – form giallo */
@@ -285,20 +284,125 @@
 
     /* Colonna destra – immagine rettangolare grande */
     .hero-right{
-      background: var(--white);
-      padding:22px;
-      border-radius:32px;
-      box-shadow:0 18px 40px rgba(0,0,0,.18);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100%;
-    }
-    .hero-right img{
-      width:100%;
-      height:100%;
-      border-radius:22px;
-      object-fit:cover;
+  display: flex;
+  align-items: stretch;
+}
+
+/* grande rettangolo giallo con form e foto dentro */
+.quote-card{
+  display: grid;
+  grid-template-columns: 1.05fr 1fr; /* form leggermente più largo */
+  background: var(--accent);
+  border-radius: 32px;
+  box-shadow: 0 18px 40px rgba(0,0,0,.20);
+  overflow: hidden; /* bordi arrotondati anche per l'immagine */
+  width: 100%;
+}
+
+/* lato form */
+.quote-form{
+  padding: 22px 22px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* intestazione blu del form */
+.quote-header{
+  background:#18455b;
+  color:#eaf6ff;
+  border-radius:20px;
+  padding:10px 16px;
+  margin-bottom:10px;
+  font-weight:700;
+  font-size:15px;
+  text-align:center;
+}
+.quote-header span{
+  display:block;
+  font-weight:500;
+  font-size:12px;
+  opacity:.95;
+  margin-top:2px;
+}
+
+/* campi input */
+.field{
+  background:var(--white);
+  border-radius:12px;
+  padding:12px 14px;
+  border:none;
+  outline:none;
+  width:100%;
+  font:inherit;
+  color:var(--text);
+  box-shadow:inset 0 0 0 1px rgba(0,0,0,.05);
+}
+
+.checks{
+  display:grid;
+  gap:8px;
+  margin:6px 2px 12px;
+}
+.checks label{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  color:#1b3a4a;
+  font-weight:600;
+  font-size:14px;
+}
+.checks input{
+  width:18px;
+  height:18px;
+  accent-color:#18455b;
+}
+
+.cta{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  margin-top:6px;
+}
+.btn{
+  background:#18455b;
+  color:#fff;
+  border:none;
+  border-radius:16px;
+  padding:10px 18px;
+  font-weight:700;
+  cursor:pointer;
+  box-shadow:var(--shadow);
+  font-size:14px;
+}
+.watch{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:#1b3a4a;
+  font-weight:700;
+  font-size:14px;
+}
+.watch i{
+  background:#ffe28c;
+  color:#1b3a4a;
+  border-radius:50%;
+  width:32px;
+  height:32px;
+  display:grid;
+  place-items:center;
+}
+
+/* lato foto: stessa altezza del form */
+.quote-photo{
+  width:100%;
+  height:100%;
+}
+.quote-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
     }
 
     /* Sezione chi siamo placeholder */
@@ -345,9 +449,9 @@
       }
       .hero-grid{
         display:grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1.4fr;
         gap:40px;
-        align-items:stretch;
+        align-items:center;
       }
       .title{font-size:36px}
     }
@@ -391,29 +495,31 @@
 
   <!-- HERO -->
   <main class="container">
-    <section id="home" class="hero">
-      <div class="hero-grid">
-        <!-- Colonna sinistra -->
-        <div class="hero-left">
-          <img src="assets/logo-cm.png" alt="Logo C.M. Pulizie" class="hero-logo">
-          <h1 class="title">C.M. Pulizie</h1>
-          <p class="lead">Ogni intervento è una promessa di ordine, cura e professionalità.</p>
+  <section id="home" class="hero">
+    <!-- sfondo già gestito dal ::before nel CSS -->
 
-          <!-- Recensione -->
-          <div class="review">
-            <img class="avatar" src="assets/u3.jpg" alt="Cliente">
-            <div>
-              <strong>Maria Rossi</strong><br>
-              <span class="stars">★★★★★</span>
-              <small>2,7k reviews</small>
-            </div>
+    <div class="hero-grid">
+      <!-- COLONNA SINISTRA: logo, titolo, testo, recensione -->
+      <div class="hero-left">
+        <img src="assets/logo-cm.png" alt="Logo C.M. Pulizie" class="hero-logo">
+        <h1 class="title">C.M. Pulizie</h1>
+        <p class="lead">Ogni intervento è una promessa di ordine, cura e professionalità.</p>
+
+        <div class="review">
+          <img class="avatar" src="assets/u3.jpg" alt="Cliente">
+          <div>
+            <strong>Maria Rossi</strong><br>
+            <span class="stars">★★★★★</span>
+            <small>2,7k reviews</small>
           </div>
+        </div>
+      </div>
 
-       
-
-        <!-- Colonna centrale: form -->
-        <div class="hero-center">
-          <form class="quote" id="prenota">
+      <!-- COLONNA DESTRA: FORM + FOTO NELLO STESSO RETTANGOLO -->
+      <div class="hero-right">
+        <div class="quote-card">
+          <!-- LATO FORM -->
+          <div class="quote-form">
             <div class="quote-header">
               Richiedi il tuo preventivo
               <span>Rispondiamo entro 24 ore</span>
@@ -430,26 +536,28 @@
 
             <div class="cta">
               <button class="btn" type="submit">Invia richiesta</button>
+              <span class="watch"><i class="fa-solid fa-play"></i> Guarda il video</span>
             </div>
-          </form>
-        </div>
+          </div>
 
-        <!-- Colonna destra: immagine grande -->
-        <div class="hero-right">
-          <img src="assets/hero-pulizie.jpg" alt="Operatrice che pulisce vetri">
-        </div>
-      </div>
-           <!-- Pillole servizi -->
-          <div class="pills" id="servizi">
-            <span class="pill">Pulizie</span>
-            <span class="pill">Giardinaggio</span>
-            <span class="pill">Costruzioni</span>
-            <span class="pill">Traslochi</span>
-            <span class="pill">Rifiuti</span>
-            <span class="pill">Disinfestazioni</span>
+          <!-- LATO FOTO -->
+          <div class="quote-photo">
+            <img src="assets/hero-pulizie.jpg" alt="Operatrice che pulisce vetri">
           </div>
         </div>
-    </section>
+      </div>
+    </div>
+
+    <!-- BOTTONI SERVIZI IN BASSO ALLINEATI -->
+    <div class="pills" id="servizi">
+      <span class="pill">Pulizie</span>
+      <span class="pill">Giardinaggio</span>
+      <span class="pill">Costruzioni</span>
+      <span class="pill">Traslochi</span>
+      <span class="pill">Rifiuti</span>
+      <span class="pill">Disinfestazioni</span>
+    </div>
+  </section>
   </main>
 
   <!-- Sezioni segnaposto -->
