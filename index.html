@@ -392,7 +392,28 @@ Unisco la logica di Laravel e Vue.js alla creatività di Figma, potenziando ogn
 
 
 
-    <section id="contatti" style="background-color: var(--white);">
+    
+    <section id="contatti">
+    <h2>Contatto</h2>
+    <p class="lead">Scrivimi per collaborazioni o feedback.</p>
+
+    <!-- Usa mailto per semplicità -->
+    <form action="mailto:vincenzomec97@gmail.com" method="post" enctype="text/plain">
+      <label>Nome 
+        <input type="text" name="Nome" placeholder=" Il tuo nome" required>
+      </label>
+      <label>Email 
+        <input type="email" name="Email" placeholder=" nome@email.com" required>
+      </label>
+      <label>Messaggio 
+        <textarea name="Messaggio" placeholder="   Dimmi pure tutto 😊" required></textarea>
+      </label>
+      <button class="btn" type="submit">💬 Invia Messaggio</button>
+    </form>
+  </section>
+  
+    <footer>
+        <section id="contatti" style="background-color: var(--white);">
         <h2 class="section-title">Mettiamoci in contatto</h2>
         <p style="text-align: center; margin-bottom: 20px;">Sei interessato a collaborare? Sentiti libero di contattarmi!</p>
         <div style="text-align: center; font-size: 1.2rem; line-height: 2;">
@@ -401,26 +422,6 @@ Unisco la logica di Laravel e Vue.js alla creatività di Figma, potenziando ogn
             <p><i class="fas fa-map-marker-alt" style="color: var(--accent-light);"></i> Milano, Italia</p>
         </div>
     </section>
-    <section id="contatti">
-    <h2>Contatto</h2>
-    <p class="lead">Scrivimi per collaborazioni o feedback.</p>
-
-    <!-- Usa mailto per semplicità -->
-    <form action="mailto:vincenzomec97@gmail.com" method="post" enctype="text/plain">
-      <label>Nome
-        <input type="text" name="Nome" placeholder=" Il tuo nome" required>
-      </label>
-      <label>Email
-        <input type="email" name="Email" placeholder=" nome@email.com" required>
-      </label>
-      <label>Messaggio
-        <textarea name="Messaggio" placeholder=" Dimmi pure tutto 😊" required></textarea>
-      </label>
-      <button class="btn" type="submit">💬 Invia Messaggio</button>
-    </form>
-  </section>
-  
-    <footer>
         <p>&copy; 2024 Vincenzo Meccariello. Tutti i diritti riservati.</p>
         <div class="social-links">
             <a href="https://www.linkedin.com/in/vincenzo-meccariello-4140b9386/" target="_blank"><i class="fab fa-linkedin"></i></a>
