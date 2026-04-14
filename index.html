@@ -194,7 +194,79 @@
             nav ul { flex-direction: column; display: none; } /* Su mobile andrebbe un hamburger menu, per ora lo nascondiamo o lo mostriamo incolonnato */
             nav ul { display: flex; flex-direction: row; gap: 10px; font-size: 0.8rem;}
         }
-    </style>
+    /* --- SEZIONE FIGMA / DESIGN --- */
+.design-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.design-card {
+    background-color: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+    transition: transform 0.3s ease;
+}
+
+.design-card:hover {
+    transform: translateY(-5px);
+}
+
+.design-img-container {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    background-color: #f0f0f0;
+    position: relative;
+}
+
+.design-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Taglia l'immagine bene */
+    transition: transform 0.5s ease;
+}
+
+.design-card:hover .design-img-container img {
+    transform: scale(1.1); /* Zoom leggero sulla grafica */
+}
+
+.design-info {
+    padding: 20px;
+}
+
+.design-info h3 {
+    color: var(--primary-dark);
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.tag-design {
+    display: inline-block;
+    background: var(--accent-light);
+    color: var(--primary-dark);
+    font-size: 0.7rem;
+    font-weight: bold;
+    padding: 3px 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.btn-figma {
+    color: #A259FF; /* Colore viola tipico di Figma */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+</style>
 </head>
 <body>
 
@@ -268,6 +340,42 @@ Unisco la logica di Laravel e Vue.js alla creatività di Figma, potenziando ogn
     </div>
 </section>
 
+<section id="design" style="background-color: #ffffff; padding: 80px 10%;">
+    <h2 class="section-title" style="text-align: center; margin-bottom: 10px; color: var(--primary-dark);">UI/UX Design Portfolio</h2>
+    <p style="text-align: center; margin-bottom: 50px; color: #666;">Progettazione di interfacce ed esperienze utente realizzate su Figma.</p>
+
+    <div class="design-grid">
+
+        <article class="design-card">
+            <div class="design-img-container">
+                <img src="assets/figma-progetto1.png" alt="Design App Mobile" onerror="this.src='https://via.placeholder.com/600x400?text=Mockup+Figma'">
+            </div>
+            <div class="design-info">
+                <span class="tag-design">Mobile App</span>
+                <h3>Dashboard Finanziaria</h3>
+                <p style="font-size: 0.85rem; color: #555; margin-bottom: 15px;">Studio di una dashboard dark-mode per il monitoraggio di asset digitali.</p>
+                <a href="LINK_AL_TUO_FILE_FIGMA" target="_blank" class="btn-figma">
+                    <i class="fab fa-figma"></i> Vedi su Figma
+                </a>
+            </div>
+        </article>
+
+        <article class="design-card">
+            <div class="design-img-container">
+                <img src="assets/figma-progetto2.png" alt="Design E-commerce" onerror="this.src='https://via.placeholder.com/600x400?text=E-commerce+Design'">
+            </div>
+            <div class="design-info">
+                <span class="tag-design">Web Design</span>
+                <h3>E-commerce Concept</h3>
+                <p style="font-size: 0.85rem; color: #555; margin-bottom: 15px;">Focus sulla User Experience d'acquisto e ottimizzazione del carrello.</p>
+                <a href="LINK_AL_TUO_FILE_FIGMA" target="_blank" class="btn-figma">
+                    <i class="fab fa-figma"></i> Vedi su Figma
+                </a>
+            </div>
+        </article>
+
+    </div>
+</section>
 
 
     <section id="contatti" style="background-color: var(--white);">
