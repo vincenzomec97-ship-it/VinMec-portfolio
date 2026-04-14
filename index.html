@@ -228,8 +228,9 @@
 .design-img-container img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Taglia l'immagine bene */
+    object-fit: contain; /* Taglia l'immagine bene */
     transition: transform 0.5s ease;
+    padding: 10px;
 }
 
 .design-card:hover .design-img-container img {
