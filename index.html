@@ -1,99 +1,249 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Profilo di Vincenzo</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; background:#f4f6f8; color:#333; }
-    header { background:#d62828; color:#fff; padding:24px; text-align:center; }
-    main { max-width:900px; margin:24px auto; padding:0 16px; }
-    .card { background:#fff; border-radius:12px; padding:24px; box-shadow:0 2px 10px rgba(0,0,0,.08); }
-    .top { display:flex; gap:16px; align-items:center; flex-wrap:wrap; }
-    .top img { width:120px; height:120px; border-radius:50%; object-fit:cover; }
-    h1 { margin:0 0 8px 0; }
-    .tags span { display:inline-block; margin:6px 6px 0 0; padding:6px 10px; border-radius:999px; background:#e0ecff; font-size:14px; }
-    .section { margin-top:24px; }
-    a.button { display:inline-block; margin-top:12px; padding:10px 16px; background:#d62828; color:#fff; text-decoration:none; border-radius:8px; font-weight:bold; }
-    a.button:hover { background:#a31515; }
-    footer { text-align:center; padding:24px; color:#777; }
-    @media (max-width:640px){ .top { flex-direction:column; text-align:center; } .top img{ width:96px; height:96px; } }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vincenzo Meccariello | Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* === COLORI PRESI DAL TUO CV === */
+        :root {
+            --primary-dark: #3b596b; /* Blu ardesia scuro */
+            --accent-light: #84c0d0; /* Azzurro ciano chiaro */
+            --bg-color: #f8f9fa;
+            --text-color: #333;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+        header {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        header h1 { font-size: 1.5rem; }
+        nav ul { list-style: none; display: flex; gap: 20px; }
+        nav ul li a { color: var(--white); text-decoration: none; font-weight: bold; transition: color 0.3s; }
+        nav ul li a:hover { color: var(--accent-light); }
+
+        /* HERO SECTION */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 100px 10%;
+            background: linear-gradient(135deg, var(--white) 60%, var(--accent-light) 100%);
+        }
+        .hero-text { max-width: 60%; }
+        .hero-text h2 { font-size: 3rem; color: var(--primary-dark); }
+        .hero-text h3 { font-size: 1.5rem; color: var(--accent-light); margin-bottom: 20px; }
+        .hero-text p { font-size: 1.1rem; margin-bottom: 30px; }
+        .btn {
+            padding: 10px 25px;
+            background-color: var(--primary-dark);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .btn:hover { background-color: var(--accent-light); color: var(--primary-dark); }
+        .hero-image img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            border: 5px solid var(--accent-light);
+            object-fit: cover;
+        }
+
+        /* SECTIONS COMUNI */
+        section { padding: 80px 10%; }
+        h2.section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--primary-dark);
+            margin-bottom: 40px;
+        }
+
+        /* SKILLS */
+        .skills-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
+        .skill-tag {
+            background-color: var(--white);
+            border: 2px solid var(--accent-light);
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            color: var(--primary-dark);
+        }
+
+        /* PROGETTI */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .project-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .project-card:hover { transform: translateY(-10px); }
+        .project-img {
+            width: 100%;
+            height: 200px;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+        }
+        .project-img img { width: 100%; height: 100%; object-fit: cover; }
+        .project-info { padding: 20px; }
+        .project-info h3 { color: var(--primary-dark); margin-bottom: 10px; }
+        .project-info p { font-size: 0.9rem; margin-bottom: 15px; }
+        .project-links a { color: var(--accent-light); text-decoration: none; font-weight: bold; margin-right: 15px; }
+        .project-links a:hover { color: var(--primary-dark); }
+
+        /* FOOTER */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 30px 10%;
+        }
+        .social-links { margin-top: 15px; }
+        .social-links a {
+            color: var(--white);
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        .social-links a:hover { color: var(--accent-light); }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero { flex-direction: column; text-align: center; }
+            .hero-text { max-width: 100%; margin-bottom: 30px; }
+            nav ul { flex-direction: column; display: none; } /* Su mobile andrebbe un hamburger menu, per ora lo nascondiamo o lo mostriamo incolonnato */
+            nav ul { display: flex; flex-direction: row; gap: 10px; font-size: 0.8rem;}
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Profilo di Vincenzo</h1>
-    <p>UI/UX + Frontend Developer in formazione 🚀</p>
-  </header>
 
-  <main>
-    <section class="card">
-      <div class="top">
-        <img src="https://github.com/vincenzomec97-ship-it/VinMec-portfolio/blob/main/IMG_3767.jpeg?raw=true alt="Foto profilo">
-        <div>
-          <h2>Ciao! Sono Vincenzo</h2>
-          <p>Sto costruendo il mio portfolio per diventare Web Designer e Frontend Developer. Amo unire creatività e tecnologia per creare esperienze digitali semplici e belle.</p>
-          <div class="tags">
-            <span>HTML</span><span>CSS</span><span>UX</span><span>Figma</span><span>JavaScript</span>
-          </div>
-          <a class="button" href="mailto:vincenzomec97@gmail.com">Contattami</a>
+    <header>
+        <h1>V. Meccariello</h1>
+        <nav>
+            <ul>
+                <li><a href="#profilo">Chi Sono</a></li>
+                <li><a href="#competenze">Competenze</a></li>
+                <li><a href="#progetti">Progetti</a></li>
+                <li><a href="#contatti">Contatti</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h2>Ciao, sono Vincenzo!</h2>
+            <h3>Full Stack Web Developer | UI/UX Designer | I.A.</h3>
+            <p>Unisco la logica di Laravel e Vue.js alla creatività di Figma, potenziando ogni flusso di lavoro con l'Intelligenza Artificiale. Il mio obiettivo è progettare esperienze digitali esteticamente eccellenti e orientate alla conversione.</p>
+            <a href="#contatti" class="btn">Contattami</a>
         </div>
-      </div>
-
-      <div class="section">
-        <h3>Progetti recenti</h3
-
-  <div style="display:flex; flex-wrap:wrap; gap:16px; justify-content:center;">
-    
-    <!-- Progetto 1: C.M. Pulizie -->
-    <div class="project-card" style="flex:1 1 380px; background:#fff; border:1px solid #eee; border-radius:12px; padding:16px; box-shadow:0 2px 10px rgba(0,0,0,.06);">
-      <h4 style="margin:0 0 8px 0;">C.M. Pulizie - Design (Figma)</h4>
-      <img src="https://github.com/vincenzomec97-ship-it/VinMec-portfolio/blob/main/cm-pulizie.png?raw=true" alt="Mockup sito C.M. Pulizie" style="width:100%; border-radius:8px; margin:12px 0;">
-      <p style="margin:12px 0 0 0;">
-        Mockup di un sito vetrina per azienda di servizi. Ho curato layout, colori, gerarchia e call-to-action per comunicare fiducia e professionalità.
-      </p>
-      <div style="margin-top:12px;">
-        <a class="button" href="https://www.figma.com/design/Qlefn1I3qe1WEOijl20qUR/Untitled?t=42a2OgBe465xzSrK-1" target="_blank">Vedi design su Figma</a>
-      </div>
-    </div>
-
-    <!-- Progetto 2: FitZone Palestra -->
-    <div class="project-card" style="flex:1 1 380px; background:#fff; border:1px solid #eee; border-radius:12px; padding:16px; box-shadow:0 2px 10px rgba(0,0,0,.06);">
-      <h4 style="margin:0 0 8px 0;">FitZone - Sito Web Palestra</h4>
-      <img src="https://raw.githubusercontent.com/vincenzomec97-ship-it/VinMec-portfolio/refs/heads/main/palestra-site.png" alt="Sito web palestra FitZone" style="width:100%; border-radius:8px; margin:12px 0;">
-      <p style="margin:12px 0 0 0;">
-        Sito vetrina per una palestra moderna. Ho curato il design responsive, la struttura delle sezioni e i colori per trasmettere energia e movimento.
-      </p>
-      <div style="margin-top:12px;">
-        <a class="button" href="https://www.figma.com/design/CgFRuCSFPFhb6KcRTZqYZa/Untitled?node-id=0-1&t=42a2OgBe465xzSrK-1" target="_blank">Vedi design su Figma</a>
-      <div style="margin-top:12px;">
-         <a class="button" href="https://vincenzomec97-ship-it.github.io/VinMec-portfolio/gym-home.html" target="_blank">
-           Apri l progetto HTML
-         </a>
-       </div>
-      </div>
-    </div>
-
-  </div>
-</div>    
-
-  <ul style="margin-top:16px;">
-          <li>Mini pagina “I miei film preferiti” – HTML base</li>
-          <li>Portfolio personale – in costruzione</li>
-        </ul>
-      </div>
-
-      <div class="section">
-        <h3>Link utili</h3>
-        <p>
-          <a href="https://www.linkedin.com/in/vincenzo-meccariello-4140b9386/" target="_blank">LinkedIn</a> ·
-          <a href="https://github.com/vincenzomec97-ship-it" target="_blank">GitHub</a> ·
-          <a href="https://vincenzomec97-ship-it.github.io/VinMec-portfolio/portfolio-mini.html" target="_blank">Portfolio</a>
-        </p>
-      </div>
+        <div class="hero-image">
+            <img src="IMG_3767.jpeg" alt="Vincenzo Meccariello">
+        </div>
     </section>
-  </main>
 
-  <footer>© 2025 Vincenzo | Tutti i diritti riservati</footer>
+    <section id="competenze" style="background-color: var(--white);">
+        <h2 class="section-title">Tech Stack & Tools</h2>
+        <div class="skills-container">
+            <div class="skill-tag"><i class="fab fa-html5"></i> HTML5 & CSS3</div>
+            <div class="skill-tag"><i class="fab fa-js"></i> JavaScript</div>
+            <div class="skill-tag"><i class="fab fa-vuejs"></i> Vue.js</div>
+            <div class="skill-tag"><i class="fab fa-php"></i> PHP & Laravel</div>
+            <div class="skill-tag"><i class="fab fa-python"></i> Python</div>
+            <div class="skill-tag"><i class="fas fa-database"></i> MySQL</div>
+            <div class="skill-tag"><i class="fab fa-sass"></i> Sass</div>
+            <div class="skill-tag"><i class="fab fa-figma"></i> Figma</div>
+            <div class="skill-tag"><i class="fas fa-paint-brush"></i> Photoshop & Canva</div>
+            <div class="skill-tag"><i class="fas fa-search"></i> SEO & Digital Marketing</div>
+        </div>
+    </section>
+
+    <section id="progetti">
+        <h2 class="section-title">I Miei Progetti</h2>
+        <div class="projects-grid">
+
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="https://via.placeholder.com/400x200" alt="Anteprima Progetto 1">
+                </div>
+                <div class="project-info">
+                    <h3>Landing Page Ottimizzata</h3>
+                    <p>Sviluppo di una landing page responsive con HTML, CSS, e JS, progettata su Figma e ottimizzata per la conversione e la SEO locale.</p>
+                    <div class="project-links">
+                        <a href="URL_DEL_TUO_PROGETTO_LIVE" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="URL_DEL_TUO_REPOSITORY_GITHUB" target="_blank"><i class="fab fa-github"></i> Codice</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="https://via.placeholder.com/400x200" alt="Anteprima Progetto 2">
+                </div>
+                <div class="project-info">
+                    <h3>Nome del Tuo Progetto (es: Web App in Vue.js)</h3>
+                    <p>Descrivi brevemente cosa fa il progetto, quali tecnologie hai usato (es: Laravel come API, Vue.js per il frontend) e quale problema risolve.</p>
+                    <div class="project-links">
+                        <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="#" target="_blank"><i class="fab fa-github"></i> Codice</a>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+    </section>
+
+    <section id="contatti" style="background-color: var(--white);">
+        <h2 class="section-title">Mettiamoci in contatto</h2>
+        <p style="text-align: center; margin-bottom: 20px;">Sei interessato a collaborare? Sentiti libero di contattarmi!</p>
+        <div style="text-align: center; font-size: 1.2rem; line-height: 2;">
+            <p><i class="fas fa-envelope" style="color: var(--accent-light);"></i> Vincenzomec97@gmail.com</p>
+            <p><i class="fas fa-phone" style="color: var(--accent-light);"></i> 3277942828</p>
+            <p><i class="fas fa-map-marker-alt" style="color: var(--accent-light);"></i> Milano, Italia</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Vincenzo Meccariello. Tutti i diritti riservati.</p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/vincenzo-meccariello-4140b9386/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/vincenzomec97-ship-it" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+    </footer>
+
 </body>
 </html>
