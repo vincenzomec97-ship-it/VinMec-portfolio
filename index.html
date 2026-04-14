@@ -101,29 +101,48 @@
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
-        .project-card {
-            background-color: var(--white);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-        .project-card:hover { transform: translateY(-10px); }
-        .project-img {
-            width: 100%;
-            height: 200px;
-            background-color: #ddd;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #777;
-        }
-        .project-img img { width: 100%; height: 100%; object-fit: cover; }
-        .project-info { padding: 20px; }
-        .project-info h3 { color: var(--primary-dark); margin-bottom: 10px; }
-        .project-info p { font-size: 0.9rem; margin-bottom: 15px; }
-        .project-links a { color: var(--accent-light); text-decoration: none; font-weight: bold; margin-right: 15px; }
-        .project-links a:hover { color: var(--primary-dark); }
+        /* STILE CARD CON EFFETTO GLOW */
+.project-card {
+    background-color: #1a1a1a; /* Sfondo scuro come nell'immagine */
+    border-radius: 15px;
+    overflow: hidden;
+    border: 2px solid transparent; /* Bordo pronto per l'animazione */
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+/* EFFETTO AL PASSAGGIO DEL MOUSE (HOVER) */
+.project-card:hover {
+    transform: translateY(-10px) scale(1.02); /* Si alza e si ingrandisce leggermente */
+    border-color: var(--accent-light); [span_1](start_span)/* Il bordo diventa azzurro[span_1](end_span) */
+    box-shadow: 0 0 20px rgba(132, 192, 208, 0.6); /* Il bagliore azzurro (glow) */
+}
+
+.project-info h3 {
+    color: var(--white); /* Testo bianco per contrasto sullo scuro */
+    margin-bottom: 10px;
+}
+
+.project-info p {
+    color: #ccc; /* Testo grigio chiaro per la descrizione */
+    font-size: 0.9rem;
+}
+
+/* Rendi i link simili a quelli nella tua foto */
+.project-links a {
+    color: var(--accent-light);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.project-links a:hover {
+    text-decoration: underline;
+}
+
 
         /* FOOTER */
         footer {
@@ -195,38 +214,52 @@ Unisco la logica di Laravel e Vue.js alla creatività di Figma, potenziando ogn
 
     <section id="progetti">
         <h2 class="section-title">I Miei Progetti</h2>
+        <p style="text-align: center; margin-bottom: 40px;" class="lead">Una piccola selezione dei miei lavori:</p>
+        
         <div class="projects-grid">
 
             <div class="project-card">
                 <div class="project-img">
-                    <img src="https://via.placeholder.com/400x200" alt="Anteprima Progetto 1">
+                    <img src="assets/palestra-site.png" alt="FitZone – Home palestra" onerror="this.src='https://via.placeholder.com/400x200?text=FitZone+Palestra'">
                 </div>
                 <div class="project-info">
-                    <h3>Landing Page Ottimizzata</h3>
-                    <p>Sviluppo di una landing page responsive con HTML, CSS, e JS, progettata su Figma e ottimizzata per la conversione e la SEO locale.</p>
+                    <h3>FitZone – Home palestra</h3>
+                    <p>Progetto con Hero giallo/nero, navigazione arrotondata e sistema di rating. Focus su impatto visivo e UI moderna.</p>
                     <div class="project-links">
-                        <a href="URL_DEL_TUO_PROGETTO_LIVE" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                        <a href="URL_DEL_TUO_REPOSITORY_GITHUB" target="_blank"><i class="fab fa-github"></i> Codice</a>
+                        <a href="gym-home.html" target="_blank"><i class="fas fa-external-link-alt"></i> Apri Progetto</a>
                     </div>
                 </div>
             </div>
 
             <div class="project-card">
                 <div class="project-img">
-                    <img src="https://via.placeholder.com/400x200" alt="Anteprima Progetto 2">
+                    <img src="assets/cm-pulizie.png" alt="Sito vetrina C.M. Pulizie" onerror="this.src='https://via.placeholder.com/400x200?text=CM+Pulizie'">
                 </div>
                 <div class="project-info">
-                    <h3>Nome del Tuo Progetto (es: Web App in Vue.js)</h3>
-                    <p>Descrivi brevemente cosa fa il progetto, quali tecnologie hai usato (es: Laravel come API, Vue.js per il frontend) e quale problema risolve.</p>
+                    <h3>CM Pulizie – Vetrina</h3>
+                    <p>Landing page professionale con Call-to-Action (CTA) strategiche e griglia servizi ottimizzata per la conversione.</p>
                     <div class="project-links">
-                        <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                        <a href="#" target="_blank"><i class="fab fa-github"></i> Codice</a>
+                        <a href="sito-vetrina.html" target="_blank"><i class="fas fa-external-link-alt"></i> Apri Progetto</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="assets/foto-registrazione.png" alt="Form registrazione" onerror="this.src='https://via.placeholder.com/400x200?text=Form+Registrazione'">
+                </div>
+                <div class="project-info">
+                    <h3>Form di Registrazione</h3>
+                    <p>Interfaccia di registrazione con campi nome, email e password, completa di validazioni HTML5 per una corretta UX.</p>
+                    <div class="project-links">
+                        <a href="registration.html" target="_blank"><i class="fas fa-external-link-alt"></i> Apri Progetto</a>
                     </div>
                 </div>
             </div>
 
             </div>
     </section>
+
 
     <section id="contatti" style="background-color: var(--white);">
         <h2 class="section-title">Mettiamoci in contatto</h2>
