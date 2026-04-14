@@ -108,23 +108,21 @@
     background-color: #1a1a1a; /* Sfondo scuro come nell'immagine */
     border-radius: 12px;
     padding: 15px;
-    border: 1px solid #333; /* Bordo pronto per l'animazione */
+    border: 1px solid #ddd; /* Bordo pronto per l'animazione */
     transition: all 0.4s cubic-benzier(0.175, 0.885, 0.32,1.275);
     display: flex;
     flex-direction: column;
-    text-aling: left;
-    cursor: pointer;
 }
 
 /* EFFETTO AL PASSAGGIO DEL MOUSE (HOVER) */
 .project-card:hover {
-    transform: translateY(-10px) scale(1.02); /* Si alza e si ingrandisce leggermente */
-    border-color: var(--accent-light); [span_1](start_span)/* Il bordo diventa azzurro[span_1](end_span) */
-    box-shadow: 0 0 20px rgba(132, 192, 208, 0.6); /* Il bagliore azzurro (glow) */
+    transform: scale(1.05);
+    border-color: #84c0d0;
+    box-shadow: 0 10px 30px rgba(132, 192, 208, 0.5); /* Il bagliore azzurro (glow) */
 }
     .project-card img {
         width: 100%;
-        height: 140px;
+        height: 150px;
         object-fit: cover;
         border-radius: 8px;
         margin-bottom: 12px;
@@ -133,7 +131,12 @@
         color: #ffffff;
         font-size: 1.1rem;
         margin-bottom: 8px;
+    }
+    .project-card p {
+        color: #b0b0b0;
+        font-size: 0.85rem;
         line-height: 1.4;
+        margin-bottom: 15px;
     }
     .project-card a {
         color: #84c0d0;
@@ -236,34 +239,35 @@ Unisco la logica di Laravel e Vue.js alla creatività di Figma, potenziando ogn
         </div>
     </section>
 
-    <section id="progetti" style="background-color: #0f0f0f; padding: 60px 10%; color: white;">
-    <h2 class="section-title" style="color: white; text-align: center; margin-bottom: 40px;">I Miei Progetti</h2>
+    <section id="progetti" style="background-color: #f8f9fa; padding: 80px 10%;">
+    <h2 class="section-title" style="text-align: center; margin-bottom: 40px; color: #3b596b;">I Miei Progetti</h2>
     
     <div class="projects-grid">
 
         <article class="project-card">
-            <img src="assets/palestra-site.png" alt="FitZone" onerror="this.src='https://via.placeholder.com/400x200?text=FitZone'">
-            <h3>FitZone – Home palestra</h3>
-            [span_4](start_span)<p>Hero giallo/nero, navigazione arrotondata e rating[span_4](end_span).</p>
+            <img src="assets/palestra-site.png" alt="FitZone">
+            <h3>FitZone – UI/UX Gym Landing</h3>
+            <p>Progettazione di un'interfaccia moderna in alta visibilità. Focus su flussi di navigazione e sistema di rating integrato.</p>
             <a href="gym-home.html" target="_blank">Apri Progetto →</a>
         </article>
 
         <article class="project-card">
-            <img src="assets/cm-pulizie.png" alt="CM Pulizie" onerror="this.src='https://via.placeholder.com/400x200?text=CM+Pulizie'">
-            <h3>CM Pulizie – Vetrina</h3>
-            [span_5](start_span)<p>Landing page ottimizzata con CTA e griglia servizi[span_5](end_span).</p>
+            <img src="assets/cm-pulizie.png" alt="CM Pulizie">
+            <h3>CM Pulizie – Business Landing</h3>
+            <p>Sviluppo orientato alla conversione con CTA strategiche e griglia servizi ottimizzata per il marketing locale.</p>
             <a href="sito-vetrina.html" target="_blank">Apri Progetto →</a>
         </article>
 
         <article class="project-card">
-            <img src="assets/foto-registrazione.png" alt="Form" onerror="this.src='https://via.placeholder.com/400x200?text=Form'">
-            <h3>Form registrazione</h3>
-            [span_6](start_span)<p>Interfaccia con validazioni HTML5 e design pulito[span_6](end_span).</p>
+            <img src="assets/foto-registrazione.png" alt="Form">
+            <h3>Form Registrazione Avanzato</h3>
+            <p>Sistema di input dinamico con validazioni in tempo reale e design user-friendly per ridurre l'attrito all'iscrizione.</p>
             <a href="registration.html" target="_blank">Apri Progetto →</a>
         </article>
 
     </div>
 </section>
+
 
 
     <section id="contatti" style="background-color: var(--white);">
