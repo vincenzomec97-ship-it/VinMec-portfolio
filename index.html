@@ -98,18 +98,22 @@
         /* PROGETTI */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            max-width: 1100px;
+            margin: 0 auto;
         }
         /* STILE CARD CON EFFETTO GLOW */
 .project-card {
     background-color: #1a1a1a; /* Sfondo scuro come nell'immagine */
-    border-radius: 15px;
-    overflow: hidden;
-    border: 2px solid transparent; /* Bordo pronto per l'animazione */
-    transition: all 0.3s ease;
+    border-radius: 12px;
+    padding: 15px;
+    border: 1px solid #333; /* Bordo pronto per l'animazione */
+    transition: all 0.4s cubic-benzier(0.175, 0.885, 0.32,1.275);
+    display: flex;
+    flex-direction: column;
+    text-aling: left;
     cursor: pointer;
-    position: relative;
 }
 
 /* EFFETTO AL PASSAGGIO DEL MOUSE (HOVER) */
@@ -118,6 +122,26 @@
     border-color: var(--accent-light); [span_1](start_span)/* Il bordo diventa azzurro[span_1](end_span) */
     box-shadow: 0 0 20px rgba(132, 192, 208, 0.6); /* Il bagliore azzurro (glow) */
 }
+    .project-card img {
+        width: 100%;
+        height: 140px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 12px;
+    }
+    .project-card h3 {
+        color: #ffffff;
+        font-size: 1.1rem;
+        margin-bottom: 8px;
+        line-height: 1.4;
+    }
+    .project-card a {
+        color: #84c0d0;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 0.9rem;
+    }
+        
 
 .project-info h3 {
     color: var(--white); /* Testo bianco per contrasto sullo scuro */
@@ -212,53 +236,34 @@ Unisco la logica di Laravel e Vue.js alla creatività di Figma, potenziando ogn
         </div>
     </section>
 
-    <section id="progetti">
-        <h2 class="section-title">I Miei Progetti</h2>
-        <p style="text-align: center; margin-bottom: 40px;" class="lead">Una piccola selezione dei miei lavori:</p>
-        
-        <div class="projects-grid">
+    <section id="progetti" style="background-color: #0f0f0f; padding: 60px 10%; color: white;">
+    <h2 class="section-title" style="color: white; text-align: center; margin-bottom: 40px;">I Miei Progetti</h2>
+    
+    <div class="projects-grid">
 
-            <div class="project-card">
-                <div class="project-img">
-                    <img src="assets/palestra-site.png" alt="FitZone – Home palestra" onerror="this.src='https://via.placeholder.com/400x200?text=FitZone+Palestra'">
-                </div>
-                <div class="project-info">
-                    <h3>FitZone – Home palestra</h3>
-                    <p>Progetto con Hero giallo/nero, navigazione arrotondata e sistema di rating. Focus su impatto visivo e UI moderna.</p>
-                    <div class="project-links">
-                        <a href="gym-home.html" target="_blank"><i class="fas fa-external-link-alt"></i> Apri Progetto</a>
-                    </div>
-                </div>
-            </div>
+        <article class="project-card">
+            <img src="assets/palestra-site.png" alt="FitZone" onerror="this.src='https://via.placeholder.com/400x200?text=FitZone'">
+            <h3>FitZone – Home palestra</h3>
+            [span_4](start_span)<p>Hero giallo/nero, navigazione arrotondata e rating[span_4](end_span).</p>
+            <a href="gym-home.html" target="_blank">Apri Progetto →</a>
+        </article>
 
-            <div class="project-card">
-                <div class="project-img">
-                    <img src="assets/cm-pulizie.png" alt="Sito vetrina C.M. Pulizie" onerror="this.src='https://via.placeholder.com/400x200?text=CM+Pulizie'">
-                </div>
-                <div class="project-info">
-                    <h3>CM Pulizie – Vetrina</h3>
-                    <p>Landing page professionale con Call-to-Action (CTA) strategiche e griglia servizi ottimizzata per la conversione.</p>
-                    <div class="project-links">
-                        <a href="sito-vetrina.html" target="_blank"><i class="fas fa-external-link-alt"></i> Apri Progetto</a>
-                    </div>
-                </div>
-            </div>
+        <article class="project-card">
+            <img src="assets/cm-pulizie.png" alt="CM Pulizie" onerror="this.src='https://via.placeholder.com/400x200?text=CM+Pulizie'">
+            <h3>CM Pulizie – Vetrina</h3>
+            [span_5](start_span)<p>Landing page ottimizzata con CTA e griglia servizi[span_5](end_span).</p>
+            <a href="sito-vetrina.html" target="_blank">Apri Progetto →</a>
+        </article>
 
-            <div class="project-card">
-                <div class="project-img">
-                    <img src="assets/foto-registrazione.png" alt="Form registrazione" onerror="this.src='https://via.placeholder.com/400x200?text=Form+Registrazione'">
-                </div>
-                <div class="project-info">
-                    <h3>Form di Registrazione</h3>
-                    <p>Interfaccia di registrazione con campi nome, email e password, completa di validazioni HTML5 per una corretta UX.</p>
-                    <div class="project-links">
-                        <a href="registration.html" target="_blank"><i class="fas fa-external-link-alt"></i> Apri Progetto</a>
-                    </div>
-                </div>
-            </div>
+        <article class="project-card">
+            <img src="assets/foto-registrazione.png" alt="Form" onerror="this.src='https://via.placeholder.com/400x200?text=Form'">
+            <h3>Form registrazione</h3>
+            [span_6](start_span)<p>Interfaccia con validazioni HTML5 e design pulito[span_6](end_span).</p>
+            <a href="registration.html" target="_blank">Apri Progetto →</a>
+        </article>
 
-            </div>
-    </section>
+    </div>
+</section>
 
 
     <section id="contatti" style="background-color: var(--white);">
