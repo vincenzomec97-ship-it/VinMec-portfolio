@@ -21,6 +21,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 86px;
+  overflow-x: hidden;
 }
 
 body {
@@ -29,6 +30,7 @@ body {
   color: var(--ink);
   background: var(--paper);
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 body.nav-open {
@@ -53,7 +55,8 @@ textarea:focus-visible {
 }
 
 .container {
-  width: min(1120px, calc(100% - 40px));
+  width: calc(100% - 40px);
+  max-width: 1120px;
   margin: 0 auto;
 }
 
@@ -140,6 +143,7 @@ textarea:focus-visible {
 
 .nav-toggle {
   display: none;
+  flex: 0 0 44px;
   width: 44px;
   height: 44px;
   border: 1px solid var(--line);
@@ -191,6 +195,7 @@ textarea:focus-visible {
 }
 
 .hero-copy {
+  min-width: 0;
   max-width: 700px;
 }
 
@@ -213,6 +218,7 @@ textarea:focus-visible {
   max-width: 780px;
   font-size: 4.4rem;
   line-height: 1.03;
+  overflow-wrap: break-word;
 }
 
 .hero-subtitle {
@@ -221,6 +227,7 @@ textarea:focus-visible {
   font-size: 1.35rem;
   font-weight: 700;
   color: var(--sky-soft);
+  overflow-wrap: break-word;
 }
 
 .hero-text {
@@ -228,6 +235,7 @@ textarea:focus-visible {
   max-width: 680px;
   color: rgba(255, 255, 255, 0.78);
   font-size: 1.03rem;
+  overflow-wrap: break-word;
 }
 
 .hero-actions,
@@ -455,6 +463,7 @@ textarea:focus-visible {
 }
 
 .project-content {
+  min-width: 0;
   padding: 28px;
 }
 
@@ -589,6 +598,7 @@ textarea:focus-visible {
 
 .contact-copy h2 {
   color: var(--white);
+  overflow-wrap: break-word;
 }
 
 .contact-copy p {
@@ -711,7 +721,8 @@ textarea:focus-visible {
 
 @media (max-width: 880px) {
   .container {
-    width: min(100% - 32px, 720px);
+    width: calc(100% - 32px);
+    max-width: 720px;
   }
 
   .nav-toggle {
