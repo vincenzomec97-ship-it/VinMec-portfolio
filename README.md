@@ -31,6 +31,20 @@ Creo siti web moderni da Figma al codice, unendo Frontend, UI/UX, AI tools e Dig
 - Shoes Concept
 - Registration Form
 
+## Come aggiungere un nuovo progetto
+
+I progetti della home sono gestiti in:
+
+`assets/js/projects.js`
+
+Per aggiungere un progetto:
+
+1. Duplica un oggetto dentro `window.portfolioProjects`.
+2. Cambia `id`, `title`, `description`, `role`, `technologies`, `care`, `image` e `links`.
+3. Usa `categoryKey` tra `web`, `ui` o `frontend`, oppure aggiungi una nuova categoria coerente.
+4. Carica lo screenshot nella cartella `assets/` e collega il percorso in `image.src`.
+5. Lascia `featured: true` solo al progetto principale.
+
 ## Contatti
 
 LinkedIn:
