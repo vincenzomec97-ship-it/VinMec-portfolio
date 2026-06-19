@@ -1,17 +1,43 @@
-# Portfolio — Vincenzo Meccariello
+# Portfolio - Vincenzo Meccariello
 
-Sito portfolio + progetto vetrina **C.M. Pulizie** (HTML + CSS, tema blu).
+Portfolio personale di Vincenzo Meccariello, Junior AI-Powered Frontend Developer, UI/UX Designer e profilo Digital Marketing.
 
-- Portfolio: https://vincenzomec97-ship-it.github.io/VinMec-portfolio/portfolio-mini.html
-- Profilo personale: https://vincenzomec97-ship-it.github.io/VinMec-portfolio/
-- Sito vetrina: https://vincenzomec97-ship-it.github.io/VinMec-portfolio/sito-vetrina.html
-- Sito Palestra: https://vincenzomec97-ship-it.github.io/VinMec-portfolio/gym-home.html
-- Registration : https://vincenzomec97-ship-it.github.io/VinMec-portfolio/registration.html
+## Live
 
+Portfolio:
+https://vincenzomec97-ship-it.github.io/VinMec-portfolio/
+
+Progetto principale:
+C.M. Pulizie:
+https://vincenzomec97-ship-it.github.io/cm-pulizie/
+
+## Profilo
+
+Creo siti web moderni da Figma al codice, unendo Frontend, UI/UX, AI tools e Digital Marketing.
 
 ## Tecnologie
-HTML5, CSS3 (Flexbox), Google Fonts (Poppins)
 
-## Note
-- Design responsive (mobile-first)
-- Immagini in /assets
+- HTML5
+- CSS3
+- JavaScript
+- Figma
+- GitHub Pages
+- AI-assisted workflow
+
+## Progetti principali
+
+- C.M. Pulizie
+- FitZone
+- Shoes Concept
+- Registration Form
+
+## Contatti
+
+LinkedIn:
+https://www.linkedin.com/in/vincenzo-meccariello-4140b9386/
+
+GitHub:
+https://github.com/vincenzomec97-ship-it
+
+Email:
+Vincenzomec97@gmail.com

@@ -1,428 +1,470 @@
-mi<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vincenzo Meccariello | Portfolio</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        /* === COLORI PRESI DAL MIO CV === */
-        :root {
-            --primary-dark: #3b596b; /* Blu ardesia scuro */
-            --accent-light: #84c0d0; /* Azzurro ciano chiaro */
-            --bg-color: #f8f9fa;
-            --text-color: #333;
-            --white: #ffffff;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-
-        /* NAVBAR */
-        header {
-            background-color: var(--primary-dark);
-            color: var(--white);
-            padding: 1rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        header h1 { font-size: 1.5rem; }
-        nav ul { list-style: none; display: flex; gap: 20px; }
-        nav ul li a { color: var(--white); text-decoration: none; font-weight: bold; transition: color 0.3s; }
-        nav ul li a:hover { color: var(--accent-light); }
-
-        /* HERO SECTION */
-        .hero {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 100px 10%;
-            background: linear-gradient(135deg, var(--white) 60%, var(--accent-light) 100%);
-        }
-        .hero-text { max-width: 60%; }
-        .hero-text h2 { font-size: 3rem; color: var(--primary-dark); }
-        .hero-text h3 { font-size: 1.5rem; color: var(--accent-light); margin-bottom: 20px; }
-        .hero-text p { font-size: 1.1rem; margin-bottom: 30px; }
-        .btn {
-            padding: 10px 25px;
-            background-color: var(--primary-dark);
-            color: var(--white);
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
-        .btn:hover { background-color: var(--accent-light); color: var(--primary-dark); }
-        .hero-image img {
-            width: 400px;
-            height: 400px;
-            border-radius: 50%;
-            border: 5px solid var(--accent-light);
-            object-fit: cover;
-        }
-
-        /* SECTIONS COMUNI */
-        section { padding: 80px 10%; }
-        h2.section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            color: var(--primary-dark);
-            margin-bottom: 40px;
-        }
-
-        /* SKILLS */
-        .skills-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
-        .skill-tag {
-            background-color: var(--white);
-            border: 2px solid var(--accent-light);
-            padding: 10px 20px;
-            border-radius: 20px;
-            font-weight: bold;
-            color: var(--primary-dark);
-        }
-
-        /* PROGETTI */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-        /* STILE CARD CON EFFETTO GLOW */
-.project-card {
-    background-color: var(--primary-dark); /* Sfondo scuro come nell'immagine */
-    border-radius: 12px;
-    padding: 15px;
-    border: 1px solid #ddd; /* Bordo pronto per l'animazione */
-    transition: all 0.4s cubic-benzier(0.175, 0.885, 0.32,1.275);
-    display: flex;
-    flex-direction: column;
-}
-
-/* EFFETTO AL PASSAGGIO DEL MOUSE (HOVER) */
-.project-card:hover {
-    transform: scale(1.05);
-    border-color: #84c0d0;
-    box-shadow: 0 10px 30px rgba(132, 192, 208, 0.5); /* Il bagliore azzurro (glow) */
-}
-    .project-card img {
-        width: 100%;
-        height: 150px;
-        object-fit: cover;
-        border-radius: 8px;
-        margin-bottom: 12px;
-    }
-    .project-card h3 {
-        color: #ffffff;
-        font-size: 1.1rem;
-        margin-bottom: 8px;
-    }
-    .project-card p {
-        color: #b0b0b0;
-        font-size: 0.85rem;
-        line-height: 1.4;
-        margin-bottom: 15px;
-    }
-    .project-card a {
-        color: #84c0d0;
-        text-decoration: none;
-        font-weight: bold;
-        font-size: 0.9rem;
-    }
-        
-
-.project-info h3 {
-    color: var(--white); /* Testo bianco per contrasto sullo scuro */
-    margin-bottom: 10px;
-}
-
-.project-info p {
-    color: #ccc; /* Testo grigio chiaro per la descrizione */
-    font-size: 0.9rem;
-}
-
-/* Rendi i link simili a quelli nella tua foto */
-.project-links a {
-    color: var(--accent-light);
-    text-decoration: none;
-    font-size: 0.85rem;
-    font-weight: bold;
-    display: inline-block;
-    margin-top: 10px;
-}
-
-.project-links a:hover {
-    text-decoration: underline;
-}
-
-
-        /* FOOTER */
-        footer {
-            background-color: var(--primary-dark);
-            color: var(--white);
-            text-align: center;
-            padding: 30px 10%;
-        }
-        .social-links { margin-top: 15px; }
-        .social-links a {
-            color: var(--white);
-            font-size: 1.5rem;
-            margin: 0 10px;
-            transition: color 0.3s;
-        }
-        .social-links a:hover { color: var(--accent-light); }
-
-        /* RESPONSIVE */
-        @media (max-width: 768px) {
-            .hero { flex-direction: column; text-align: center; }
-            .hero-text { max-width: 100%; margin-bottom: 30px; }
-            nav ul { flex-direction: column; display: none; } /* Su mobile andrebbe un hamburger menu, per ora lo nascondiamo o lo mostriamo incolonnato */
-            nav ul { display: flex; flex-direction: row; gap: 10px; font-size: 0.8rem;}
-        }
-    /* --- SEZIONE FIGMA / DESIGN --- */
-.design-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-.design-card {
-    background-color: var(--prymary-dark);
-    border-radius: 15px;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.4s ease;
-    display: flex;
-    flex-direction: column;
-}
-
-.design-card:hover {
-    transform: translateY(-8px);
-    border-color: var(--accent-light);
-    box-shadow: 0 10px 30px rgba(132, 192, 208, 0.3);
-}
-
-.design-img-container {
-    width: 100%;
-    height: 180px;
-    overflow: hidden;
-}
-
-.design-img-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain; /* Taglia l'immagine bene */
-    transition: transform 0.5s ease;
-    padding: 10px;
-}
-
-.design-card:hover .design-img-container img {
-    transform: scale(1.1); /* Zoom leggero sulla grafica */
-}
-
-.design-info {
-    padding: 20px;
-}
-
-.design-info h3 {
-    color: var(--primary-dark);
-    font-size: 1.2rem;
-    margin-bottom: 5px;
-}
-.design-info p {
-        color: #dldldl;
-        font-size: 0.85rem;
-        magin-bottom: 15px;
-    }
-
-
-.tag-design {
-    display: inline-block;
-    background: var(--accent-light);
-    color: var(--primary-dark);
-    font-size: 0.7rem;
-    font-weight: bold;
-    padding: 3px 10px;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-}
-
-.btn-figma {
-    color: var(--accent-light); 
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 0.85rem;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vincenzo Meccariello | Junior AI-Powered Frontend Developer & UI/UX Designer</title>
+  <meta name="description" content="Portfolio di Vincenzo Meccariello, Junior AI-Powered Frontend Developer e UI/UX Designer. Creo siti web responsive da Figma al codice, integrando HTML, CSS, JavaScript, strumenti AI, SEO e digital marketing.">
+  <meta name="author" content="Vincenzo Meccariello">
+  <link rel="canonical" href="https://vincenzomec97-ship-it.github.io/VinMec-portfolio/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Vincenzo Meccariello | Junior AI-Powered Frontend Developer">
+  <meta property="og:description" content="Creo siti web moderni da Figma al codice, unendo Frontend, UI/UX, AI tools e Digital Marketing.">
+  <meta property="og:url" content="https://vincenzomec97-ship-it.github.io/VinMec-portfolio/">
+  <meta property="og:image" content="https://vincenzomec97-ship-it.github.io/VinMec-portfolio/IMG_3767.jpeg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Vincenzo Meccariello | Junior AI-Powered Frontend Developer">
+  <meta name="twitter:description" content="Portfolio personale: Frontend, UI/UX, AI-assisted workflow, SEO e Digital Marketing.">
+  <meta name="twitter:image" content="https://vincenzomec97-ship-it.github.io/VinMec-portfolio/IMG_3767.jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script defer src="assets/js/main.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Vincenzo Meccariello",
+    "jobTitle": "Junior AI-Powered Frontend Developer",
+    "url": "https://vincenzomec97-ship-it.github.io/VinMec-portfolio/",
+    "email": "mailto:Vincenzomec97@gmail.com",
+    "sameAs": [
+      "https://www.linkedin.com/in/vincenzo-meccariello-4140b9386/",
+      "https://github.com/vincenzomec97-ship-it"
+    ],
+    "knowsAbout": [
+      "Frontend Development",
+      "UI/UX Design",
+      "Digital Marketing",
+      "SEO",
+      "AI-assisted workflow"
+    ]
+  }
+  </script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Salta al contenuto</a>
 
-    <header>
-        <h1>V. Meccariello</h1>
-        <nav>
+  <header class="site-header" data-header>
+    <nav class="nav container" aria-label="Navigazione principale">
+      <a class="brand" href="#home" aria-label="Vai alla home">
+        <span class="brand-mark">VM</span>
+        <span class="brand-text">Vincenzo Meccariello</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Apri menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-menu" id="site-menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#chi-sono">Chi sono</a></li>
+        <li><a href="#servizi">Servizi</a></li>
+        <li><a href="#progetti">Progetti</a></li>
+        <li><a href="#case-study">Case Study</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#cv">CV</a></li>
+        <li><a href="#contatti">Contatti</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero section-hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="badge">Junior AI-Powered Frontend Developer</span>
+          <h1>Ciao, sono Vincenzo Meccariello.</h1>
+          <p class="hero-subtitle">Creo siti web moderni da Figma al codice, unendo Frontend, UI/UX, AI tools e Digital Marketing.</p>
+          <p class="hero-text">Trasformo idee e prototipi Figma in siti web funzionanti, responsive e curati nella struttura, nell'interfaccia e nella presenza online. Uso strumenti AI e Vibe Coding per velocizzare il processo creativo e tecnico.</p>
+          <div class="hero-actions" aria-label="Azioni principali">
+            <a class="button button-primary" href="#progetti">Guarda i progetti</a>
+            <a class="button button-secondary" href="assets/cv/vincenzo-meccariello-cv.pdf" target="_blank" rel="noopener noreferrer">Scarica CV</a>
+            <a class="button button-ghost" href="#contatti">Contattami</a>
+          </div>
+          <ul class="tag-list" aria-label="Competenze principali">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>Figma</li>
+            <li>AI-assisted</li>
+            <li>SEO</li>
+          </ul>
+        </div>
+
+        <figure class="hero-photo">
+          <img src="IMG_3767.jpeg" alt="Foto di Vincenzo Meccariello">
+          <figcaption>Frontend, UI/UX e presenza digitale per progetti web moderni.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="chi-sono">
+      <div class="container split">
+        <div class="section-heading align-left">
+          <span class="section-kicker">Profilo</span>
+          <h2>Chi sono</h2>
+        </div>
+        <div class="content-stack">
+          <p>Sono un profilo junior orientato alla creazione di prodotti digitali AI-assisted, con basi in frontend, UI/UX design, SEO e digital marketing.</p>
+          <p>Mi occupo di trasformare idee e prototipi Figma in siti web funzionanti, curando struttura, interfaccia, responsive design e presenza online.</p>
+          <p>Sto sviluppando competenze in Vibe Coding e strumenti AI per velocizzare il processo creativo e tecnico, mantenendo sempre attenzione alla chiarezza, all'esperienza utente e agli obiettivi del progetto.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section surface" id="servizi">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-kicker">Servizi</span>
+          <h2>Cosa posso fare</h2>
+        </div>
+        <div class="service-grid">
+          <article class="info-card">
+            <h3>Frontend Development</h3>
+            <p>Sviluppo pagine web responsive con HTML, CSS e JavaScript, curando struttura, layout, interazioni base e compatibilità mobile.</p>
+          </article>
+          <article class="info-card">
+            <h3>UI/UX Design</h3>
+            <p>Progetto interfacce moderne su Figma, lavorando su gerarchia visiva, colori, spaziature, componenti e semplicità d'uso.</p>
+          </article>
+          <article class="info-card">
+            <h3>AI-assisted Workflow</h3>
+            <p>Uso strumenti AI, prompt engineering e Vibe Coding per velocizzare ricerca, copy, prototipazione, debugging e sviluppo.</p>
+          </article>
+          <article class="info-card">
+            <h3>SEO & Digital Marketing</h3>
+            <p>Creo landing page e siti con attenzione a testi, call to action, struttura, presenza online e conversione.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="progetti">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-kicker">Portfolio</span>
+          <h2>Progetti</h2>
+          <p>Una selezione di lavori che mostra il mix tra sviluppo frontend, UI design, AI-assisted workflow e attenzione al risultato online.</p>
+        </div>
+
+        <div class="project-list">
+          <article class="project-card project-featured">
+            <div class="project-media">
+              <img src="assets/cm-pulizie.png" alt="Screenshot del sito C.M. Pulizie">
+            </div>
+            <div class="project-content">
+              <span class="project-badge">Progetto principale</span>
+              <h3>C.M. Pulizie - Sito web completo per impresa locale</h3>
+              <p>Sito web completo per un'attività di pulizie, progettato prima su Figma e poi sviluppato in codice. Il progetto presenta servizi, richiesta preventivo, recensioni, contatti e una struttura pensata per clienti locali.</p>
+              <dl class="project-details">
+                <div>
+                  <dt>Ruolo</dt>
+                  <dd>UI Designer & Frontend Developer</dd>
+                </div>
+                <div>
+                  <dt>Tecnologie</dt>
+                  <dd>Figma, HTML, CSS, JavaScript, JSON, GitHub Pages</dd>
+                </div>
+                <div>
+                  <dt>Cosa ho curato</dt>
+                  <dd>Design dell'interfaccia, layout responsive, sezioni servizi, preventivo dinamico, call to action, chatbot controllato, WhatsApp, SEO tecnica base e pubblicazione online.</dd>
+                </div>
+              </dl>
+              <div class="project-actions">
+                <a class="button button-primary" href="https://vincenzomec97-ship-it.github.io/cm-pulizie/" target="_blank" rel="noopener noreferrer">Live Site</a>
+                <a class="button button-secondary" href="https://github.com/vincenzomec97-ship-it/cm-pulizie" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a class="button button-ghost" href="https://www.figma.com/proto/Qlefn1I3qe1WEOijl20qUR/Untitled?t=QmHGINTnjDozetfi-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&node-id=1-75" target="_blank" rel="noopener noreferrer">Figma</a>
+              </div>
+            </div>
+          </article>
+
+          <div class="project-grid">
+            <article class="project-card">
+              <div class="project-media">
+                <img src="assets/palestra-site.png" alt="Screenshot della landing page FitZone">
+              </div>
+              <div class="project-content">
+                <h3>FitZone - Landing page palestra</h3>
+                <p>Concept UI per una landing page dedicata a una palestra. Design energico, forte e diretto, pensato per comunicare motivazione, fiducia e azione immediata.</p>
+                <dl class="project-details compact">
+                  <div>
+                    <dt>Ruolo</dt>
+                    <dd>UI/UX Designer</dd>
+                  </div>
+                  <div>
+                    <dt>Tecnologie</dt>
+                    <dd>Figma, HTML, CSS</dd>
+                  </div>
+                  <div>
+                    <dt>Cosa ho curato</dt>
+                    <dd>Hero section, navigazione, call to action, composizione visuale e stile grafico.</dd>
+                  </div>
+                </dl>
+                <div class="project-actions">
+                  <a class="button button-secondary" href="gym-home.html" target="_blank" rel="noopener noreferrer">Demo</a>
+                  <a class="button button-ghost" href="https://www.figma.com/proto/CgFRuCSFPFhb6KcRTZqYZa/Untitled?node-id=1-12&p=f&t=c04ReWw6m3h8teUK-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1" target="_blank" rel="noopener noreferrer">Figma</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-media">
+                <img src="assets/progetto-figma-1.png" alt="Mockup Figma del concept e-commerce Shoes">
+              </div>
+              <div class="project-content">
+                <h3>Shoes Concept - E-commerce sneaker</h3>
+                <p>Concept creativo per uno store online di sneaker. Il progetto mostra una UI sperimentale, con attenzione a immagine prodotto, card, ricerca e navigazione.</p>
+                <dl class="project-details compact">
+                  <div>
+                    <dt>Ruolo</dt>
+                    <dd>UI Designer</dd>
+                  </div>
+                  <div>
+                    <dt>Tecnologie</dt>
+                    <dd>Figma</dd>
+                  </div>
+                  <div>
+                    <dt>Cosa ho curato</dt>
+                    <dd>Layout e-commerce, card prodotto, stile visuale, navigazione e struttura della pagina.</dd>
+                  </div>
+                </dl>
+                <div class="project-actions">
+                  <a class="button button-secondary" href="https://www.figma.com/proto/G09Tq8i37addPsCe293DVz/Untitled?t=ncBAfwnNsLpot8OY-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&node-id=2-2" target="_blank" rel="noopener noreferrer">Figma</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-media">
+                <img src="assets/foto-registrazione.png" alt="Screenshot del form di registrazione responsive">
+              </div>
+              <div class="project-content">
+                <h3>Registration Form - Form responsive</h3>
+                <p>Form di registrazione responsive con campi base, validazione HTML5 e stile scuro.</p>
+                <dl class="project-details compact">
+                  <div>
+                    <dt>Ruolo</dt>
+                    <dd>Frontend Developer</dd>
+                  </div>
+                  <div>
+                    <dt>Tecnologie</dt>
+                    <dd>HTML, CSS</dd>
+                  </div>
+                  <div>
+                    <dt>Cosa ho curato</dt>
+                    <dd>Struttura del form, input, checkbox, responsive e stile visuale.</dd>
+                  </div>
+                </dl>
+                <div class="project-actions">
+                  <a class="button button-secondary" href="registration.html" target="_blank" rel="noopener noreferrer">Demo</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section surface" id="case-study">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-kicker">Approfondimento</span>
+          <h2>Case Study - C.M. Pulizie</h2>
+        </div>
+        <div class="case-grid">
+          <article class="info-card">
+            <span class="step-number">01</span>
+            <h3>Problema</h3>
+            <p>L'obiettivo era creare una presenza online chiara e professionale per un'attività locale, aiutando i clienti a capire subito i servizi offerti e a richiedere un preventivo.</p>
+          </article>
+          <article class="info-card">
+            <span class="step-number">02</span>
+            <h3>Soluzione</h3>
+            <p>Ho progettato una landing page semplice, visiva e orientata alla conversione, con sezioni dedicate a servizi, contatti, recensioni, richiesta preventivo, WhatsApp e assistente virtuale controllato.</p>
+          </article>
+          <article class="info-card">
+            <span class="step-number">03</span>
+            <h3>Processo</h3>
+            <p>Sono partito dalla struttura in Figma, definendo colori, sezioni, layout e priorità dei contenuti. Successivamente ho sviluppato il sito in HTML, CSS e JavaScript, rendendolo responsive e pubblicabile online con GitHub Pages.</p>
+          </article>
+          <article class="info-card">
+            <span class="step-number">04</span>
+            <h3>Risultato</h3>
+            <p>Un sito completo, navigabile e pubblicato online, utile come progetto reale da mostrare nel portfolio.</p>
+          </article>
+        </div>
+        <div class="center-action">
+          <a class="button button-primary" href="https://vincenzomec97-ship-it.github.io/cm-pulizie/" target="_blank" rel="noopener noreferrer">Visita il sito</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="processo">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-kicker">Metodo</span>
+          <h2>Il mio processo</h2>
+        </div>
+        <ol class="process-list">
+          <li>
+            <span>01</span>
+            <h3>Idea e obiettivo</h3>
+            <p>Capisco il messaggio, il pubblico e l'obiettivo della pagina.</p>
+          </li>
+          <li>
+            <span>02</span>
+            <h3>Struttura</h3>
+            <p>Organizzo contenuti, sezioni, call to action e flusso utente.</p>
+          </li>
+          <li>
+            <span>03</span>
+            <h3>Design Figma</h3>
+            <p>Creo interfaccia, colori, componenti, spaziature e gerarchia visiva.</p>
+          </li>
+          <li>
+            <span>04</span>
+            <h3>Sviluppo</h3>
+            <p>Trasformo il design in codice HTML, CSS e JavaScript.</p>
+          </li>
+          <li>
+            <span>05</span>
+            <h3>Test e pubblicazione</h3>
+            <p>Controllo responsive, link, SEO base e pubblico online con GitHub Pages.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section surface" id="skills">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-kicker">Competenze</span>
+          <h2>Skills</h2>
+        </div>
+        <div class="skills-grid">
+          <article class="skill-group">
+            <h3>Frontend</h3>
             <ul>
-                <li><a href="#profilo">Chi Sono</a></li>
-                <li><a href="#competenze">Competenze</a></li>
-                <li><a href="#progetti">Progetti</a></li>
-                <li><a href="#contatti">Contatti</a></li>
+              <li>HTML5</li>
+              <li>CSS3</li>
+              <li>JavaScript</li>
             </ul>
-        </nav>
-    </header>
-
-    <section class="hero">
-        <div class="hero-text">
-            <h2>Ciao, sono Vincenzo!</h2>
-            <h3>Full Stack Web Developer | UI/UX Designer | I.A.</h3>
-            <p>Sono un Full Stack Web Developer con una forte inclinazione per il Design UI/UX. Il mio obiettivo non è solo scrivere codice pulito, ma progettare esperienze digitali che funzionino, siano esteticamente eccellenti e orientate alla conversione.
-Unisco la logica di Laravel e Vue.js alla creatività di Figma, potenziando ogni flusso di lavoro con l'I.A.. Grazie alle certificazioni Google e HubSpot e agli studi sul Direct Response Marketing (Vignali Asset), approccio ogni progetto con una visione orientata al business e ai risultati.</p>
-            <a href="#contatti" class="btn">Contattami</a>
+          </article>
+          <article class="skill-group">
+            <h3>Design</h3>
+            <ul>
+              <li>Figma</li>
+              <li>Photoshop</li>
+              <li>Canva</li>
+              <li>UI Design</li>
+              <li>UX Design</li>
+              <li>Web Design</li>
+            </ul>
+          </article>
+          <article class="skill-group">
+            <h3>AI & Automation</h3>
+            <ul>
+              <li>OpenAI</li>
+              <li>Agentic AI</li>
+              <li>LLM Prompt Engineering</li>
+              <li>Python</li>
+              <li>Multimodal AI</li>
+              <li>Automation Workflow</li>
+              <li>Vibe Coding</li>
+            </ul>
+          </article>
+          <article class="skill-group">
+            <h3>Marketing</h3>
+            <ul>
+              <li>Digital Marketing</li>
+              <li>SEO</li>
+              <li>Copywriting</li>
+              <li>Landing Page</li>
+              <li>Conversione</li>
+            </ul>
+          </article>
+          <article class="skill-group">
+            <h3>Tools</h3>
+            <ul>
+              <li>Git</li>
+              <li>GitHub</li>
+              <li>VS Code</li>
+              <li>Pacchetto Office</li>
+              <li>Problem Solving</li>
+            </ul>
+          </article>
         </div>
-        <div class="hero-image">
-            <img src="IMG_3767.jpeg" alt="Vincenzo Meccariello">
-        </div>
+      </div>
     </section>
 
-    <section id="competenze" style="background-color: var(--white);">
-        <h2 class="section-title">Tech Stack & Tools</h2>
-        <div class="skills-container">
-            <div class="skill-tag"><i class="fab fa-html5"></i> HTML5 & CSS3</div>
-            <div class="skill-tag"><i class="fab fa-js"></i> JavaScript</div>
-            <div class="skill-tag"><i class="fab fa-vuejs"></i> Vue.js</div>
-            <div class="skill-tag"><i class="fab fa-php"></i> PHP & Laravel</div>
-            <div class="skill-tag"><i class="fab fa-python"></i> Python</div>
-            <div class="skill-tag"><i class="fas fa-database"></i> MySQL</div>
-            <div class="skill-tag"><i class="fab fa-sass"></i> Sass</div>
-            <div class="skill-tag"><i class="fab fa-figma"></i> Figma</div>
-            <div class="skill-tag"><i class="fas fa-paint-brush"></i> Photoshop & Canva</div>
-            <div class="skill-tag"><i class="fas fa-search"></i> SEO & Digital Marketing</div>
+    <section class="section" id="cv">
+      <div class="container cv-panel">
+        <div>
+          <span class="section-kicker">Formazione</span>
+          <h2>CV e formazione</h2>
+          <p>Ho unito formazione frontend, UI/UX design, strumenti AI e digital marketing per costruire un profilo pratico, orientato alla creazione di siti web moderni, responsive e funzionali.</p>
+          <a class="button button-primary" href="assets/cv/vincenzo-meccariello-cv.pdf" target="_blank" rel="noopener noreferrer">Scarica CV</a>
         </div>
+        <ul class="cert-list">
+          <li>Masterclass in Vibe Coding & Agentic AI - Jobformazione</li>
+          <li>Graphic & Web Design - Percorso autonomo</li>
+          <li>Responsive Web Design Certification - freeCodeCamp</li>
+          <li>Diploma I.T.E. Informatico - Istituto Tecnico Economico</li>
+          <li>Google Digital Marketing</li>
+          <li>HubSpot SEO / AI</li>
+          <li>OpenAI / Agentic AI</li>
+        </ul>
+      </div>
     </section>
 
-    <section id="progetti" style="background-color: #ffffff; padding: 80px 10%;">
-    <h2 class="section-title" style="text-align: center; margin-bottom: 10px; color: var(--primary-dark);">Sviluppo Web</h2>
-        <p style="text-align: center; margin-bottom: 50px; color: #666;">Dalla logica del codice alla messa online: performance e funzionalità.</p>
-        
-    
-    <div class="projects-grid">
+    <section class="section contact-section" id="contatti">
+      <div class="container contact-grid">
+        <div class="contact-copy">
+          <span class="section-kicker">Contatti</span>
+          <h2>Hai un progetto, una landing page o un sito da realizzare?</h2>
+          <p>Parliamone. Posso aiutarti a trasformare un'idea in una pagina web moderna, chiara e pronta per essere pubblicata.</p>
+          <div class="contact-actions">
+            <a class="button button-primary" href="mailto:Vincenzomec97@gmail.com">Scrivimi</a>
+            <a class="button button-secondary" href="assets/cv/vincenzo-meccariello-cv.pdf" target="_blank" rel="noopener noreferrer">Scarica CV</a>
+            <a class="button button-ghost" href="https://www.linkedin.com/in/vincenzo-meccariello-4140b9386/" target="_blank" rel="noopener noreferrer">Vai su LinkedIn</a>
+          </div>
+          <ul class="contact-list">
+            <li><strong>Email</strong><a href="mailto:Vincenzomec97@gmail.com">Vincenzomec97@gmail.com</a></li>
+            <li><strong>LinkedIn</strong><a href="https://www.linkedin.com/in/vincenzo-meccariello-4140b9386/" target="_blank" rel="noopener noreferrer">linkedin.com/in/vincenzo-meccariello-4140b9386</a></li>
+            <li><strong>GitHub</strong><a href="https://github.com/vincenzomec97-ship-it" target="_blank" rel="noopener noreferrer">github.com/vincenzomec97-ship-it</a></li>
+            <li><strong>Portfolio</strong><a href="https://vincenzomec97-ship-it.github.io/VinMec-portfolio/" target="_blank" rel="noopener noreferrer">vincenzomec97-ship-it.github.io/VinMec-portfolio</a></li>
+          </ul>
+        </div>
 
-        <article class="project-card">
-            <img src="assets/palestra-site.png" alt="FitZone">
-            <h3>FitZone – UI/UX Gym Landing</h3>
-            <p>Progettazione di un'interfaccia moderna in alta visibilità. Focus su flussi di navigazione e sistema di rating integrato.</p>
-            <a href="gym-home.html" target="_blank">Apri Progetto →</a>
-        </article>
+        <form class="contact-form" action="mailto:Vincenzomec97@gmail.com" method="post" enctype="text/plain">
+          <label for="name">Nome</label>
+          <input id="name" name="Nome" type="text" autocomplete="name" placeholder="Il tuo nome" required>
 
-        <article class="project-card">
-            <img src="assets/cm-pulizie.png" alt="CM Pulizie">
-            <h3>CM Pulizie – Business Landing</h3>
-            <p>Sviluppo orientato alla conversione con CTA strategiche e griglia servizi ottimizzata per il marketing locale.</p>
-            <a href="sito-vetrina.html" target="_blank">Apri Progetto →</a>
-        </article>
+          <label for="email">Email</label>
+          <input id="email" name="Email" type="email" autocomplete="email" placeholder="nome@email.com" required>
 
-        <article class="project-card">
-            <img src="assets/foto-registrazione.png" alt="Form">
-            <h3>Form Registrazione Avanzato</h3>
-            <p>Sistema di input dinamico con validazioni in tempo reale e design user-friendly per ridurre l'attrito all'iscrizione.</p>
-            <a href="registration.html" target="_blank">Apri Progetto →</a>
-        </article>
-</div>
-</section>
+          <label for="message">Messaggio</label>
+          <textarea id="message" name="Messaggio" placeholder="Raccontami cosa vuoi realizzare" required></textarea>
 
-<section id="design" style="background-color: var(--bg-color); padding: 80px 10%;">
-    <h2 class="section-title" style="text-align: center; margin-bottom: 10px; color: var(--primary-dark);">UI/UX Design Portfolio</h2>
-    <p style="text-align: center; margin-bottom: 50px; color: #666;">Progettazione di interfacce ed esperienze utente realizzate su Figma.</p>
+          <button class="button button-primary" type="submit">Invia messaggio</button>
+        </form>
+      </div>
+    </section>
+  </main>
 
-    <div class="design-grid">
-
-        <article class="design-card">
-            <div class="design-img-container">
-                <img src="assets/progetto-figma-1.png" alt="Design 1">
-            </div>
-            <div class="design-info">
-                <h3>Shoes</h3>
-                <p>Design Sito Web Shoes.</p>
-                <a href="https://www.figma.com/proto/G09Tq8i37addPsCe293DVz/Untitled?t=ncBAfwnNsLpot8OY-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&node-id=2-2" target="_blank" class="btn-figma">Vedi su Figma →</a>
-            </div>
-        </article>
-
-        <article class="design-card">
-            <div class="design-img-container">
-                <img src="assets/progetto-figma-2.png" alt="Design 2">
-            </div>
-            <div class="design-info">
-                <h3>C.M. Pulizie</h3>
-                <p>Design Sito Web C.M. Pulizie.</p>
-                <a href="https://www.figma.com/proto/Qlefn1I3qe1WEOijl20qUR/Untitled?t=QmHGINTnjDozetfi-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&node-id=1-75" target="_blank" class="btn-figma">Vedi su Figma →</a>
-            </div>
-        </article>
-
-        <article class="design-card">
-            <div class="design-img-container">
-                <img src="assets/progetto-figma-3.png" alt="Design 3">
-            </div>
-            <div class="design-info">
-                <h3>FitZone</h3>
-                <p>Design Sito Web FitZone</p>
-                <a href="https://www.figma.com/proto/CgFRuCSFPFhb6KcRTZqYZa/Untitled?node-id=1-12&p=f&t=c04ReWw6m3h8teUK-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1" target="_blank" class="btn-figma">Vedi su Figma →</a>
-            </div>
-        </article>
-
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <p>© <span data-year></span> Vincenzo Meccariello. Portfolio personale.</p>
+      <div class="footer-links" aria-label="Link social">
+        <a href="mailto:Vincenzomec97@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/vincenzo-meccariello-4140b9386/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/vincenzomec97-ship-it" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
     </div>
-</section>
-
-
-
-    
-    <section id="contatti">
-    <h2>Contattami</h2>
-    <p class="lead">Scrivimi per collaborazioni o feedback.</p>
-
-    <!-- Usa mailto per semplicità -->
-    <form action="mailto:vincenzomec97@gmail.com" method="post" enctype="text/plain">
-      <label>Nome 
-        <input type="text" name="Nome" placeholder=" Il tuo nome" required>
-      </label>
-      <label>Email 
-        <input type="email" name="Email" placeholder=" nome@email.com" required>
-      </label>
-      <label>Messaggio 
-        <textarea name="Messaggio" placeholder="..." required></textarea>
-      </label>
-      <button class="btn" type="submit">💬 Invia Messaggio</button>
-    </form>
-  </section>
-    <footer>
-         <div style="text-align: center; font-size: 1.2rem; line-height: 2;">
-            <p><i class="fas fa-envelope" style="color: var(--accent-light);"></i> Vincenzomec97@gmail.com</p>
-            <p><i class="fas fa-phone" style="color: var(--accent-light);"></i> 3277942828</p>
-            <p><i class="fas fa-map-marker-alt" style="color: var(--accent-light);"></i> Milano,20146 Italia</p>
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/vincenzo-meccariello-4140b9386/" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/vincenzomec97-ship-it" target="_blank"><i class="fab fa-github"></i></a>
-             <p>&copy; 2024 Vincenzo Meccariello. Tutti i diritti riservati.</p>
-        </div>
-    </footer>
-
+  </footer>
 </body>
 </html>
