@@ -2,7 +2,7 @@ const header = document.querySelector("[data-header]");
 const navToggle = document.querySelector(".nav-toggle");
 const navMenu = document.querySelector("#site-menu");
 const yearTarget = document.querySelector("[data-year]");
-const projects = window.portfolioProjects || [];
+let projects = [];
 
 if (yearTarget) {
   yearTarget.textContent = new Date().getFullYear();
@@ -64,9 +64,102 @@ const createNode = (tag, className, text) => {
 const createProjectDetail = (label, value) => {
   const wrapper = document.createElement("div");
   const term = createNode("dt", "", label);
-  const description = createNode("dd", "", value);
+  const description = createNode("dd");
+
+  if (Array.isArray(value)) {
+    const list = createNode("ul", "project-highlights");
+    value.forEach((item) => list.append(createNode("li", "", item)));
+    description.append(list);
+  } else {
+    description.textContent = value;
+  }
+
   wrapper.append(term, description);
   return wrapper;
+};
+
+const getFallbackProjects = () => {
+  if (window.portfolioProjectFallback?.projects) {
+    return window.portfolioProjectFallback.projects;
+  }
+
+  return window.portfolioProjects || [];
+};
+
+const getCategoryKey = (category = "progetto") => category
+  .toLowerCase()
+  .normalize("NFD")
+  .replace(/[\u0300-\u036f]/g, "")
+  .replace(/[^a-z0-9]+/g, "-")
+  .replace(/^-|-$/g, "");
+
+const createProjectLinks = (project) => {
+  const links = [];
+
+  if (project.liveUrl) {
+    links.push({
+      label: project.featured ? "Live Site" : "Demo",
+      href: project.liveUrl,
+      variant: project.featured ? "primary" : "secondary"
+    });
+  }
+
+  if (project.githubUrl) {
+    links.push({ label: "GitHub", href: project.githubUrl, variant: "secondary" });
+  }
+
+  if (project.figmaUrl) {
+    links.push({ label: "Figma", href: project.figmaUrl, variant: project.featured ? "ghost" : "secondary" });
+  }
+
+  return links;
+};
+
+const normalizeProject = (project) => {
+  const image = typeof project.image === "object"
+    ? project.image
+    : {
+        src: project.image,
+        alt: project.imageAlt,
+        width: project.imageWidth,
+        height: project.imageHeight,
+        variant: project.imageVariant
+      };
+
+  return {
+    ...project,
+    categoryKey: project.categoryKey || getCategoryKey(project.category),
+    care: project.highlights || project.care || [],
+    image: {
+      src: image.src || project.image,
+      alt: image.alt || project.imageAlt || `Preview del progetto ${project.title}`,
+      width: image.width || project.imageWidth || 1440,
+      height: image.height || project.imageHeight || 900,
+      variant: image.variant || project.imageVariant || "browser"
+    },
+    links: project.links || createProjectLinks(project)
+  };
+};
+
+const loadProjects = async () => {
+  try {
+    const response = await fetch("data/projects.json", { cache: "no-store" });
+
+    if (!response.ok) {
+      throw new Error("Projects JSON not available");
+    }
+
+    const payload = await response.json();
+    const projectList = Array.isArray(payload) ? payload : payload.projects;
+
+    if (!Array.isArray(projectList)) {
+      throw new Error("Projects JSON has an invalid shape");
+    }
+
+    return projectList;
+  } catch (error) {
+    return getFallbackProjects();
+  }
 };
 
 const createProjectCard = (project) => {
@@ -106,8 +199,12 @@ const createProjectCard = (project) => {
   project.links.forEach((link) => {
     const action = createNode("a", `button button-${link.variant || "secondary"}`, link.label);
     action.href = link.href;
-    action.target = "_blank";
-    action.rel = "noopener noreferrer";
+
+    if (/^https?:\/\//i.test(link.href)) {
+      action.target = "_blank";
+      action.rel = "noopener noreferrer";
+    }
+
     actions.append(action);
   });
 
@@ -238,7 +335,16 @@ const bindGlowCards = () => {
   });
 };
 
-updateProjectStats();
-renderProjectFilters();
-renderProjects();
-bindGlowCards();
+const initProjects = async () => {
+  const loadedProjects = await loadProjects();
+  projects = loadedProjects
+    .filter((project) => project && project.published !== false && !project.isFutureTemplate)
+    .map(normalizeProject);
+
+  updateProjectStats();
+  renderProjectFilters();
+  renderProjects();
+  bindGlowCards();
+};
+
+initProjects();

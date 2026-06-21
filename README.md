@@ -13,7 +13,7 @@ https://vincenzomec97-ship-it.github.io/cm-pulizie/
 
 ## Profilo
 
-Creo siti web moderni da Figma al codice, unendo Frontend, UI/UX, AI tools e Digital Marketing.
+Creo siti web, landing page e piccole web app da Figma al codice, unendo Frontend, UI/UX, AI tools, Vibe Coding e Digital Marketing.
 
 ## Tecnologie
 
@@ -23,6 +23,93 @@ Creo siti web moderni da Figma al codice, unendo Frontend, UI/UX, AI tools e Dig
 - Figma
 - GitHub Pages
 - AI-assisted workflow
+- Vibe Coding
+- SEO base
+- Digital Marketing
+
+## Struttura progetti
+
+I progetti sono organizzati in:
+
+```text
+projects/
+assets/projects/
+data/projects.json
+```
+
+## Come aggiungere un nuovo progetto
+
+1. Creare una nuova cartella dentro `projects/`.
+
+   Esempio:
+
+   ```text
+   projects/quiz-app/
+   ```
+
+2. Inserire il progetto dentro quella cartella.
+
+   Esempio:
+
+   ```text
+   projects/quiz-app/index.html
+   ```
+
+3. Inserire lo screenshot o la preview dentro `assets/projects/`.
+
+   Esempio:
+
+   ```text
+   assets/projects/quiz-app-preview.png
+   ```
+
+4. Aprire `data/projects.json`.
+
+5. Aggiungere una nuova voce dentro l'array `projects` usando questi campi:
+
+   - `title`
+   - `badge`
+   - `category`
+   - `description`
+   - `role`
+   - `technologies`
+   - `highlights`
+   - `image`
+   - `imageAlt`
+   - `liveUrl`
+   - `githubUrl`
+   - `figmaUrl`
+
+6. Salvare e testare il portfolio.
+
+Nota: se apri `index.html` direttamente con `file://`, il browser potrebbe non caricare `data/projects.json`. In quel caso aggiorna anche il fallback in `assets/js/projects.js`, oppure testa con un server locale.
+
+### Esempio futuro - Quiz App
+
+Questo esempio è già preparato in `data/projects.json` come `futureProjectTemplate` con `published: false`, quindi non viene mostrato nel portfolio finché non lo sposti nell'array `projects` e lo imposti come pubblicato.
+
+```json
+{
+  "title": "Quiz App — Web app interattiva in JavaScript",
+  "badge": "JavaScript App",
+  "category": "Web App",
+  "description": "Web app interattiva per quiz a risposta multipla, sviluppata con HTML, CSS e JavaScript. Il progetto gestisce domande, risposte, punteggio finale e feedback all'utente.",
+  "role": "Frontend Developer",
+  "technologies": ["HTML", "CSS", "JavaScript"],
+  "highlights": [
+    "Struttura dell'interfaccia",
+    "Logica delle domande",
+    "Gestione del punteggio",
+    "Feedback utente",
+    "Responsive design e pubblicazione online"
+  ],
+  "image": "assets/projects/quiz-app-preview.png",
+  "imageAlt": "Preview della Quiz App di Vincenzo Meccariello",
+  "liveUrl": "projects/quiz-app/",
+  "githubUrl": "",
+  "figmaUrl": ""
+}
+```
 
 ## Progetti principali
 
@@ -30,20 +117,6 @@ Creo siti web moderni da Figma al codice, unendo Frontend, UI/UX, AI tools e Dig
 - FitZone
 - Shoes Concept
 - Registration Form
-
-## Come aggiungere un nuovo progetto
-
-I progetti della home sono gestiti in:
-
-`assets/js/projects.js`
-
-Per aggiungere un progetto:
-
-1. Duplica un oggetto dentro `window.portfolioProjects`.
-2. Cambia `id`, `title`, `description`, `role`, `technologies`, `care`, `image` e `links`.
-3. Usa `categoryKey` tra `web`, `ui` o `frontend`, oppure aggiungi una nuova categoria coerente.
-4. Carica lo screenshot nella cartella `assets/` e collega il percorso in `image.src`.
-5. Lascia `featured: true` solo al progetto principale.
 
 ## Contatti
 

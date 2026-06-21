@@ -1,0 +1,143 @@
+{
+  "_instructions": [
+    "Per aggiungere un nuovo progetto: crea una cartella in projects/, aggiungi una preview in assets/projects/ e inserisci una nuova voce in projects.",
+    "Usa isFutureTemplate: true o published: false per conservare esempi senza mostrarli nel portfolio.",
+    "I campi principali sono: title, badge, category, description, role, technologies, highlights, image, imageAlt, liveUrl, githubUrl, figmaUrl."
+  ],
+  "projects": [
+    {
+      "id": "cm-pulizie",
+      "featured": true,
+      "published": true,
+      "title": "C.M. Pulizie \u2014 Sito web completo per impresa locale",
+      "badge": "Progetto principale",
+      "category": "Sito web / Local business",
+      "categoryKey": "web",
+      "description": "Sito web completo per un'attivit\u00e0 di pulizie, progettato prima su Figma e poi sviluppato in codice. Il progetto presenta servizi, richiesta preventivo, recensioni, contatti e una struttura pensata per clienti locali.",
+      "role": "UI Designer & Frontend Developer",
+      "technologies": ["Figma", "HTML", "CSS", "JavaScript", "JSON", "GitHub Pages"],
+      "highlights": [
+        "Design dell'interfaccia",
+        "Layout responsive",
+        "Sezioni servizi e preventivo dinamico",
+        "Call to action, chatbot controllato e WhatsApp",
+        "SEO tecnica base e pubblicazione online"
+      ],
+      "image": "assets/projects/cm-pulizie-preview.png",
+      "imageAlt": "Screenshot completo del sito C.M. Pulizie",
+      "imageWidth": 2560,
+      "imageHeight": 1662,
+      "imageVariant": "browser",
+      "liveUrl": "https://vincenzomec97-ship-it.github.io/cm-pulizie/",
+      "githubUrl": "https://github.com/vincenzomec97-ship-it/cm-pulizie",
+      "figmaUrl": "https://www.figma.com/proto/Qlefn1I3qe1WEOijl20qUR/Untitled?t=QmHGINTnjDozetfi-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&node-id=1-75"
+    },
+    {
+      "id": "fitzone",
+      "featured": false,
+      "published": true,
+      "title": "FitZone \u2014 Landing page palestra",
+      "badge": "UI Concept",
+      "category": "Landing Page",
+      "categoryKey": "landing",
+      "description": "Concept UI per una landing page dedicata a una palestra. Design energico, forte e diretto, pensato per comunicare motivazione, fiducia e azione immediata.",
+      "role": "UI/UX Designer",
+      "technologies": ["Figma", "HTML", "CSS"],
+      "highlights": [
+        "Hero section",
+        "Navigazione",
+        "Call to action",
+        "Composizione visuale e stile grafico"
+      ],
+      "image": "assets/projects/fitzone-preview.png",
+      "imageAlt": "Screenshot della landing page FitZone",
+      "imageWidth": 2560,
+      "imageHeight": 1664,
+      "imageVariant": "browser",
+      "liveUrl": "projects/fitzone/",
+      "legacyUrl": "gym-home.html",
+      "githubUrl": "",
+      "figmaUrl": "https://www.figma.com/proto/CgFRuCSFPFhb6KcRTZqYZa/Untitled?node-id=1-12&p=f&t=c04ReWw6m3h8teUK-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1"
+    },
+    {
+      "id": "shoes-concept",
+      "featured": false,
+      "published": true,
+      "title": "Shoes Concept \u2014 E-commerce sneaker",
+      "badge": "Figma Concept",
+      "category": "UI Design",
+      "categoryKey": "ui",
+      "description": "Concept creativo per uno store online di sneaker. Il progetto mostra una UI sperimentale, con attenzione a immagine prodotto, card, ricerca e navigazione.",
+      "role": "UI Designer",
+      "technologies": ["Figma"],
+      "highlights": [
+        "Layout e-commerce",
+        "Card prodotto",
+        "Stile visuale",
+        "Navigazione e struttura della pagina"
+      ],
+      "image": "assets/projects/shoes-preview.png",
+      "imageAlt": "Mockup Figma del concept e-commerce Shoes",
+      "imageWidth": 2576,
+      "imageHeight": 3344,
+      "imageVariant": "figma",
+      "liveUrl": "",
+      "githubUrl": "",
+      "figmaUrl": "https://www.figma.com/proto/G09Tq8i37addPsCe293DVz/Untitled?t=ncBAfwnNsLpot8OY-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&node-id=2-2"
+    },
+    {
+      "id": "registration-form",
+      "featured": false,
+      "published": true,
+      "title": "Registration Form \u2014 Form responsive",
+      "badge": "Frontend Practice",
+      "category": "Frontend Component",
+      "categoryKey": "frontend",
+      "description": "Form di registrazione responsive con campi base, validazione HTML5 e stile scuro.",
+      "role": "Frontend Developer",
+      "technologies": ["HTML", "CSS"],
+      "highlights": [
+        "Struttura del form",
+        "Input e checkbox",
+        "Validazione HTML5",
+        "Responsive design e stile visuale"
+      ],
+      "image": "assets/projects/registration-preview.png",
+      "imageAlt": "Screenshot del form di registrazione responsive",
+      "imageWidth": 1082,
+      "imageHeight": 684,
+      "imageVariant": "browser",
+      "liveUrl": "projects/registration-form/",
+      "legacyUrl": "registration.html",
+      "githubUrl": "",
+      "figmaUrl": ""
+    }
+  ],
+  "futureProjectTemplate": {
+    "id": "quiz-app",
+    "published": false,
+    "isFutureTemplate": true,
+    "title": "Quiz App \u2014 Web app interattiva in JavaScript",
+    "badge": "JavaScript App",
+    "category": "Web App",
+    "categoryKey": "web-app",
+    "description": "Web app interattiva per quiz a risposta multipla, sviluppata con HTML, CSS e JavaScript. Il progetto gestisce domande, risposte, punteggio finale e feedback all'utente.",
+    "role": "Frontend Developer",
+    "technologies": ["HTML", "CSS", "JavaScript"],
+    "highlights": [
+      "Struttura dell'interfaccia",
+      "Logica delle domande",
+      "Gestione del punteggio",
+      "Feedback utente",
+      "Responsive design e pubblicazione online"
+    ],
+    "image": "assets/projects/quiz-app-preview.png",
+    "imageAlt": "Preview della Quiz App di Vincenzo Meccariello",
+    "imageWidth": 1440,
+    "imageHeight": 900,
+    "imageVariant": "browser",
+    "liveUrl": "projects/quiz-app/",
+    "githubUrl": "",
+    "figmaUrl": ""
+  }
+}
