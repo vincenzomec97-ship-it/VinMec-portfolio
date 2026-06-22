@@ -1,6 +1,6 @@
 # Portfolio - Vincenzo Meccariello
 
-Portfolio personale di Vincenzo Meccariello, Junior AI-Powered Frontend Developer, UI/UX Designer e profilo Digital Marketing.
+Portfolio personale di Vincenzo Meccariello, Junior Web Developer, UI/UX Designer e AI Automation Junior.
 
 ## Live
 

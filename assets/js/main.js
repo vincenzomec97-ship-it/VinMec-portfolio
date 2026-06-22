@@ -93,6 +93,28 @@ const getCategoryKey = (category = "progetto") => category
   .replace(/[^a-z0-9]+/g, "-")
   .replace(/^-|-$/g, "");
 
+const normalizeFilterCategories = (project) => {
+  const providedCategories = Array.isArray(project.filterCategories)
+    ? project.filterCategories
+    : [];
+
+  const normalizedCategories = providedCategories
+    .filter((category) => category?.key && category?.label)
+    .map((category) => ({
+      key: category.key,
+      label: category.label
+    }));
+
+  if (normalizedCategories.length > 0) {
+    return normalizedCategories;
+  }
+
+  return [{
+    key: project.categoryKey || getCategoryKey(project.category),
+    label: project.category
+  }];
+};
+
 const createProjectLinks = (project) => {
   const links = [];
 
@@ -116,6 +138,7 @@ const createProjectLinks = (project) => {
 };
 
 const normalizeProject = (project) => {
+  const filterCategories = normalizeFilterCategories(project);
   const image = typeof project.image === "object"
     ? project.image
     : {
@@ -128,7 +151,8 @@ const normalizeProject = (project) => {
 
   return {
     ...project,
-    categoryKey: project.categoryKey || getCategoryKey(project.category),
+    categoryKey: project.categoryKey || filterCategories[0].key,
+    filterCategories,
     care: project.highlights || project.care || [],
     image: {
       src: image.src || project.image,
@@ -216,9 +240,11 @@ const createProjectCard = (project) => {
 const getProjectCategories = () => {
   const categories = [];
   projects.forEach((project) => {
-    if (!categories.some((category) => category.key === project.categoryKey)) {
-      categories.push({ key: project.categoryKey, label: project.category });
-    }
+    project.filterCategories.forEach((projectCategory) => {
+      if (!categories.some((category) => category.key === projectCategory.key)) {
+        categories.push(projectCategory);
+      }
+    });
   });
   return categories;
 };
@@ -244,7 +270,7 @@ const renderProjects = (filter = "all") => {
 
   const filteredProjects = filter === "all"
     ? projects
-    : projects.filter((project) => project.categoryKey === filter);
+    : projects.filter((project) => project.filterCategories.some((category) => category.key === filter));
 
   if (projectEmpty) {
     projectEmpty.hidden = filteredProjects.length > 0;
@@ -285,7 +311,7 @@ const renderProjectFilters = () => {
   filters.forEach((filter, index) => {
     const count = filter.key === "all"
       ? projects.length
-      : projects.filter((project) => project.categoryKey === filter.key).length;
+      : projects.filter((project) => project.filterCategories.some((category) => category.key === filter.key)).length;
     const button = createNode("button", "project-filter", filter.label);
     const countNode = createNode("span", "project-filter-count", count);
     button.type = "button";

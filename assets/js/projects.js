@@ -26,6 +26,10 @@ window.portfolioProjectFallback = {
       badge: "Progetto principale",
       category: "Sito web / Local business",
       categoryKey: "web",
+      filterCategories: [
+        { key: "web", label: "Sito web / Local business" },
+        { key: "ui", label: "UI Design" }
+      ],
       description: "Sito web completo per un'attivit\u00e0 di pulizie, progettato prima su Figma e poi sviluppato in codice. Il progetto presenta servizi, richiesta preventivo, recensioni, contatti e una struttura pensata per clienti locali.",
       role: "UI Designer & Frontend Developer",
       technologies: ["Figma", "HTML", "CSS", "JavaScript", "JSON", "GitHub Pages"],
@@ -53,6 +57,10 @@ window.portfolioProjectFallback = {
       badge: "UI Concept",
       category: "Landing Page",
       categoryKey: "landing",
+      filterCategories: [
+        { key: "landing", label: "Landing Page" },
+        { key: "ui", label: "UI Design" }
+      ],
       description: "Concept UI per una landing page dedicata a una palestra. Design energico, forte e diretto, pensato per comunicare motivazione, fiducia e azione immediata.",
       role: "UI/UX Designer",
       technologies: ["Figma", "HTML", "CSS"],
@@ -75,6 +83,9 @@ window.portfolioProjectFallback = {
       badge: "Figma Concept",
       category: "UI Design",
       categoryKey: "ui",
+      filterCategories: [
+        { key: "ui", label: "UI Design" }
+      ],
       description: "Concept creativo per uno store online di sneaker. Il progetto mostra una UI sperimentale, con attenzione a immagine prodotto, card, ricerca e navigazione.",
       role: "UI Designer",
       technologies: ["Figma"],
@@ -96,6 +107,9 @@ window.portfolioProjectFallback = {
       badge: "Frontend Practice",
       category: "Frontend Component",
       categoryKey: "frontend",
+      filterCategories: [
+        { key: "frontend", label: "Frontend Component" }
+      ],
       description: "Form di registrazione responsive con campi base, validazione HTML5 e stile scuro.",
       role: "Frontend Developer",
       technologies: ["HTML", "CSS"],
