@@ -14,7 +14,9 @@
   </defs>
   <rect x="3" y="3" width="58" height="58" rx="16" fill="url(#bg)"/>
   <rect x="5.5" y="5.5" width="53" height="53" rx="13.5" stroke="#0074D9" stroke-opacity="0.72" stroke-width="2"/>
-  <path d="M15 18L25 47L35 18" stroke="#F8FAFC" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M35 47V18L46 36L57 18V47" stroke="url(#accent)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" filter="url(#softGlow)"/>
-  <path d="M18 51H54" stroke="#0074D9" stroke-width="2" stroke-linecap="round" stroke-opacity="0.7"/>
+  <g transform="translate(0 0.5)">
+    <path d="M13.5 18L23.5 46L33.5 18" stroke="#F8FAFC" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M35.5 46V18L44 33.5L52.5 18V46" stroke="url(#accent)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#softGlow)"/>
+  </g>
+  <path d="M17 51H47" stroke="#0074D9" stroke-width="2" stroke-linecap="round" stroke-opacity="0.7"/>
 </svg>
