@@ -17,15 +17,16 @@
         { "key": "web", "label": "Sito web / Local business" },
         { "key": "ui", "label": "UI Design" }
       ],
-      "description": "Sito web completo per un'attivit\u00e0 di pulizie, progettato prima su Figma e poi sviluppato in codice. Il progetto presenta servizi, richiesta preventivo, recensioni, contatti e una struttura pensata per clienti locali.",
+      "description": "Sito web e mini-sistema operativo per un'attivit\u00e0 di pulizie locale: dal preventivo online alla gestione ordinata delle richieste, con automazioni per email, PDF, Google Sheets e area admin.",
       "role": "UI Designer & Frontend Developer",
-      "technologies": ["Figma", "HTML", "CSS", "JavaScript", "JSON", "GitHub Pages"],
+      "technologies": ["Figma", "HTML", "CSS", "JavaScript", "JSON", "Google Apps Script", "Google Sheets", "Google Drive", "GitHub Pages"],
       "highlights": [
-        "Design dell'interfaccia",
-        "Layout responsive",
-        "Sezioni servizi e preventivo dinamico",
-        "Call to action, chatbot controllato e WhatsApp",
-        "SEO tecnica base e pubblicazione online"
+        "Design dell'interfaccia e layout responsive",
+        "Flusso preventivo evoluto con salvataggio richieste su Google Sheets",
+        "Email automatica al cliente e al titolare con riepilogo richiesta",
+        "PDF riepilogativo generato in Google Drive",
+        "Pagina admin riservata per richieste, PDF e stato del contatto",
+        "Endpoint Apps Script non hardcoded, token admin lato script e fallback WhatsApp"
       ],
       "image": "assets/projects/cm-pulizie-preview.png",
       "imageAlt": "Screenshot completo del sito C.M. Pulizie",
