@@ -3,128 +3,130 @@
   La fonte principale dei progetti e data/projects.json.
 
   Per aggiungere un nuovo progetto:
-  1. crea una cartella in projects/nome-progetto/
-     esempio: projects/quiz-app/index.html
-  2. aggiungi una preview in assets/projects/
-     esempio: assets/projects/quiz-app-preview.png
-  3. aggiungi una nuova voce in data/projects.json con:
-     title, badge, category, description, role, technologies,
-     highlights, image, imageAlt, liveUrl, githubUrl, figmaUrl
-  4. testa il portfolio.
-
-  Nota: questo fallback serve solo quando apri index.html con file://.
-  Se testi con un server locale o su GitHub Pages, viene letto data/projects.json.
+  1. copia un oggetto esistente in data/projects.json
+  2. modifica id, title, type, description, longDescription, image, tags, status, order, link e category
+  3. usa featured true per Progetti principali oppure false per Altri progetti
+  4. lascia liveUrl o githubUrl vuoti se non sono ancora disponibili.
 */
 
 window.portfolioProjectFallback = {
-  projects: [
+  "_instructions": [
+    "Per aggiungere un nuovo progetto, copia un oggetto esistente dentro projects, modifica i campi e scegli featured true per Progetti principali oppure false per Altri progetti.",
+    "Compila sempre: id, title, type, description, longDescription, image, tags, status, featured, order, liveUrl, githubUrl, year, category.",
+    "Se liveUrl o githubUrl sono vuoti, il portfolio non mostra pulsanti rotti. Se image manca o non esiste, viene mostrato un placeholder coerente con lo stile del sito."
+  ],
+  "projects": [
     {
-      id: "cm-pulizie",
-      featured: true,
-      published: true,
-      title: "C.M. Pulizie \u2014 Sito web completo per impresa locale",
-      badge: "Progetto principale",
-      category: "Sito web / Local business",
-      categoryKey: "web",
-      filterCategories: [
-        { key: "web", label: "Sito web / Local business" },
-        { key: "ui", label: "UI Design" }
-      ],
-      description: "Sito web completo per un'attivit\u00e0 di pulizie, progettato prima su Figma e poi sviluppato in codice. Il progetto presenta servizi, richiesta preventivo, recensioni, contatti e una struttura pensata per clienti locali.",
-      role: "UI Designer & Frontend Developer",
-      technologies: ["Figma", "HTML", "CSS", "JavaScript", "JSON", "GitHub Pages"],
-      highlights: [
-        "Design dell'interfaccia",
-        "Layout responsive",
-        "Sezioni servizi e preventivo dinamico",
-        "Call to action, chatbot controllato e WhatsApp",
-        "SEO tecnica base e pubblicazione online"
-      ],
-      image: "assets/projects/cm-pulizie-preview.png",
-      imageAlt: "Screenshot completo del sito C.M. Pulizie",
-      imageWidth: 2560,
-      imageHeight: 1662,
-      imageVariant: "browser",
-      liveUrl: "https://vincenzomec97-ship-it.github.io/cm-pulizie/",
-      githubUrl: "https://github.com/vincenzomec97-ship-it/cm-pulizie",
-      figmaUrl: "https://www.figma.com/proto/Qlefn1I3qe1WEOijl20qUR/Untitled?t=QmHGINTnjDozetfi-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&node-id=1-75"
+      "id": "cm-pulizie",
+      "title": "C.M. Pulizie",
+      "type": "Sito web aziendale / sito vetrina professionale",
+      "description": "Sito web per un'impresa di pulizie a Napoli con modulo preventivo guidato collegato a Google Apps Script.",
+      "longDescription": "Progetto reale per una piccola impresa locale: struttura multi-pagina con servizi, chi siamo, prenota, candidati, aiuto e privacy. Il flusso preventivi salva richieste, genera PDF, invia email automatiche e aiuta il titolare a gestire i contatti da un'area admin.",
+      "image": "assets/projects/cm-pulizie-preview.png",
+      "imageAlt": "Screenshot del sito C.M. Pulizie",
+      "tags": ["HTML", "CSS", "JavaScript", "UI/UX", "Responsive Design", "Google Apps Script", "Google Sheets", "Automazione richieste"],
+      "status": "Progetto principale / progetto portfolio reale",
+      "featured": true,
+      "published": true,
+      "order": 1,
+      "liveUrl": "https://vincenzomec97-ship-it.github.io/cm-pulizie/",
+      "githubUrl": "https://github.com/vincenzomec97-ship-it/cm-pulizie",
+      "figmaUrl": "https://www.figma.com/proto/Qlefn1I3qe1WEOijl20qUR/Untitled?t=QmHGINTnjDozetfi-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&node-id=1-75",
+      "year": "2026",
+      "category": "Sito aziendale"
     },
     {
-      id: "fitzone",
-      featured: false,
-      published: true,
-      title: "FitZone \u2014 Landing page palestra",
-      badge: "UI Concept",
-      category: "Landing Page",
-      categoryKey: "landing",
-      filterCategories: [
-        { key: "landing", label: "Landing Page" },
-        { key: "ui", label: "UI Design" }
-      ],
-      description: "Concept UI per una landing page dedicata a una palestra. Design energico, forte e diretto, pensato per comunicare motivazione, fiducia e azione immediata.",
-      role: "UI/UX Designer",
-      technologies: ["Figma", "HTML", "CSS"],
-      highlights: ["Hero section", "Navigazione", "Call to action", "Composizione visuale e stile grafico"],
-      image: "assets/projects/fitzone-preview.png",
-      imageAlt: "Screenshot della landing page FitZone",
-      imageWidth: 2560,
-      imageHeight: 1664,
-      imageVariant: "browser",
-      liveUrl: "projects/fitzone/",
-      legacyUrl: "gym-home.html",
-      githubUrl: "",
-      figmaUrl: "https://www.figma.com/proto/CgFRuCSFPFhb6KcRTZqYZa/Untitled?node-id=1-12&p=f&t=c04ReWw6m3h8teUK-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1"
+      "id": "quiz-inglese",
+      "title": "App Quiz Inglese",
+      "type": "Web app quiz educativa",
+      "description": "Web app quiz pensata per docenti e studenti, con domande, risposte, verifica e feedback sugli errori.",
+      "longDescription": "Progetto in sviluppo per creare e svolgere quiz di inglese. La struttura prevede logica quiz in JavaScript, dati in JSON, feedback sulle risposte corrette e sbagliate, fonti e interfaccia semplice per uso educativo.",
+      "image": "assets/projects/quiz-app-preview.png",
+      "imageAlt": "Preview della App Quiz Inglese",
+      "tags": ["HTML", "CSS", "JavaScript", "JSON", "UI/UX", "Logica quiz", "App educativa", "AI tools"],
+      "status": "Progetto principale / web app educativa",
+      "featured": true,
+      "published": true,
+      "order": 2,
+      "liveUrl": "",
+      "githubUrl": "",
+      "year": "2026",
+      "category": "Web app educativa"
     },
     {
-      id: "shoes-concept",
-      featured: false,
-      published: true,
-      title: "Shoes Concept \u2014 E-commerce sneaker",
-      badge: "Figma Concept",
-      category: "UI Design",
-      categoryKey: "ui",
-      filterCategories: [
-        { key: "ui", label: "UI Design" }
-      ],
-      description: "Concept creativo per uno store online di sneaker. Il progetto mostra una UI sperimentale, con attenzione a immagine prodotto, card, ricerca e navigazione.",
-      role: "UI Designer",
-      technologies: ["Figma"],
-      highlights: ["Layout e-commerce", "Card prodotto", "Stile visuale", "Navigazione e struttura della pagina"],
-      image: "assets/projects/shoes-preview.png",
-      imageAlt: "Mockup Figma del concept e-commerce Shoes",
-      imageWidth: 2576,
-      imageHeight: 3344,
-      imageVariant: "figma",
-      liveUrl: "",
-      githubUrl: "",
-      figmaUrl: "https://www.figma.com/proto/G09Tq8i37addPsCe293DVz/Untitled?t=ncBAfwnNsLpot8OY-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&node-id=2-2"
+      "id": "portfolio-personale",
+      "title": "Portfolio Personale",
+      "type": "Portfolio web",
+      "description": "Portfolio personale per presentare profilo, competenze, progetti e percorso tra frontend, UI/UX e strumenti AI.",
+      "longDescription": "Sito personale costruito per comunicare un profilo junior digitale, valorizzando progetti, case study, competenze tecniche, personal branding e presenza online.",
+      "image": "assets/brand/linkedin-cover.png",
+      "imageAlt": "Brand visual del portfolio personale di Vincenzo Meccariello",
+      "tags": ["HTML", "CSS", "JavaScript", "UI/UX", "Personal branding", "Responsive Design"],
+      "status": "Portfolio personale",
+      "featured": false,
+      "published": true,
+      "order": 3,
+      "liveUrl": "https://vincenzomec97-ship-it.github.io/VinMec-portfolio/",
+      "githubUrl": "https://github.com/vincenzomec97-ship-it/VinMec-portfolio",
+      "year": "2026",
+      "category": "Portfolio web"
     },
     {
-      id: "registration-form",
-      featured: false,
-      published: true,
-      title: "Registration Form \u2014 Form responsive",
-      badge: "Frontend Practice",
-      category: "Frontend Component",
-      categoryKey: "frontend",
-      filterCategories: [
-        { key: "frontend", label: "Frontend Component" }
-      ],
-      description: "Form di registrazione responsive con campi base, validazione HTML5 e stile scuro.",
-      role: "Frontend Developer",
-      technologies: ["HTML", "CSS"],
-      highlights: ["Struttura del form", "Input e checkbox", "Validazione HTML5", "Responsive design e stile visuale"],
-      image: "assets/projects/registration-preview.png",
-      imageAlt: "Screenshot del form di registrazione responsive",
-      imageWidth: 1082,
-      imageHeight: 684,
-      imageVariant: "browser",
-      liveUrl: "projects/registration-form/",
-      legacyUrl: "registration.html",
-      githubUrl: "",
-      figmaUrl: ""
+      "id": "fitzone",
+      "title": "Landing Page Palestra",
+      "type": "Landing page",
+      "description": "Landing page dimostrativa per una palestra, pensata per presentare servizi, abbonamenti, CTA e contatti.",
+      "longDescription": "Concept UI energico e diretto per una palestra, con attenzione a hero section, navigazione, call to action, composizione visuale e responsive design.",
+      "image": "assets/projects/fitzone-preview.png",
+      "imageAlt": "Screenshot della landing page palestra FitZone",
+      "tags": ["HTML", "CSS", "UI/UX", "Responsive Design", "Landing Page"],
+      "status": "Demo",
+      "featured": false,
+      "published": true,
+      "order": 4,
+      "liveUrl": "projects/fitzone/",
+      "githubUrl": "",
+      "figmaUrl": "https://www.figma.com/proto/CgFRuCSFPFhb6KcRTZqYZa/Untitled?node-id=1-12&p=f&t=c04ReWw6m3h8teUK-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1",
+      "year": "2026",
+      "category": "Landing page"
+    },
+    {
+      "id": "figma-to-code",
+      "title": "Progetto da Figma a Codice",
+      "type": "Conversione UI in sito web",
+      "description": "Progetto nato da un design Figma e trasformato in una pagina web funzionante, responsive e curata nel codice.",
+      "longDescription": "Esercitazione focalizzata sul passaggio da UI design a codice: struttura della pagina, layout, card, navigazione, pulizia visuale e attenzione alla resa responsive.",
+      "image": "assets/projects/shoes-preview.png",
+      "imageAlt": "Mockup Figma trasformato in progetto UI to code",
+      "tags": ["Figma", "HTML", "CSS", "JavaScript", "UI to Code", "Responsive Design"],
+      "status": "UI Concept",
+      "featured": false,
+      "published": true,
+      "order": 5,
+      "liveUrl": "",
+      "githubUrl": "",
+      "figmaUrl": "https://www.figma.com/proto/G09Tq8i37addPsCe293DVz/Untitled?t=ncBAfwnNsLpot8OY-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&node-id=2-2",
+      "year": "2026",
+      "category": "UI to Code"
+    },
+    {
+      "id": "registration-form",
+      "title": "Registration Form",
+      "type": "Componente frontend responsive",
+      "description": "Form di registrazione responsive con campi base, validazione HTML5 e stile scuro.",
+      "longDescription": "Esercitazione frontend dedicata a struttura del form, input, checkbox, validazione HTML5, responsive design e cura visuale del componente.",
+      "image": "assets/projects/registration-preview.png",
+      "imageAlt": "Screenshot del form di registrazione responsive",
+      "tags": ["HTML", "CSS", "Form", "Responsive Design", "Validazione HTML5"],
+      "status": "Esercitazione frontend",
+      "featured": false,
+      "published": true,
+      "order": 6,
+      "liveUrl": "projects/registration-form/",
+      "githubUrl": "",
+      "year": "2026",
+      "category": "Frontend component"
     }
   ]
 };
-
 window.portfolioProjects = window.portfolioProjectFallback.projects;

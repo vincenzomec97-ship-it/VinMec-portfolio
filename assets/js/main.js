@@ -115,19 +115,16 @@ const normalizeFilterCategories = (project) => {
   }];
 };
 
+
 const createProjectLinks = (project) => {
   const links = [];
 
   if (project.liveUrl) {
-    links.push({
-      label: project.featured ? "Live Site" : "Demo",
-      href: project.liveUrl,
-      variant: project.featured ? "primary" : "secondary"
-    });
+    links.push({ label: "Vedi sito", href: project.liveUrl, variant: project.featured ? "primary" : "secondary" });
   }
 
   if (project.githubUrl) {
-    links.push({ label: "GitHub", href: project.githubUrl, variant: "secondary" });
+    links.push({ label: "Codice GitHub", href: project.githubUrl, variant: "secondary" });
   }
 
   if (project.figmaUrl) {
@@ -136,6 +133,7 @@ const createProjectLinks = (project) => {
 
   return links;
 };
+
 
 const normalizeProject = (project) => {
   const filterCategories = normalizeFilterCategories(project);
@@ -148,14 +146,20 @@ const normalizeProject = (project) => {
         height: project.imageHeight,
         variant: project.imageVariant
       };
+  const tags = project.tags || project.technologies || [];
 
   return {
     ...project,
+    title: project.title || "Progetto",
+    type: project.type || project.category || "Progetto web",
+    status: project.status || project.badge || "Progetto",
+    order: Number.isFinite(Number(project.order)) ? Number(project.order) : 999,
     categoryKey: project.categoryKey || filterCategories[0].key,
     filterCategories,
+    tags,
     care: project.highlights || project.care || [],
     image: {
-      src: image.src || project.image,
+      src: image.src || project.image || "",
       alt: image.alt || project.imageAlt || `Preview del progetto ${project.title}`,
       width: image.width || project.imageWidth || 1440,
       height: image.height || project.imageHeight || 900,
@@ -186,12 +190,24 @@ const loadProjects = async () => {
   }
 };
 
-const createProjectCard = (project) => {
-  const card = createNode("article", project.featured ? "project-card project-featured" : "project-card");
-  card.id = `project-${project.id}`;
 
+const createProjectPlaceholder = (project) => {
+  const placeholder = createNode("div", "project-placeholder");
+  const mark = createNode("span", "project-placeholder-mark", "VM");
+  const text = createNode("span", "project-placeholder-text", project.type || project.category || "Progetto web");
+  placeholder.append(mark, text);
+  return placeholder;
+};
+
+const createProjectMedia = (project) => {
   const mediaVariant = project.image.variant === "figma" ? "figma" : "browser";
   const media = createNode("div", `project-media project-media-${mediaVariant}`);
+
+  if (!project.image.src) {
+    media.append(createProjectPlaceholder(project));
+    return media;
+  }
+
   const image = document.createElement("img");
   image.src = project.image.src;
   image.alt = project.image.alt;
@@ -202,21 +218,34 @@ const createProjectCard = (project) => {
     image.fetchPriority = "high";
   }
   image.decoding = "async";
+  image.addEventListener("error", () => {
+    image.remove();
+    if (!media.querySelector(".project-placeholder")) {
+      media.append(createProjectPlaceholder(project));
+    }
+  });
   media.append(image);
+  return media;
+};
 
+const createProjectCard = (project) => {
+  const card = createNode("article", project.featured ? "project-card project-featured" : "project-card");
+  card.id = `project-${project.id}`;
+
+  const media = createProjectMedia(project);
   const content = createNode("div", "project-content");
-  if (project.badge) {
-    content.append(createNode("span", "project-badge", project.badge));
+  if (project.status) {
+    content.append(createNode("span", "project-badge", project.status));
   }
 
   content.append(createNode("h3", "", project.title));
+  content.append(createNode("p", "project-type", project.type));
   content.append(createNode("p", "", project.description));
 
   const details = createNode("dl", project.featured ? "project-details" : "project-details compact");
   details.append(
-    createProjectDetail("Ruolo", project.role),
-    createProjectDetail("Tecnologie", project.technologies.join(", ")),
-    createProjectDetail("Cosa ho curato", project.care)
+    createProjectDetail("Tecnologie", project.tags.join(", ")),
+    createProjectDetail(project.featured ? "Dettaglio" : "Focus", project.longDescription || project.description)
   );
 
   const actions = createNode("div", "project-actions");
@@ -231,6 +260,10 @@ const createProjectCard = (project) => {
 
     actions.append(action);
   });
+
+  if (project.links.length === 0) {
+    actions.append(createNode("span", "project-status-note", "Link in arrivo"));
+  }
 
   content.append(details, actions);
   card.append(media, content);
@@ -254,11 +287,24 @@ const updateProjectStats = () => {
     projectTotal.textContent = projects.length;
   }
   if (projectFigma) {
-    projectFigma.textContent = projects.filter((project) => project.technologies.includes("Figma")).length;
+    projectFigma.textContent = projects.filter((project) => project.tags.includes("Figma")).length;
   }
   if (projectLive) {
-    projectLive.textContent = projects.filter((project) => project.links.some((link) => /live|demo/i.test(link.label))).length;
+    projectLive.textContent = projects.filter((project) => project.liveUrl).length;
   }
+};
+
+
+const createProjectSection = (title, description, sectionProjects, className) => {
+  const section = createNode("section", `project-section-block ${className}`);
+  const heading = createNode("div", "project-section-head");
+  heading.append(createNode("h3", "", title), createNode("p", "", description));
+
+  const grid = createNode("div", className === "project-featured-block" ? "project-featured-grid" : "project-grid");
+  sectionProjects.forEach((project) => grid.append(createProjectCard(project)));
+
+  section.append(heading, grid);
+  return section;
 };
 
 const renderProjects = (filter = "all") => {
@@ -280,21 +326,25 @@ const renderProjects = (filter = "all") => {
     return;
   }
 
-  const featuredProject = filteredProjects.find((project) => project.featured);
-  const remainingProjects = featuredProject
-    ? filteredProjects.filter((project) => project.id !== featuredProject.id)
-    : filteredProjects;
+  const featuredProjects = filteredProjects.filter((project) => project.featured);
+  const secondaryProjects = filteredProjects.filter((project) => !project.featured);
 
-  if (featuredProject) {
-    projectList.append(createProjectCard(featuredProject));
+  if (featuredProjects.length > 0) {
+    projectList.append(createProjectSection(
+      "Progetti principali",
+      "Lavori pi? completi, pensati per mostrare competenze applicate a casi reali o web app strutturate.",
+      featuredProjects,
+      "project-featured-block"
+    ));
   }
 
-  if (remainingProjects.length > 0) {
-    const grid = createNode("div", "project-grid");
-    remainingProjects.forEach((project) => {
-      grid.append(createProjectCard(project));
-    });
-    projectList.append(grid);
+  if (secondaryProjects.length > 0) {
+    projectList.append(createProjectSection(
+      "Altri progetti",
+      "Esercitazioni, landing page e sperimentazioni utili per allenare design, codice e logica frontend.",
+      secondaryProjects,
+      "project-secondary-block"
+    ));
   }
 
   bindGlowCards();
@@ -365,7 +415,8 @@ const initProjects = async () => {
   const loadedProjects = await loadProjects();
   projects = loadedProjects
     .filter((project) => project && project.published !== false && !project.isFutureTemplate)
-    .map(normalizeProject);
+    .map(normalizeProject)
+    .sort((a, b) => a.order - b.order);
 
   updateProjectStats();
   renderProjectFilters();
