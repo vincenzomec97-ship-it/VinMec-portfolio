@@ -17,16 +17,16 @@
         { "key": "web", "label": "Sito web / Local business" },
         { "key": "ui", "label": "UI Design" }
       ],
-      "description": "Sito web e sistema operativo leggero per un'attivit\u00e0 di pulizie locale: trasforma un normale sito statico in un flusso commerciale automatizzato con Google Apps Script, Sheets, email, PDF e area admin.",
+      "description": "Sito web e mini-sistema gestionale commerciale per un'attivit\u00e0 di pulizie locale: raccoglie lead, organizza richieste, genera PDF e automatizza email con Google Apps Script in production.",
       "role": "UI Designer & Frontend Developer",
       "technologies": ["Figma", "HTML", "CSS", "JavaScript", "JSON", "Google Apps Script", "Google Sheets", "Google Drive", "GitHub Pages"],
       "highlights": [
         "Design dell'interfaccia e layout responsive",
-        "Flusso preventivo evoluto con backend gratuito Google Apps Script",
-        "Salvataggio richieste in Google Sheets con creazione automatica del foglio",
+        "Form preventivo collegato a endpoint production Google Apps Script",
+        "Salvataggio richieste in Google Sheets e PDF preventivo in Google Drive",
         "Email automatiche a cliente e titolare con riepilogo operativo",
-        "PDF preventivo generato in Google Drive e area admin riservata",
-        "Endpoint Apps Script production reale e fallback WhatsApp verso il titolare"
+        "Area admin protetta da token per richieste, PDF e stato contatto",
+        "Fallback WhatsApp verso il titolare e test reale ok: true con PDF generato"
       ],
       "image": "assets/projects/cm-pulizie-preview.png",
       "imageAlt": "Screenshot completo del sito C.M. Pulizie",
