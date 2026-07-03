@@ -37,86 +37,73 @@ assets/projects/
 data/projects.json
 ```
 
-## Come aggiungere un nuovo progetto
+La sezione Progetti viene generata da `data/projects.json`. Ogni progetto usa il campo `group` per decidere dove comparire nel portfolio.
 
-1. Creare una nuova cartella dentro `projects/`.
+## Organizzazione portfolio
 
-   Esempio:
+### Progetti principali
 
-   ```text
-   projects/quiz-app/
-   ```
+- C.M. Pulizie
+- English Quiz Lab
 
-2. Inserire il progetto dentro quella cartella.
+### Progetti business / marketing
 
-   Esempio:
+- Landing Page commerciale / FitZone palestra
+- Dashboard clienti
 
-   ```text
-   projects/quiz-app/index.html
-   ```
+### Progetti AI / automation
 
-3. Inserire lo screenshot o la preview dentro `assets/projects/`.
+- Chatbot aziendale
 
-   Esempio:
+### Progetti UI/Figma
 
-   ```text
-   assets/projects/quiz-app-preview.png
-   ```
+- Shoes Concept
+- C.M. Pulizie - Figma Concept
+- Fitness Landing - Figma Concept
 
-4. Aprire `data/projects.json`.
+### Practice / Frontend
 
-5. Aggiungere una nuova voce dentro l'array `projects` usando questi campi:
+- Pagina registrazione / Registration Form
+
+I progetti indicati come In sviluppo o Da sviluppare sono presenti nella roadmap del portfolio e verranno aggiornati con demo, screenshot e link quando saranno completati.
+
+## Come aggiungere o completare un progetto
+
+1. Aprire `data/projects.json`.
+2. Copiare un oggetto esistente oppure aggiornare la card roadmap già presente.
+3. Modificare i campi principali:
 
    - `title`
-   - `badge`
-   - `category`
+   - `type`
    - `description`
-   - `role`
-   - `technologies`
-   - `highlights`
+   - `longDescription`
    - `image`
-   - `imageAlt`
+   - `tags`
+   - `badge`
+   - `status`
+   - `priority`
+   - `group`
+   - `groupLabel`
    - `liveUrl`
    - `githubUrl`
    - `figmaUrl`
+   - `year`
+   - `category`
 
+4. Usare uno di questi gruppi:
+
+   - `main`
+   - `business`
+   - `ai`
+   - `figma`
+   - `practice`
+
+5. Non inserire link finti o localhost. Se un link non esiste ancora, lasciare il campo vuoto.
 6. Salvare e testare il portfolio.
 
+Quando un progetto roadmap sarà completato, basterà aggiornare `status`, descrizione, screenshot, link demo, link GitHub, eventuale case study e README.
+
 Nota: se apri `index.html` direttamente con `file://`, il browser potrebbe non caricare `data/projects.json`. In quel caso aggiorna anche il fallback in `assets/js/projects.js`, oppure testa con un server locale.
-
-### Esempio futuro - Quiz App
-
-Questo esempio è già preparato in `data/projects.json` come `futureProjectTemplate` con `published: false`, quindi non viene mostrato nel portfolio finché non lo sposti nell'array `projects` e lo imposti come pubblicato.
-
-```json
-{
-  "title": "Quiz App — Web app interattiva in JavaScript",
-  "badge": "JavaScript App",
-  "category": "Web App",
-  "description": "Web app interattiva per quiz a risposta multipla, sviluppata con HTML, CSS e JavaScript. Il progetto gestisce domande, risposte, punteggio finale e feedback all'utente.",
-  "role": "Frontend Developer",
-  "technologies": ["HTML", "CSS", "JavaScript"],
-  "highlights": [
-    "Struttura dell'interfaccia",
-    "Logica delle domande",
-    "Gestione del punteggio",
-    "Feedback utente",
-    "Responsive design e pubblicazione online"
-  ],
-  "image": "assets/projects/quiz-app-preview.png",
-  "imageAlt": "Preview della Quiz App di Vincenzo Meccariello",
-  "liveUrl": "projects/quiz-app/",
-  "githubUrl": "",
-  "figmaUrl": ""
-}
-```
-
-## Progetti principali
-
-- C.M. Pulizie
-- FitZone
-- Shoes Concept
-- Registration Form
 
 ## Contatti
 
