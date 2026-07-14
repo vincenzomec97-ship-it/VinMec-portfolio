@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>English Quiz Lab | Case study — Vincenzo Meccariello</title>
+  <meta name="description" content="Case study di English Quiz Lab, web app full-stack per quiz di inglese generati con Gemini, validati e gestiti con Supabase.">
+  <link rel="icon" href="../../assets/brand/vinmec-logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="english-quiz-lab.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Salta al contenuto</a>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Navigazione case study">
+      <a class="brand" href="../../index.html"><span class="brand-mark"><img src="../../assets/brand/vinmec-logo.png" alt=""></span><span class="brand-text">Vincenzo Meccariello</span></a>
+      <a class="button button-ghost" href="../../index.html#progetti">Torna ai progetti</a>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="detail-hero">
+      <div class="container detail-hero-grid">
+        <div><span class="project-badge">Progetto principale</span><h1>English Quiz Lab</h1><p class="detail-lead">Una web app full-stack per creare, revisionare, pubblicare e svolgere quiz di inglese generati con AI.</p><ul class="tag-list"><li>Gemini</li><li>Supabase</li><li>Node.js</li><li>Vercel</li><li>RLS</li></ul><div class="detail-actions"><a class="button button-primary" href="https://english-quiz-lab-one.vercel.app/" target="_blank" rel="noopener noreferrer">Apri la Demo</a></div></div>
+        <img src="../../assets/projects/english-quiz-lab-preview.png" alt="Schermata di accesso dell'app English Quiz Lab" width="1440" height="1000">
+      </div>
+    </section>
+    <section class="section"><div class="container detail-grid"><article><span class="section-kicker">Il progetto</span><h2>Quiz AI, con controllo umano</h2><p>La piattaforma supporta i livelli A1–B2 e categorie come Grammar, Vocabulary, Translation, Irregular Verbs, Reading e Listening. Il docente genera e revisiona le domande; lo studente sceglie il quiz dal catalogo e riceve un risultato calcolato in sicurezza sul server.</p></article><aside class="detail-facts"><div><strong>Ruolo</strong><span>Full-stack Developer &amp; AI Integration</span></div><div><strong>Utenti</strong><span>Docenti, studenti, editor e amministratori</span></div><div><strong>Formato</strong><span>Quiz da 5, 10, 15 o 20 domande</span></div></aside></div></section>
+    <section class="section surface"><div class="container"><div class="section-heading"><span class="section-kicker">Flusso principale</span><h2>Dal docente al quiz studente</h2></div><ol class="flow" aria-label="Flusso dell'app"><li><strong>Docente</strong><span>Carica fonti e definisce il quiz</span></li><li><strong>Gemini</strong><span>Genera domande strutturate</span></li><li><strong>Validazione</strong><span>Controlla il JSON prima del rendering</span></li><li><strong>Supabase</strong><span>Salva, protegge e pubblica</span></li><li><strong>Studente</strong><span>Svolge il quiz e riceve il punteggio</span></li></ol></div></section>
+    <section class="section"><div class="container"><div class="section-heading"><span class="section-kicker">Punti di forza</span><h2>Architettura, AI e sicurezza</h2></div><div class="feature-grid"><article class="info-card"><h3>AI multimodale</h3><p>PDF, immagini, audio e video possono diventare fonti. Audio e video mantengono timestamp verificabili.</p></article><article class="info-card"><h3>Full-stack serverless</h3><p>Frontend in HTML, CSS e JavaScript, API Node.js, Edge Functions Supabase e deploy su Vercel.</p></article><article class="info-card"><h3>Sicurezza</h3><p>RLS, validazioni server-side, segreti in variabili d’ambiente e risposte corrette protette dal frontend.</p></article><article class="info-card"><h3>Ruoli e controllo</h3><p>Accessi distinti per studente, docente, editor, proprietario e super admin, con dashboard e log operativi.</p></article></div></div></section>
+    <section class="section surface"><div class="container detail-grid"><article><span class="section-kicker">Metodo</span><h2>Sviluppo progressivo e documentato</h2><p>English Quiz Lab è nato come mock locale ed è cresciuto fino a integrare Gemini, Supabase e Vercel. <code>AGENTS.md</code> è stato usato come guida tecnica e logbook per decisioni, cambi di direzione, file coinvolti e motivazioni.</p></article><aside class="detail-facts"><div><strong>Dati</strong><span>Quiz, fonti e risultati persistenti</span></div><div><strong>Controlli</strong><span>Log di validazione e operazioni critiche</span></div><div><strong>Database</strong><span>Migration SQL e Supabase CLI</span></div></aside></div></section>
+  </main>
+  <footer class="site-footer"><div class="container"><p>© Vincenzo Meccariello</p><a href="../../index.html#contatti">Contatti</a></div></footer>
+</body>
+</html>
