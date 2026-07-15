@@ -3,6 +3,7 @@ const navToggle = document.querySelector(".nav-toggle");
 const navMenu = document.querySelector("#site-menu");
 const yearTarget = document.querySelector("[data-year]");
 let projects = [];
+let projectGroups = [];
 
 if (yearTarget) {
   yearTarget.textContent = new Date().getFullYear();
@@ -79,7 +80,7 @@ const createProjectDetail = (label, value) => {
 };
 
 const getFallbackProjects = () => {
-  if (window.portfolioProjectFallback?.projects) {
+  if (window.portfolioProjectFallback.projects) {
     return window.portfolioProjectFallback.projects;
   }
 
@@ -93,49 +94,62 @@ const getCategoryKey = (category = "progetto") => category
   .replace(/[^a-z0-9]+/g, "-")
   .replace(/^-|-$/g, "");
 
-const normalizeFilterCategories = (project) => {
-  const providedCategories = Array.isArray(project.filterCategories)
-    ? project.filterCategories
-    : [];
-
-  const normalizedCategories = providedCategories
-    .filter((category) => category?.key && category?.label)
-    .map((category) => ({
-      key: category.key,
-      label: category.label
-    }));
-
-  if (normalizedCategories.length > 0) {
-    return normalizedCategories;
+const defaultProjectGroups = [
+  {
+    key: "main",
+    label: "Progetti principali",
+    description: "I progetti pi forti del portfolio: uno orientato a un sito web completo per attivit reale e uno orientato a web app educativa, AI e logica applicativa."
+  },
+  {
+    key: "business",
+    label: "Progetti business / marketing",
+    description: "Progetti pensati per mostrare mentalit aziendale, lead generation, landing page, conversione e gestione clienti."
+  },
+  {
+    key: "ai",
+    label: "Progetti AI / automation",
+    description: "Progetti pensati per mostrare uso pratico di AI tools, automazioni e assistenti digitali applicati ad aziende reali o simulate."
+  },
+  {
+    key: "figma",
+    label: "Progetti UI/Figma",
+    description: "Concept grafici realizzati in Figma per mostrare studio dell'interfaccia, composizione visuale, gerarchia e prototipazione."
+  },
+  {
+    key: "practice",
+    label: "Practice / Frontend",
+    description: "Esercizi e componenti frontend realizzati per consolidare HTML, CSS, responsive design e struttura delle interfacce."
   }
+];
 
-  return [{
-    key: project.categoryKey || getCategoryKey(project.category),
-    label: project.category
-  }];
+const normalizeFilterCategories = (project) => {
+  const groupKey = project.group || project.categoryKey || getCategoryKey(project.category || project.type);
+  const groupLabel = project.groupLabel
+    || projectGroups.find((group) => group.key === groupKey)?.label
+    || project.category
+    || project.type
+    || "Progetto";
+
+  return [{ key: groupKey, label: groupLabel }];
 };
 
 const createProjectLinks = (project) => {
   const links = [];
 
   if (project.detailUrl) {
-    links.push({
-      label: "Scopri il progetto",
-      href: project.detailUrl,
-      variant: project.featured ? "primary" : "secondary"
-    });
+    links.push({ label: "Case study", href: project.detailUrl, variant: project.featured ? "primary" : "secondary" });
   }
 
   if (project.liveUrl) {
     links.push({
-      label: project.featured ? "Live Site" : "Demo",
+      label: project.id === "english-quiz-lab" ? "Demo" : "Vedi sito",
       href: project.liveUrl,
-      variant: project.featured ? "primary" : "secondary"
+      variant: project.id === "english-quiz-lab" ? "secondary" : (project.featured ? "primary" : "secondary")
     });
   }
 
   if (project.githubUrl) {
-    links.push({ label: "GitHub", href: project.githubUrl, variant: "secondary" });
+    links.push({ label: "Codice GitHub", href: project.githubUrl, variant: "secondary" });
   }
 
   if (project.figmaUrl) {
@@ -144,6 +158,7 @@ const createProjectLinks = (project) => {
 
   return links;
 };
+
 
 const normalizeProject = (project) => {
   const filterCategories = normalizeFilterCategories(project);
@@ -156,14 +171,21 @@ const normalizeProject = (project) => {
         height: project.imageHeight,
         variant: project.imageVariant
       };
+  const tags = project.tags || project.technologies || [];
 
   return {
     ...project,
+    title: project.title || "Progetto",
+    type: project.type || project.category || "Progetto web",
+    status: project.status || project.badge || "Progetto",
+    priority: Number.isFinite(Number(project.priority)) ? Number(project.priority) : Number(project.order || 999),
+    order: Number.isFinite(Number(project.order)) ? Number(project.order) : Number(project.priority || 999),
     categoryKey: project.categoryKey || filterCategories[0].key,
     filterCategories,
+    tags,
     care: project.highlights || project.care || [],
     image: {
-      src: image.src || project.image,
+      src: image.src || project.image || "",
       alt: image.alt || project.imageAlt || `Preview del progetto ${project.title}`,
       width: image.width || project.imageWidth || 1440,
       height: image.height || project.imageHeight || 900,
@@ -173,7 +195,16 @@ const normalizeProject = (project) => {
   };
 };
 
-const loadProjects = async () => {
+const getFallbackProjectData = () => ({
+  projects: getFallbackProjects(),
+  groups: window.portfolioProjectFallback.groups || defaultProjectGroups
+});
+
+const loadProjectData = async () => {
+  if (window.location.protocol === "file:") {
+    return getFallbackProjectData();
+  }
+
   try {
     const response = await fetch("data/projects.json", { cache: "no-store" });
 
@@ -182,24 +213,41 @@ const loadProjects = async () => {
     }
 
     const payload = await response.json();
-    const projectList = Array.isArray(payload) ? payload : payload.projects;
 
-    if (!Array.isArray(projectList)) {
+    if (Array.isArray(payload)) {
+      return { projects: payload, groups: defaultProjectGroups };
+    }
+
+    if (!Array.isArray(payload.projects)) {
       throw new Error("Projects JSON has an invalid shape");
     }
 
-    return projectList;
+    return {
+      projects: payload.projects,
+      groups: Array.isArray(payload.groups) ? payload.groups : defaultProjectGroups
+    };
   } catch (error) {
-    return getFallbackProjects();
+    return getFallbackProjectData();
   }
 };
 
-const createProjectCard = (project) => {
-  const card = createNode("article", project.featured ? "project-card project-featured" : "project-card");
-  card.id = `project-${project.id}`;
+const createProjectPlaceholder = (project) => {
+  const placeholder = createNode("div", "project-placeholder");
+  const mark = createNode("span", "project-placeholder-mark", "VM");
+  const text = createNode("span", "project-placeholder-text", project.type || project.category || "Progetto web");
+  placeholder.append(mark, text);
+  return placeholder;
+};
 
+const createProjectMedia = (project) => {
   const mediaVariant = project.image.variant === "figma" ? "figma" : "browser";
   const media = createNode("div", `project-media project-media-${mediaVariant}`);
+
+  if (!project.image.src) {
+    media.append(createProjectPlaceholder(project));
+    return media;
+  }
+
   const image = document.createElement("img");
   image.src = project.image.src;
   image.alt = project.image.alt;
@@ -210,21 +258,41 @@ const createProjectCard = (project) => {
     image.fetchPriority = "high";
   }
   image.decoding = "async";
+  image.addEventListener("error", () => {
+    image.remove();
+    if (!media.querySelector(".project-placeholder")) {
+      media.append(createProjectPlaceholder(project));
+    }
+  });
   media.append(image);
+  return media;
+};
 
+const createProjectCard = (project) => {
+  const cardClass = ["project-card"];
+  if (project.featured) cardClass.push("project-featured");
+  if (project.status === "Da sviluppare") cardClass.push("project-roadmap-card");
+  const card = createNode("article", cardClass.join(" "));
+  card.id = `project-${project.id}`;
+
+  const media = createProjectMedia(project);
   const content = createNode("div", "project-content");
   if (project.badge) {
     content.append(createNode("span", "project-badge", project.badge));
   }
 
+  if (project.status) {
+    content.append(createNode("span", "project-status", project.status));
+  }
+
   content.append(createNode("h3", "", project.title));
+  content.append(createNode("p", "project-type", project.type));
   content.append(createNode("p", "", project.description));
 
   const details = createNode("dl", project.featured ? "project-details" : "project-details compact");
   details.append(
-    createProjectDetail("Ruolo", project.role),
-    createProjectDetail("Tecnologie", project.technologies.join(", ")),
-    createProjectDetail("Cosa ho curato", project.care)
+    createProjectDetail("Tecnologie", project.tags.join(", ")),
+    createProjectDetail(project.featured ? "Dettaglio" : "Focus", project.longDescription || project.description)
   );
 
   const actions = createNode("div", "project-actions");
@@ -232,7 +300,7 @@ const createProjectCard = (project) => {
     const action = createNode("a", `button button-${link.variant || "secondary"}`, link.label);
     action.href = link.href;
 
-    if (/^https?:\/\//i.test(link.href)) {
+    if (/^https:\/\//i.test(link.href)) {
       action.target = "_blank";
       action.rel = "noopener noreferrer";
     }
@@ -240,33 +308,43 @@ const createProjectCard = (project) => {
     actions.append(action);
   });
 
+  if (project.links.length === 0) {
+    actions.append(createNode("span", "project-status-note", "Link in arrivo"));
+  }
+
   content.append(details, actions);
   card.append(media, content);
   return card;
 };
 
-const getProjectCategories = () => {
-  const categories = [];
-  projects.forEach((project) => {
-    project.filterCategories.forEach((projectCategory) => {
-      if (!categories.some((category) => category.key === projectCategory.key)) {
-        categories.push(projectCategory);
-      }
-    });
-  });
-  return categories;
-};
+const getProjectCategories = () => projectGroups
+  .filter((group) => projects.some((project) => project.group === group.key))
+  .map((group) => ({ key: group.key, label: group.label }));
 
 const updateProjectStats = () => {
   if (projectTotal) {
     projectTotal.textContent = projects.length;
   }
   if (projectFigma) {
-    projectFigma.textContent = projects.filter((project) => project.technologies.includes("Figma")).length;
+    projectFigma.textContent = projects.filter((project) => project.tags.includes("Figma")).length;
   }
   if (projectLive) {
-    projectLive.textContent = projects.filter((project) => project.links.some((link) => /live|demo/i.test(link.label))).length;
+    projectLive.textContent = projects.filter((project) => project.liveUrl).length;
   }
+};
+
+
+const createProjectSection = (group, sectionProjects) => {
+  const isMainGroup = group.key === "main";
+  const section = createNode("section", `project-group project-group-${group.key}`);
+  const heading = createNode("div", "project-group-heading");
+  heading.append(createNode("h3", "", group.label), createNode("p", "project-group-description", group.description));
+
+  const grid = createNode("div", isMainGroup ? "project-group-grid project-featured-grid" : "project-group-grid project-grid");
+  sectionProjects.forEach((project) => grid.append(createProjectCard(project)));
+
+  section.append(heading, grid);
+  return section;
 };
 
 const renderProjects = (filter = "all") => {
@@ -278,7 +356,7 @@ const renderProjects = (filter = "all") => {
 
   const filteredProjects = filter === "all"
     ? projects
-    : projects.filter((project) => project.filterCategories.some((category) => category.key === filter));
+    : projects.filter((project) => project.group === filter);
 
   if (projectEmpty) {
     projectEmpty.hidden = filteredProjects.length > 0;
@@ -288,22 +366,14 @@ const renderProjects = (filter = "all") => {
     return;
   }
 
-  const featuredProject = filteredProjects.find((project) => project.featured);
-  const remainingProjects = featuredProject
-    ? filteredProjects.filter((project) => project.id !== featuredProject.id)
-    : filteredProjects;
+  const groupsToRender = projectGroups.filter((group) => filteredProjects.some((project) => project.group === group.key));
 
-  if (featuredProject) {
-    projectList.append(createProjectCard(featuredProject));
-  }
-
-  if (remainingProjects.length > 0) {
-    const grid = createNode("div", "project-grid");
-    remainingProjects.forEach((project) => {
-      grid.append(createProjectCard(project));
-    });
-    projectList.append(grid);
-  }
+  groupsToRender.forEach((group) => {
+    const groupProjects = filteredProjects
+      .filter((project) => project.group === group.key)
+      .sort((a, b) => a.priority - b.priority);
+    projectList.append(createProjectSection(group, groupProjects));
+  });
 
   bindGlowCards();
 };
@@ -313,13 +383,13 @@ const renderProjectFilters = () => {
     return;
   }
 
-  const filters = [{ key: "all", label: "Tutti" }, ...getProjectCategories()];
+  const filters = [{ key: "all", label: "Tutti i gruppi" }, ...getProjectCategories()];
   projectFilters.textContent = "";
 
   filters.forEach((filter, index) => {
     const count = filter.key === "all"
       ? projects.length
-      : projects.filter((project) => project.filterCategories.some((category) => category.key === filter.key)).length;
+      : projects.filter((project) => project.group === filter.key).length;
     const button = createNode("button", "project-filter", filter.label);
     const countNode = createNode("span", "project-filter-count", count);
     button.type = "button";
@@ -370,10 +440,12 @@ const bindGlowCards = () => {
 };
 
 const initProjects = async () => {
-  const loadedProjects = await loadProjects();
-  projects = loadedProjects
+  const projectData = await loadProjectData();
+  projectGroups = projectData.groups || defaultProjectGroups;
+  projects = projectData.projects
     .filter((project) => project && project.published !== false && !project.isFutureTemplate)
-    .map(normalizeProject);
+    .map(normalizeProject)
+    .sort((a, b) => a.priority - b.priority);
 
   updateProjectStats();
   renderProjectFilters();

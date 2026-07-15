@@ -1,162 +1,323 @@
 /*
   Fallback locale per file://.
-  La fonte principale dei progetti e data/projects.json.
+  La fonte principale dei progetti è data/projects.json.
 
-  Per aggiungere un nuovo progetto:
-  1. crea una cartella in projects/nome-progetto/
-     esempio: projects/quiz-app/index.html
-  2. aggiungi una preview in assets/projects/
-     esempio: assets/projects/quiz-app-preview.png
-  3. aggiungi una nuova voce in data/projects.json con:
-     title, badge, category, description, role, technologies,
-     highlights, image, imageAlt, liveUrl, githubUrl, figmaUrl
-  4. testa il portfolio.
-
-  Nota: questo fallback serve solo quando apri index.html con file://.
-  Se testi con un server locale o su GitHub Pages, viene letto data/projects.json.
+  Per aggiungere o completare un progetto:
+  1. modifica l'oggetto corrispondente in data/projects.json
+  2. aggiorna status, descrizioni, screenshot e link reali
+  3. scegli group: main, business, ai, figma oppure practice
+  4. non inserire link demo o GitHub se non sono disponibili.
 */
 
 window.portfolioProjectFallback = {
-  projects: [
+  "_instructions": [
+    "Per aggiungere o completare un progetto, modifica solo l'oggetto corrispondente dentro projects.",
+    "Usa group per decidere il gruppo: main, business, ai, figma, practice.",
+    "Usa priority per ordinare i progetti. Non inserire link finti: lascia liveUrl, githubUrl o figmaUrl vuoti se non esistono.",
+    "Quando un progetto roadmap viene completato aggiorna: status, description, longDescription, image, liveUrl, githubUrl, eventuale case study e README."
+  ],
+  "groups": [
     {
-      id: "english-quiz-lab",
-      featured: true,
-      published: true,
-      title: "English Quiz Lab — Quiz di inglese full-stack con AI",
-      badge: "Progetto principale",
-      category: "AI Web App / Full-stack",
-      categoryKey: "ai-web-app",
-      filterCategories: [
-        { key: "ai-web-app", label: "AI Web App" },
-        { key: "full-stack", label: "Full-stack" }
-      ],
-      description: "Web app per creare, revisionare, pubblicare e svolgere quiz di inglese generati con AI, con flussi dedicati a docenti e studenti.",
-      role: "Full-stack Developer & AI Integration",
-      technologies: ["HTML", "CSS", "JavaScript", "Node.js", "Google Gemini", "Supabase", "Vercel"],
-      highlights: [
-        "Generazione AI da PDF, immagini, audio e video",
-        "Validazione JSON prima del rendering",
-        "Ruoli, RLS e controlli server-side",
-        "Quiz, fonti e risultati salvati su Supabase",
-        "Deploy serverless su Vercel"
-      ],
-      image: "assets/projects/english-quiz-lab-preview.png",
-      imageAlt: "Schermata di accesso dell'app English Quiz Lab",
-      imageWidth: 1440,
-      imageHeight: 900,
-      imageVariant: "browser",
-      detailUrl: "projects/english-quiz-lab/",
-      liveUrl: "https://english-quiz-lab-one.vercel.app/",
-      githubUrl: "",
-      figmaUrl: ""
+      "key": "main",
+      "label": "Progetti principali",
+      "description": "I progetti più forti del portfolio: uno orientato a un sito web completo per attività reale e uno orientato a web app educativa, AI e logica applicativa."
     },
     {
-      id: "cm-pulizie",
-      featured: false,
-      published: true,
-      title: "C.M. Pulizie \u2014 Sito web completo per impresa locale",
-      badge: "Progetto principale",
-      category: "Sito web / Local business",
-      categoryKey: "web",
-      filterCategories: [
-        { key: "web", label: "Sito web / Local business" },
-        { key: "ui", label: "UI Design" }
-      ],
-      description: "Sito web completo per un'attivit\u00e0 di pulizie, progettato prima su Figma e poi sviluppato in codice. Il progetto presenta servizi, richiesta preventivo, recensioni, contatti e una struttura pensata per clienti locali.",
-      role: "UI Designer & Frontend Developer",
-      technologies: ["Figma", "HTML", "CSS", "JavaScript", "JSON", "GitHub Pages"],
-      highlights: [
-        "Design dell'interfaccia",
-        "Layout responsive",
-        "Sezioni servizi e preventivo dinamico",
-        "Call to action, chatbot controllato e WhatsApp",
-        "SEO tecnica base e pubblicazione online"
-      ],
-      image: "assets/projects/cm-pulizie-preview.png",
-      imageAlt: "Screenshot completo del sito C.M. Pulizie",
-      imageWidth: 2560,
-      imageHeight: 1662,
-      imageVariant: "browser",
-      liveUrl: "https://vincenzomec97-ship-it.github.io/cm-pulizie/",
-      githubUrl: "https://github.com/vincenzomec97-ship-it/cm-pulizie",
-      figmaUrl: "https://www.figma.com/proto/Qlefn1I3qe1WEOijl20qUR/Untitled?t=QmHGINTnjDozetfi-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&node-id=1-75"
+      "key": "business",
+      "label": "Progetti business / marketing",
+      "description": "Progetti pensati per mostrare mentalità aziendale, lead generation, landing page, conversione e gestione clienti."
     },
     {
-      id: "fitzone",
-      featured: false,
-      published: true,
-      title: "FitZone \u2014 Landing page palestra",
-      badge: "UI Concept",
-      category: "Landing Page",
-      categoryKey: "landing",
-      filterCategories: [
-        { key: "landing", label: "Landing Page" },
-        { key: "ui", label: "UI Design" }
-      ],
-      description: "Concept UI per una landing page dedicata a una palestra. Design energico, forte e diretto, pensato per comunicare motivazione, fiducia e azione immediata.",
-      role: "UI/UX Designer",
-      technologies: ["Figma", "HTML", "CSS"],
-      highlights: ["Hero section", "Navigazione", "Call to action", "Composizione visuale e stile grafico"],
-      image: "assets/projects/fitzone-preview.png",
-      imageAlt: "Screenshot della landing page FitZone",
-      imageWidth: 2560,
-      imageHeight: 1664,
-      imageVariant: "browser",
-      liveUrl: "projects/fitzone/",
-      legacyUrl: "gym-home.html",
-      githubUrl: "",
-      figmaUrl: "https://www.figma.com/proto/CgFRuCSFPFhb6KcRTZqYZa/Untitled?node-id=1-12&p=f&t=c04ReWw6m3h8teUK-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1"
+      "key": "ai",
+      "label": "Progetti AI / automation",
+      "description": "Progetti pensati per mostrare uso pratico di AI tools, automazioni e assistenti digitali applicati ad aziende reali o simulate."
     },
     {
-      id: "shoes-concept",
-      featured: false,
-      published: true,
-      title: "Shoes Concept \u2014 E-commerce sneaker",
-      badge: "Figma Concept",
-      category: "UI Design",
-      categoryKey: "ui",
-      filterCategories: [
-        { key: "ui", label: "UI Design" }
-      ],
-      description: "Concept creativo per uno store online di sneaker. Il progetto mostra una UI sperimentale, con attenzione a immagine prodotto, card, ricerca e navigazione.",
-      role: "UI Designer",
-      technologies: ["Figma"],
-      highlights: ["Layout e-commerce", "Card prodotto", "Stile visuale", "Navigazione e struttura della pagina"],
-      image: "assets/projects/shoes-preview.png",
-      imageAlt: "Mockup Figma del concept e-commerce Shoes",
-      imageWidth: 2576,
-      imageHeight: 3344,
-      imageVariant: "figma",
-      liveUrl: "",
-      githubUrl: "",
-      figmaUrl: "https://www.figma.com/proto/G09Tq8i37addPsCe293DVz/Untitled?t=ncBAfwnNsLpot8OY-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&node-id=2-2"
+      "key": "figma",
+      "label": "Progetti UI/Figma",
+      "description": "Concept grafici realizzati in Figma per mostrare studio dell'interfaccia, composizione visuale, gerarchia e prototipazione."
     },
     {
-      id: "registration-form",
-      featured: false,
-      published: true,
-      title: "Registration Form \u2014 Form responsive",
-      badge: "Frontend Practice",
-      category: "Frontend Component",
-      categoryKey: "frontend",
-      filterCategories: [
-        { key: "frontend", label: "Frontend Component" }
+      "key": "practice",
+      "label": "Practice / Frontend",
+      "description": "Esercizi e componenti frontend realizzati per consolidare HTML, CSS, responsive design e struttura delle interfacce."
+    }
+  ],
+  "projects": [
+    {
+      "id": "cm-pulizie",
+      "title": "C.M. Pulizie",
+      "type": "Sito web completo / Local business",
+      "description": "Sito web completo per un'impresa di pulizie a Napoli, progettato da Figma e sviluppato in codice con struttura multi-pagina, responsive design, modulo preventivo e automazioni per la gestione delle richieste.",
+      "longDescription": "Progetto completo nato da un prototipo Figma e trasformato in un sito web funzionante per C.M. Pulizie. Ho curato struttura delle pagine, gerarchia dei contenuti, interfaccia, responsive design, sezioni servizi, recensioni, contatti, WhatsApp, SEO base e pubblicazione su GitHub Pages. Il sito include un flusso preventivo collegato a Google Apps Script per salvare richieste, inviare email e generare PDF. In una fase successiva ho migliorato dati aziendali, footer legale, Privacy Policy, Cookie Policy base, checkbox privacy e validazione dei moduli, predisponendo sezioni informative più complete da far verificare a un consulente privacy o commercialista se necessario.",
+      "image": "assets/projects/cm-pulizie-preview.png",
+      "imageAlt": "Screenshot del sito C.M. Pulizie",
+      "tags": [
+        "Figma",
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "UI/UX",
+        "Responsive Design",
+        "Google Apps Script",
+        "Google Sheets",
+        "PDF Drive",
+        "Form validation",
+        "SEO base",
+        "GitHub Pages"
       ],
-      description: "Form di registrazione responsive con campi base, validazione HTML5 e stile scuro.",
-      role: "Frontend Developer",
-      technologies: ["HTML", "CSS"],
-      highlights: ["Struttura del form", "Input e checkbox", "Validazione HTML5", "Responsive design e stile visuale"],
-      image: "assets/projects/registration-preview.png",
-      imageAlt: "Screenshot del form di registrazione responsive",
-      imageWidth: 1082,
-      imageHeight: 684,
-      imageVariant: "browser",
-      liveUrl: "projects/registration-form/",
-      legacyUrl: "registration.html",
-      githubUrl: "",
-      figmaUrl: ""
+      "badge": "Sito web completo",
+      "status": "Pubblicato",
+      "featured": true,
+      "published": true,
+      "priority": 1,
+      "order": 1,
+      "group": "main",
+      "groupLabel": "Progetti principali",
+      "liveUrl": "https://vincenzomec97-ship-it.github.io/cm-pulizie/",
+      "githubUrl": "https://github.com/vincenzomec97-ship-it/cm-pulizie",
+      "figmaUrl": "https://www.figma.com/proto/Qlefn1I3qe1WEOijl20qUR/Untitledt=QmHGINTnjDozetfi-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&node-id=1-75",
+      "year": "2026",
+      "category": "Sito web completo / Local business"
+    },
+    {
+      "id": "english-quiz-lab",
+      "title": "English Quiz Lab",
+      "type": "AI Web App / Educational Platform",
+      "description": "Web app full-stack per creare, revisionare, pubblicare e svolgere quiz di inglese generati con AI, con flussi dedicati a docenti e studenti.",
+      "longDescription": "Genera quiz strutturati con Gemini usando PDF, immagini, audio e video. Il sistema valida il JSON prima del rendering, gestisce ruoli e approvazioni, salva fonti e risultati su Supabase e calcola il punteggio in sicurezza lato server.",
+      "image": "assets/projects/english-quiz-lab-preview.png",
+      "imageAlt": "Schermata di accesso dell'app English Quiz Lab",
+      "tags": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Node.js",
+        "Google Gemini",
+        "Supabase",
+        "Supabase Edge Functions",
+        "RLS",
+        "Vercel"
+      ],
+      "badge": "AI Web App full-stack",
+      "status": "Pubblicato",
+      "featured": true,
+      "published": true,
+      "priority": 2,
+      "order": 2,
+      "group": "main",
+      "groupLabel": "Progetti principali",
+      "liveUrl": "https://english-quiz-lab-one.vercel.app/",
+      "githubUrl": "",
+      "figmaUrl": "",
+      "detailUrl": "projects/english-quiz-lab/",
+      "year": "2026",
+      "category": "AI Web App / Educational Platform"
+    },
+    {
+      "id": "fitzone",
+      "title": "Landing Page commerciale / FitZone palestra",
+      "type": "Marketing + Design + Web",
+      "description": "Landing page per palestra nata da concept Figma, pensata per mostrare struttura commerciale, hero, call to action, design responsive e comunicazione orientata alla conversione.",
+      "longDescription": "Progetto da completare: oggi mostra un concept e una base frontend utile per lavorare su messaggio, layout commerciale, call to action e responsive design.",
+      "image": "assets/projects/fitzone-preview.png",
+      "imageAlt": "Screenshot della landing page palestra FitZone",
+      "tags": [
+        "HTML",
+        "CSS",
+        "UI/UX",
+        "Responsive Design",
+        "Landing Page",
+        "Marketing"
+      ],
+      "badge": "Landing page",
+      "status": "Da completare / In sviluppo",
+      "featured": false,
+      "published": true,
+      "priority": 3,
+      "order": 3,
+      "group": "business",
+      "groupLabel": "Progetti business / marketing",
+      "liveUrl": "projects/fitzone/",
+      "githubUrl": "",
+      "figmaUrl": "https://www.figma.com/proto/CgFRuCSFPFhb6KcRTZqYZa/Untitlednode-id=1-12&p=f&t=c04ReWw6m3h8teUK-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1",
+      "year": "2026",
+      "category": "Marketing + Design + Web"
+    },
+    {
+      "id": "dashboard-clienti",
+      "title": "Dashboard clienti",
+      "type": "Business Dashboard",
+      "description": "Dashboard per gestire richieste preventivo, dati cliente, servizio richiesto, stato della trattativa, note interne e follow-up commerciale.",
+      "longDescription": "Progetto pianificato: servirà a mostrare gestione clienti, pipeline commerciale, stati di avanzamento e follow-up. La card è pronta per essere aggiornata quando demo, screenshot e repository saranno disponibili.",
+      "image": "",
+      "imageAlt": "Placeholder della Dashboard clienti pianificata",
+      "tags": [
+        "Dashboard",
+        "CRM",
+        "JavaScript",
+        "UI/UX",
+        "Business workflow"
+      ],
+      "badge": "Gestione richieste",
+      "status": "Da sviluppare",
+      "featured": false,
+      "published": true,
+      "priority": 4,
+      "order": 4,
+      "group": "business",
+      "groupLabel": "Progetti business / marketing",
+      "liveUrl": "",
+      "githubUrl": "",
+      "figmaUrl": "",
+      "year": "2026",
+      "category": "Business Dashboard"
+    },
+    {
+      "id": "chatbot-aziendale",
+      "title": "Chatbot aziendale",
+      "type": "AI / Automation",
+      "description": "Assistente digitale per attività locali, pensato per rispondere a domande sui servizi, guidare il cliente e raccogliere informazioni utili per una richiesta.",
+      "longDescription": "Progetto pianificato: sarà utile per mostrare uso pratico di AI tools e automazioni in un contesto aziendale locale. Non ha demo o link finché non verrà sviluppato.",
+      "image": "",
+      "imageAlt": "Placeholder del Chatbot aziendale pianificato",
+      "tags": [
+        "AI Assistant",
+        "Automation",
+        "Prompt",
+        "Customer support",
+        "Lead collection"
+      ],
+      "badge": "AI Assistant",
+      "status": "Da sviluppare",
+      "featured": false,
+      "published": true,
+      "priority": 5,
+      "order": 5,
+      "group": "ai",
+      "groupLabel": "Progetti AI / automation",
+      "liveUrl": "",
+      "githubUrl": "",
+      "figmaUrl": "",
+      "year": "2026",
+      "category": "AI / Automation"
+    },
+    {
+      "id": "shoes-concept",
+      "title": "Shoes Concept",
+      "type": "UI Design / Figma Concept",
+      "description": "Concept grafico per uno store online di sneaker, creato per studiare card prodotto, navigazione, ricerca e composizione visuale.",
+      "longDescription": "Concept solo Figma: non viene presentato come progetto sviluppato in codice, ma come esercizio di interfaccia, gerarchia visiva e prototipazione.",
+      "image": "assets/projects/shoes-preview.png",
+      "imageAlt": "Mockup Figma del concept e-commerce Shoes",
+      "tags": [
+        "Figma",
+        "UI Design",
+        "E-commerce",
+        "Visual Design",
+        "Prototype"
+      ],
+      "badge": "Figma Concept",
+      "status": "Figma Concept",
+      "featured": false,
+      "published": true,
+      "priority": 6,
+      "order": 6,
+      "group": "figma",
+      "groupLabel": "Progetti UI/Figma",
+      "liveUrl": "",
+      "githubUrl": "",
+      "figmaUrl": "https://www.figma.com/proto/G09Tq8i37addPsCe293DVz/Untitledt=ncBAfwnNsLpot8OY-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&node-id=2-2",
+      "year": "2026",
+      "category": "UI/Figma"
+    },
+    {
+      "id": "cleaning-figma-concept",
+      "title": "C.M. Pulizie - Figma Concept",
+      "type": "UI Design / Figma Concept",
+      "description": "Concept Figma del sito C.M. Pulizie, utile per mostrare studio dell'interfaccia, sezioni informative e priorità dei contenuti.",
+      "longDescription": "Concept solo Figma collegato alla fase di progettazione visuale: mostra struttura, componenti e gerarchia prima dello sviluppo del sito.",
+      "image": "assets/progetto-figma-2.png",
+      "imageAlt": "Concept Figma del sito C.M. Pulizie",
+      "tags": [
+        "Figma",
+        "UI Design",
+        "Web Design",
+        "Prototype",
+        "Local business"
+      ],
+      "badge": "Figma Concept",
+      "status": "Figma Concept",
+      "featured": false,
+      "published": true,
+      "priority": 7,
+      "order": 7,
+      "group": "figma",
+      "groupLabel": "Progetti UI/Figma",
+      "liveUrl": "",
+      "githubUrl": "",
+      "figmaUrl": "https://www.figma.com/proto/Qlefn1I3qe1WEOijl20qUR/Untitledt=QmHGINTnjDozetfi-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&node-id=1-75",
+      "year": "2026",
+      "category": "UI/Figma"
+    },
+    {
+      "id": "fitness-figma-concept",
+      "title": "Fitness Landing - Figma Concept",
+      "type": "UI Design / Figma Concept",
+      "description": "Concept Figma per landing page fitness, focalizzato su composizione visuale, tono energico, hero section e call to action.",
+      "longDescription": "Concept solo Figma: mostra studio di layout, colori, spaziature e direzione visuale per una landing page commerciale.",
+      "image": "assets/progetto-figma-3.png",
+      "imageAlt": "Concept Figma per landing page fitness",
+      "tags": [
+        "Figma",
+        "UI Design",
+        "Landing Page",
+        "Visual Design",
+        "Prototype"
+      ],
+      "badge": "Figma Concept",
+      "status": "Figma Concept",
+      "featured": false,
+      "published": true,
+      "priority": 8,
+      "order": 8,
+      "group": "figma",
+      "groupLabel": "Progetti UI/Figma",
+      "liveUrl": "",
+      "githubUrl": "",
+      "figmaUrl": "https://www.figma.com/proto/CgFRuCSFPFhb6KcRTZqYZa/Untitlednode-id=1-12&p=f&t=c04ReWw6m3h8teUK-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1",
+      "year": "2026",
+      "category": "UI/Figma"
+    },
+    {
+      "id": "registration-form",
+      "title": "Pagina registrazione / Registration Form",
+      "type": "Practice / Frontend",
+      "description": "Pagina di registrazione responsive con campi base, validazione HTML5 e stile curato.",
+      "longDescription": "Esercizio frontend realizzato per consolidare struttura HTML, styling CSS, gestione dei campi form, validazione nativa e responsive design.",
+      "image": "assets/projects/registration-preview.png",
+      "imageAlt": "Screenshot del form di registrazione responsive",
+      "tags": [
+        "HTML",
+        "CSS",
+        "Form",
+        "Responsive Design",
+        "Validazione HTML5"
+      ],
+      "badge": "Frontend Practice",
+      "status": "Completato",
+      "featured": false,
+      "published": true,
+      "priority": 9,
+      "order": 9,
+      "group": "practice",
+      "groupLabel": "Practice / Frontend",
+      "liveUrl": "projects/registration-form/",
+      "githubUrl": "",
+      "figmaUrl": "",
+      "year": "2026",
+      "category": "Practice / Frontend"
     }
   ]
 };
-
 window.portfolioProjects = window.portfolioProjectFallback.projects;
