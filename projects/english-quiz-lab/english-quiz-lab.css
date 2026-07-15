@@ -4,7 +4,7 @@
 .detail-hero h1 { margin: 18px 0; color: var(--white); font-size: clamp(2.8rem, 7vw, 5.8rem); line-height: .98; }
 .detail-lead { max-width: 620px; color: var(--color-text-muted); font-size: clamp(1.1rem, 2vw, 1.35rem); }
 .detail-actions { margin-top: 26px; }
-.detail-hero img { border: 1px solid rgba(var(--white-rgb), .18); border-radius: var(--radius); box-shadow: var(--shadow-strong); }
+.detail-hero img { width: min(100%, 620px); height: auto; margin-inline: auto; justify-self: center; border: 1px solid rgba(var(--white-rgb), .18); border-radius: var(--radius); box-shadow: var(--shadow-strong); }
 .detail-grid h2 { margin: 10px 0 16px; color: var(--night); font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.05; }
 .detail-grid article p { color: var(--muted); font-size: 1.08rem; }
 .detail-facts { display: grid; gap: 1px; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius); background: var(--line); box-shadow: var(--shadow); }
