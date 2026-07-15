@@ -982,6 +982,17 @@ textarea:focus-visible {
   margin-top: 28px;
 }
 
+.case-study-secondary {
+  margin-top: clamp(56px, 8vw, 88px);
+  padding-top: clamp(48px, 7vw, 72px);
+  border-top: 1px solid var(--line);
+}
+
+.case-study-secondary .center-action {
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
 .process-list {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));

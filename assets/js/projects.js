@@ -108,6 +108,7 @@ window.portfolioProjectFallback = {
       "group": "main",
       "groupLabel": "Progetti principali",
       "liveUrl": "https://english-quiz-lab-one.vercel.app/",
+      "liveLabel": "Visita l’app",
       "githubUrl": "",
       "figmaUrl": "",
       "detailUrl": "projects/english-quiz-lab/",

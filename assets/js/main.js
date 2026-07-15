@@ -142,7 +142,7 @@ const createProjectLinks = (project) => {
 
   if (project.liveUrl) {
     links.push({
-      label: project.id === "english-quiz-lab" ? "Demo" : "Vedi sito",
+      label: project.liveLabel || "Vedi sito",
       href: project.liveUrl,
       variant: project.id === "english-quiz-lab" ? "secondary" : (project.featured ? "primary" : "secondary")
     });
