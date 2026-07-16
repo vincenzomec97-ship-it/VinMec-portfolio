@@ -1784,6 +1784,29 @@ body::before {
   color: var(--color-text-muted);
 }
 
+.form-note {
+  margin: 0 0 4px;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.project-card:not(.project-featured) {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 100%;
+}
+
+.project-card:not(.project-featured) .project-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:not(.project-featured) .project-actions,
+.project-card:not(.project-featured) .project-status-note {
+  margin-top: auto;
+  padding-top: 22px;
+}
+
 .site-footer {
   background: var(--color-bg);
   border-top: 1px solid var(--color-border);
@@ -1863,13 +1886,15 @@ body::before {
     box-shadow: var(--shadow-strong);
     backdrop-filter: blur(18px);
     opacity: 0;
+    visibility: hidden;
     pointer-events: none;
     transform: translateY(-8px);
-    transition: opacity 0.2s ease, transform 0.2s ease;
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
   }
 
   .site-header.is-open .nav-menu {
     opacity: 1;
+    visibility: visible;
     pointer-events: auto;
     transform: translateY(0);
   }
