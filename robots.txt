@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vincenzomec97-ship-it.github.io/VinMec-portfolio/sitemap.xml

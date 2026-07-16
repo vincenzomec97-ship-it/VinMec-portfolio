@@ -80,7 +80,7 @@ const createProjectDetail = (label, value) => {
 };
 
 const getFallbackProjects = () => {
-  if (window.portfolioProjectFallback.projects) {
+  if (window.portfolioProjectFallback?.projects) {
     return window.portfolioProjectFallback.projects;
   }
 
@@ -98,12 +98,12 @@ const defaultProjectGroups = [
   {
     key: "main",
     label: "Progetti principali",
-    description: "I progetti pi forti del portfolio: uno orientato a un sito web completo per attivit reale e uno orientato a web app educativa, AI e logica applicativa."
+    description: "I progetti più completi del portfolio: un sito per un'attività locale e una web app educativa con AI e logica applicativa."
   },
   {
     key: "business",
     label: "Progetti business / marketing",
-    description: "Progetti pensati per mostrare mentalit aziendale, lead generation, landing page, conversione e gestione clienti."
+    description: "Progetti che mostrano struttura commerciale, landing page, acquisizione contatti e gestione clienti."
   },
   {
     key: "ai",
@@ -197,7 +197,7 @@ const normalizeProject = (project) => {
 
 const getFallbackProjectData = () => ({
   projects: getFallbackProjects(),
-  groups: window.portfolioProjectFallback.groups || defaultProjectGroups
+  groups: window.portfolioProjectFallback?.groups || defaultProjectGroups
 });
 
 const loadProjectData = async () => {
@@ -253,10 +253,7 @@ const createProjectMedia = (project) => {
   image.alt = project.image.alt;
   image.width = project.image.width;
   image.height = project.image.height;
-  image.loading = project.featured ? "eager" : "lazy";
-  if (project.featured) {
-    image.fetchPriority = "high";
-  }
+  image.loading = "lazy";
   image.decoding = "async";
   image.addEventListener("error", () => {
     image.remove();
@@ -290,10 +287,10 @@ const createProjectCard = (project) => {
   content.append(createNode("p", "", project.description));
 
   const details = createNode("dl", project.featured ? "project-details" : "project-details compact");
-  details.append(
-    createProjectDetail("Tecnologie", project.tags.join(", ")),
-    createProjectDetail(project.featured ? "Dettaglio" : "Focus", project.longDescription || project.description)
-  );
+  details.append(createProjectDetail("Tecnologie", project.tags.join(", ")));
+  if (project.featured) {
+    details.append(createProjectDetail("Dettaglio", project.longDescription || project.description));
+  }
 
   const actions = createNode("div", "project-actions");
   project.links.forEach((link) => {

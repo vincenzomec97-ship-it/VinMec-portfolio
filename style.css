@@ -41,6 +41,7 @@ body {
   backdrop-filter: blur(8px);
 }
 
+h1,
 h2 {
   margin: 0 0 20px;
   color: var(--yellow);
@@ -172,6 +173,7 @@ input:focus-visible {
     padding: 22px 18px;
   }
 
+  h1,
   h2 {
     font-size: 1.42rem;
   }
