@@ -1,232 +1,856 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="it">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>FitZone | Prototipo landing page di Vincenzo Meccariello</title>
-  <meta name="description" content="Prototipo responsive di una landing page per palestra, realizzato per studiare struttura commerciale, call to action e sviluppo frontend.">
-  <link rel="canonical" href="https://vincenzomec97-ship-it.github.io/VinMec-portfolio/projects/fitzone/">
-  <link rel="icon" href="../../assets/brand/favicon.svg" type="image/svg+xml">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Scopri FitZone: allenamenti personalizzati, corsi di gruppo e coach qualificati. Prenota la tua prova gratuita." />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="it_IT" />
+    <meta property="og:title" content="FitZone | Palestra, corsi e personal training" />
+    <meta property="og:description" content="Allenamenti personalizzati, corsi di gruppo e coach qualificati. Prenota la tua prova gratuita." />
+    <meta property="og:image" content="assets/images/athlete.png" />
+    <meta property="og:image:alt" content="Atleta FitZone durante un allenamento con manubri" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="FitZone | Palestra, corsi e personal training" />
+    <meta name="twitter:description" content="Landing page portfolio per una palestra immaginaria, sviluppata da un design Figma." />
+    <meta name="twitter:image" content="assets/images/athlete.png" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#010101" />
+    <title>FitZone | Palestra, corsi e personal training</title>
+    <link rel="icon" href="assets/images/logo.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Piedra&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#contenuto">Vai al contenuto principale</a>
+    <header class="site-header">
+      <nav class="navbar" aria-label="Navigazione principale">
+        <a class="brand" href="#home" aria-label="FitZone, torna alla pagina iniziale">
+          <img src="assets/images/logo.png" alt="" width="61" height="44" />
+        </a>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Piedra&display=swap" rel="stylesheet">
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu">
+          <span class="sr-only">Apri il menu</span>
+          <span></span><span></span><span></span>
+        </button>
 
-  <style>
-    :root {
-      --brand: #f6b81a;
-      --black: #0b0b0b;
-      --white: #fff;
-    }
+        <div class="nav-links" id="main-menu">
+          <a class="nav-link nav-link--dark" href="#home">Home</a>
+          <a class="nav-link nav-link--dark" href="#corsi">Corsi</a>
+          <a class="nav-link nav-link--dark" href="#coach">Coach</a>
+          <a href="#prezzi">Prezzi</a>
+          <a href="#orari">Orari</a>
+          <a href="#contatti">Contatti</a>
+        </div>
+      </nav>
+    </header>
 
-    * { box-sizing: border-box; }
+    <main id="contenuto">
+      <section class="hero" id="home" aria-labelledby="hero-title">
+        <div class="hero-content">
+          <h1 id="hero-title">Costruisci la tua<br />versione migliore</h1>
+          <p class="hero-copy">Ogni obbiettivo inizia con un passo. Fallo con noi: allenamenti personalizzati, istruttori qualificati e orari flessibili.</p>
 
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: var(--black);
-      color: var(--white);
-    }
+          <div class="hero-actions">
+            <a class="button button--primary" href="#iscrizione">Inizia ora <span aria-hidden="true">&gt;&gt;</span></a>
+            <button class="video-button" type="button" data-video-trigger>
+              <span class="play-icon"><img src="assets/images/play.png" alt="" /></span>
+              <span>Watch Video</span>
+            </button>
+          </div>
 
-    /* ===== NAVBAR ===== */
-    .nav-wrap {
-      display: flex;
-      justify-content: center;
-      background: var(--brand);
-      border-radius: 999px;
-      margin: 20px auto;
-      padding: 10px 30px;
-      width: fit-content;
-    }
+          <div class="reviews" aria-label="Valutazione: 5 stelle, 2.700 recensioni">
+            <div class="reviewers" aria-hidden="true">
+              <img src="assets/images/reviewer-1.png" alt="" />
+              <img src="assets/images/reviewer-2.png" alt="" />
+              <img src="assets/images/reviewer-3.png" alt="" />
+              <img src="assets/images/reviewer-4.png" alt="" />
+            </div>
+            <img class="stars" src="assets/images/stars.svg" alt="" />
+            <p>2.7 k reviews</p>
+          </div>
+        </div>
 
-    .nav {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
+        <div class="hero-visual">
+          <img src="assets/images/athlete.png" alt="Atleta che si allena con due manubri in palestra" fetchpriority="high" />
+        </div>
+      </section>
 
-    .nav img {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      border: 2px solid #000;
-    }
+      <section class="journey-section" id="metodo" aria-labelledby="journey-title">
+        <div class="journey-container">
+          <header class="journey-heading">
+            <p class="journey-eyebrow">Il tuo cambiamento inizia oggi.</p>
+            <h2 id="journey-title">Un percorso costruito intorno a te</h2>
+            <p>Allenarti senza un piano può creare confusione e rendere difficile mantenere la costanza. Per questo partiamo dai tuoi obiettivi, dal tuo livello e dal tempo che hai davvero a disposizione.</p>
+          </header>
 
-    .nav a {
-      color: #000;
-      text-decoration: none;
-      font-weight: 800;
-      padding: 8px 18px;
-      border-radius: 999px;
-      transition: 0.2s;
-    }
+          <ol class="journey-steps" aria-label="Il metodo FitZone in quattro passaggi">
+            <li><span>01</span><strong>Conosciamo i tuoi obiettivi</strong><p>Ascoltiamo esigenze, abitudini e risultati che vuoi raggiungere, senza giudizio.</p></li>
+            <li><span>02</span><strong>Valutiamo il tuo livello</strong><p>Definiamo un punto di partenza adatto anche a chi non si è mai allenato.</p></li>
+            <li><span>03</span><strong>Creiamo il programma</strong><p>Costruiamo un percorso concreto, sostenibile e compatibile con i tuoi tempi.</p></li>
+            <li><span>04</span><strong>Controlliamo i progressi</strong><p>I coach verificano il percorso e lo adattano quando le tue esigenze cambiano.</p></li>
+          </ol>
 
-    .nav a:hover {
-      background: #000;
-      color: var(--brand);
-    }
+          <a class="journey-cta" href="#iscrizione">Voglio iniziare <span aria-hidden="true">→</span></a>
+        </div>
+      </section>
 
-    /* ===== HERO SECTION ===== */
-    .hero {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 60px 10%;
-      position: relative;
-      overflow: hidden;
-    }
+      <section class="courses-section" id="corsi" aria-labelledby="courses-title">
+        <div class="courses-container">
+          <header class="courses-heading">
+            <p class="courses-eyebrow">Allenati. Evolvi. Supera i tuoi limiti.</p>
+            <h2 id="courses-title">I nostri corsi</h2>
+            <p>Scegli il percorso più adatto ai tuoi obiettivi e porta il tuo allenamento al livello successivo.</p>
+          </header>
 
-    /* Macchia gialla dietro */
-    .hero::before {
-      content: "";
-      position: absolute;
-      top: -10%;
-      right: -15%;
-      width: 70%;
-      height: 130%;
-      background: var(--brand);
-      clip-path: ellipse(60% 60% at 70% 50%);
-      z-index: 0;
-    }
+          <div class="courses-grid">
+            <article class="course-card">
+              <div class="course-card__media course-card__media--weights" role="img" aria-label="Atleta durante un allenamento con bilanciere in sala pesi"></div>
+              <div class="course-card__body">
+                <h3>Sala pesi</h3>
+                <p>Sviluppa forza e massa muscolare con attrezzatura completa e allenamenti progressivi.</p>
+                <dl class="course-card__details">
+                  <div><dt>Livello</dt><dd>Tutti i livelli</dd></div>
+                  <div><dt>Durata</dt><dd>60 min</dd></div>
+                </dl>
+                <a class="course-card__link" href="#iscrizione" aria-label="Scopri il corso Sala pesi">Scopri il corso <span aria-hidden="true">→</span></a>
+              </div>
+            </article>
 
-    .hero-inner {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 60px;
-      width: 100%;
-    }
+            <article class="course-card">
+              <div class="course-card__media course-card__media--functional" role="img" aria-label="Atleta durante un allenamento functional con battle rope"></div>
+              <div class="course-card__body">
+                <h3>Functional training</h3>
+                <p>Migliora potenza, mobilità e resistenza con esercizi dinamici per tutto il corpo.</p>
+                <dl class="course-card__details">
+                  <div><dt>Livello</dt><dd>Intermedio</dd></div>
+                  <div><dt>Durata</dt><dd>50 min</dd></div>
+                </dl>
+                <a class="course-card__link" href="#iscrizione" aria-label="Scopri il corso Functional training">Scopri il corso <span aria-hidden="true">→</span></a>
+              </div>
+            </article>
 
-    .hero-text {
-      max-width: 520px;
-    }
+            <article class="course-card">
+              <div class="course-card__media course-card__media--cross" role="img" aria-label="Atleta durante un esercizio di cross training su box"></div>
+              <div class="course-card__body">
+                <h3>Cross training</h3>
+                <p>Affronta circuiti ad alta intensità che combinano forza, agilità e condizionamento.</p>
+                <dl class="course-card__details">
+                  <div><dt>Livello</dt><dd>Intermedio</dd></div>
+                  <div><dt>Durata</dt><dd>55 min</dd></div>
+                </dl>
+                <a class="course-card__link" href="#iscrizione" aria-label="Scopri il corso Cross training">Scopri il corso <span aria-hidden="true">→</span></a>
+              </div>
+            </article>
 
-    .hero-text h1 {
-      font-family: 'Piedra', cursive;
-      font-size: 60px;
-      color: var(--brand);
-      line-height: 1.1;
-      margin: 0 0 20px;
-      text-shadow: 0 3px 4px rgba(0, 0, 0, 0.6);
-    }
+            <article class="course-card">
+              <div class="course-card__media course-card__media--spinning" role="img" aria-label="Atleta durante una sessione di spinning indoor"></div>
+              <div class="course-card__body">
+                <h3>Spinning</h3>
+                <p>Pedala al ritmo della musica e allena fiato e gambe in una sessione ad alta energia.</p>
+                <dl class="course-card__details">
+                  <div><dt>Livello</dt><dd>Tutti i livelli</dd></div>
+                  <div><dt>Durata</dt><dd>45 min</dd></div>
+                </dl>
+                <a class="course-card__link" href="#iscrizione" aria-label="Scopri il corso Spinning">Scopri il corso <span aria-hidden="true">→</span></a>
+              </div>
+            </article>
 
-    .hero-text p {
-      font-size: 18px;
-      line-height: 1.6;
-      color: #eaeaea;
-      margin-bottom: 30px;
-    }
+            <article class="course-card">
+              <div class="course-card__media course-card__media--yoga" role="img" aria-label="Atleta durante una pratica di yoga in palestra"></div>
+              <div class="course-card__body">
+                <h3>Yoga</h3>
+                <p>Ritrova equilibrio, mobilità e concentrazione attraverso respiro e movimento consapevole.</p>
+                <dl class="course-card__details">
+                  <div><dt>Livello</dt><dd>Principiante</dd></div>
+                  <div><dt>Durata</dt><dd>60 min</dd></div>
+                </dl>
+                <a class="course-card__link" href="#iscrizione" aria-label="Scopri il corso Yoga">Scopri il corso <span aria-hidden="true">→</span></a>
+              </div>
+            </article>
 
-    .actions {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
+            <article class="course-card">
+              <div class="course-card__media course-card__media--personal" role="img" aria-label="Personal trainer che segue una cliente durante un esercizio"></div>
+              <div class="course-card__body">
+                <h3>Personal training</h3>
+                <p>Segui un programma su misura con un coach dedicato ai tuoi obiettivi e progressi.</p>
+                <dl class="course-card__details">
+                  <div><dt>Livello</dt><dd>Personalizzato</dd></div>
+                  <div><dt>Durata</dt><dd>60 min</dd></div>
+                </dl>
+                <a class="course-card__link" href="#iscrizione" aria-label="Scopri il corso Personal training">Scopri il corso <span aria-hidden="true">→</span></a>
+              </div>
+            </article>
+          </div>
+          <button class="section-toggle" type="button" data-section-toggle="courses-grid" aria-expanded="false">Mostra tutti i corsi <span aria-hidden="true">↓</span></button>
+        </div>
+      </section>
 
-    .btn {
-      background: var(--brand);
-      color: #000;
-      font-weight: 800;
-      padding: 12px 24px;
-      border-radius: 999px;
-      text-decoration: none;
-      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
-      transition: 0.3s;
-    }
+      <section class="benefits-section" id="perche-noi" aria-labelledby="benefits-title">
+        <div class="benefits-container">
+          <header class="benefits-heading">
+            <p class="benefits-eyebrow">La tua crescita, la nostra missione.</p>
+            <h2 id="benefits-title">Perché scegliere noi</h2>
+            <p>Ogni dettaglio di FitZone è pensato per aiutarti ad allenarti meglio, con costanza e in totale sicurezza.</p>
+          </header>
 
-    .btn:hover {
-      filter: brightness(0.9);
-    }
+          <div class="benefits-grid">
+            <article class="benefit-card">
+              <div class="benefit-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48" focusable="false"><path d="M24 5 30 9l7-1 2 7 5 5-5 5-2 7-7-1-6 4-6-4-7 1-2-7-5-5 5-5 2-7 7 1 6-4Z"/><path d="m17 20 5 5 10-11"/></svg>
+              </div>
+              <p class="benefit-card__number">01</p>
+              <h3>Istruttori qualificati</h3>
+              <p>Professionisti preparati ti seguono con competenza, attenzione e indicazioni sempre chiare.</p>
+            </article>
 
-    .play {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--brand);
-      font-weight: 700;
-      text-decoration: none;
-    }
+            <article class="benefit-card">
+              <div class="benefit-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48" focusable="false"><circle cx="24" cy="24" r="17"/><circle cx="24" cy="24" r="9"/><path d="M24 2v8M24 38v8M2 24h8M38 24h8"/></svg>
+              </div>
+              <p class="benefit-card__number">02</p>
+              <h3>Programmi personalizzati</h3>
+              <p>Percorsi costruiti sui tuoi obiettivi, sul livello di partenza e sui progressi raggiunti.</p>
+            </article>
 
-    .play span {
-      display: inline-block;
-      background: var(--brand);
-      color: #000;
-      border-radius: 50%;
-      padding: 5px 8px;
-      font-size: 14px;
-    }
+            <article class="benefit-card">
+              <div class="benefit-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48" focusable="false"><path d="M5 19v10M11 15v18M17 21v6M31 21v6M37 15v18M43 19v10M17 24h14"/></svg>
+              </div>
+              <p class="benefit-card__number">03</p>
+              <h3>Attrezzature moderne</h3>
+              <p>Spazi curati e macchinari di ultima generazione per allenamenti efficaci e confortevoli.</p>
+            </article>
 
-    /* ===== IMMAGINE ===== */
-    .hero-media {
-      width: 420px;
-      height: 420px;
-      border-radius: 50%;
-      border: 8px solid #000;
-      overflow: hidden;
-      flex-shrink: 0;
-      box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
-    }
+            <article class="benefit-card">
+              <div class="benefit-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48" focusable="false"><circle cx="24" cy="24" r="18"/><path d="M24 13v12l8 5"/></svg>
+              </div>
+              <p class="benefit-card__number">04</p>
+              <h3>Orari flessibili</h3>
+              <p>Accesso tutti i giorni, 24 ore su 24, per allenarti quando è davvero comodo per te.</p>
+            </article>
+          </div>
+        </div>
+      </section>
 
-    .hero-media img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+      <section class="coaches-section" id="coach" aria-labelledby="coaches-title">
+        <div class="coaches-container">
+          <header class="coaches-heading">
+            <p class="coaches-eyebrow">Esperienza. Metodo. Motivazione.</p>
+            <h2 id="coaches-title">I nostri coach</h2>
+            <p>Professionisti qualificati, pronti a guidarti con un metodo concreto e un supporto sempre presente.</p>
+          </header>
 
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 900px) {
-      .hero-inner {
-        flex-direction: column;
-        text-align: center;
-      }
-      .hero-text {
-        max-width: 100%;
-      }
-      .hero-media {
-        width: 280px;
-        height: 280px;
-        margin-top: 30px;
-      }
-      .hero-text h1 {
-        font-size: 40px;
-      }
-    }
-  </style>
-</head>
-<body>
+          <div class="coaches-grid">
+            <article class="coach-card">
+              <div class="coach-card__photo coach-card__photo--marco" role="img" aria-label="Ritratto del coach Marco Rinaldi in palestra"></div>
+              <div class="coach-card__content">
+                <p class="coach-card__specialty">Strength &amp; conditioning</p>
+                <h3>Marco Rinaldi</h3>
+                <p class="coach-card__experience"><strong>10 anni</strong> di esperienza</p>
+                <p>Aiuta ogni atleta a sviluppare forza, tecnica e sicurezza con programmi progressivi e misurabili.</p>
+                <nav class="coach-card__socials" aria-label="Profili social dimostrativi di Marco Rinaldi">
+                  <a href="#coach" aria-label="Instagram dimostrativo di Marco Rinaldi">IG</a>
+                  <a href="#coach" aria-label="Facebook dimostrativo di Marco Rinaldi">FB</a>
+                  <a href="#coach" aria-label="TikTok dimostrativo di Marco Rinaldi">TK</a>
+                </nav>
+              </div>
+            </article>
 
-  <!-- NAVBAR -->
-  <div class="nav-wrap">
-    <nav class="nav">
-      <img src="../../assets/logo.png" alt="Logo IronFit">
-      <a aria-disabled="true" title="Sezione non disponibile nel prototipo">Home</a>
-      <a aria-disabled="true" title="Sezione non disponibile nel prototipo">Corsi</a>
-      <a aria-disabled="true" title="Sezione non disponibile nel prototipo">Coach</a>
-      <a aria-disabled="true" title="Sezione non disponibile nel prototipo">Prezzi</a>
-      <a aria-disabled="true" title="Sezione non disponibile nel prototipo">Orari</a>
-      <a aria-disabled="true" title="Sezione non disponibile nel prototipo">Contatti</a>
-    </nav>
-  </div>
+            <article class="coach-card">
+              <div class="coach-card__photo coach-card__photo--giulia" role="img" aria-label="Ritratto della coach Giulia Ferri in palestra"></div>
+              <div class="coach-card__content">
+                <p class="coach-card__specialty">Yoga &amp; mobility</p>
+                <h3>Giulia Ferri</h3>
+                <p class="coach-card__experience"><strong>8 anni</strong> di esperienza</p>
+                <p>Unisce movimento, respirazione e mobilità per migliorare postura, equilibrio e benessere quotidiano.</p>
+                <nav class="coach-card__socials" aria-label="Profili social dimostrativi di Giulia Ferri">
+                  <a href="#coach" aria-label="Instagram dimostrativo di Giulia Ferri">IG</a>
+                  <a href="#coach" aria-label="Facebook dimostrativo di Giulia Ferri">FB</a>
+                  <a href="#coach" aria-label="TikTok dimostrativo di Giulia Ferri">TK</a>
+                </nav>
+              </div>
+            </article>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-text">
-        <h1>COSTRUISCI LA TUA VERSIONE MIGLIORE</h1>
-        <p>Ogni <strong>obiettivo</strong> inizia con un passo. Fallo con noi: allenamenti personalizzati, istruttori qualificati e orari flessibili.</p>
+            <article class="coach-card">
+              <div class="coach-card__photo coach-card__photo--luca" role="img" aria-label="Ritratto del coach Luca Moretti in palestra"></div>
+              <div class="coach-card__content">
+                <p class="coach-card__specialty">Boxe &amp; functional</p>
+                <h3>Luca Moretti</h3>
+                <p class="coach-card__experience"><strong>12 anni</strong> di esperienza</p>
+                <p>Costruisce allenamenti energici che migliorano resistenza, coordinazione e controllo del corpo.</p>
+                <nav class="coach-card__socials" aria-label="Profili social dimostrativi di Luca Moretti">
+                  <a href="#coach" aria-label="Instagram dimostrativo di Luca Moretti">IG</a>
+                  <a href="#coach" aria-label="Facebook dimostrativo di Luca Moretti">FB</a>
+                  <a href="#coach" aria-label="TikTok dimostrativo di Luca Moretti">TK</a>
+                </nav>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
 
-        <div class="actions">
-          <a href="#corsi" class="btn">Inizia ora >></a>
-          <a href="#video" class="play"><span>▶</span> Watch Video</a>
+      <section class="results-section" id="risultati" aria-labelledby="results-title">
+        <div class="results-container">
+          <header class="results-heading">
+            <p class="results-eyebrow">Un percorso concreto, al tuo ritmo.</p>
+            <h2 id="results-title">Piccoli passi. Risultati reali.</h2>
+            <p>Dati dimostrativi che raccontano l’esperienza FitZone, senza promesse di risultato o trasformazioni garantite.</p>
+          </header>
+
+          <dl class="results-stats" aria-label="I numeri dell'offerta FitZone">
+            <div>
+              <dt><strong>300+</strong> iscritti</dt>
+              <dd>Un dato dimostrativo della comunità che FitZone vuole costruire.</dd>
+            </div>
+            <div>
+              <dt><strong>20</strong> corsi</dt>
+              <dd>Appuntamenti settimanali dimostrativi per allenarsi con continuità.</dd>
+            </div>
+            <div>
+              <dt><strong>8</strong> coach</dt>
+              <dd>Numero dimostrativo di professionisti con competenze complementari.</dd>
+            </div>
+            <div>
+              <dt><strong>4,9</strong> su 5</dt>
+              <dd>Valutazione dimostrativa basata sulle recensioni facsimile.</dd>
+            </div>
+          </dl>
+
+          <div class="results-cta">
+            <div>
+              <p class="results-cta__eyebrow">Inizia senza pressioni</p>
+              <h3>Scopri se FitZone fa per te</h3>
+              <p>Prova gli spazi, conosci il team e valuta il percorso più adatto ai tuoi obiettivi.</p>
+            </div>
+            <a class="results-cta__button" href="#iscrizione">Prenota la prova gratuita <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="pricing-section" id="prezzi" aria-labelledby="pricing-title">
+        <div class="pricing-container">
+          <header class="pricing-heading">
+            <p class="pricing-eyebrow">Scegli il tuo ritmo.</p>
+            <h2 id="pricing-title">Prezzi</h2>
+            <p>Tre formule semplici per allenarti ogni giorno e trovare la continuità più adatta a te.</p>
+          </header>
+
+          <div class="pricing-grid">
+            <article class="pricing-card">
+              <header class="pricing-card__header">
+                <p class="pricing-card__duration">1 mese</p>
+                <h3>Mensile</h3>
+                <p class="pricing-card__price"><span aria-hidden="true">€</span><strong>70</strong><span>/mese</span></p>
+                <p class="pricing-card__saving">Massima flessibilità, nessun vincolo lungo</p>
+              </header>
+              <ul class="pricing-card__features">
+                <li>Accesso alla palestra 24/7</li>
+                <li>Sala pesi e attrezzature</li>
+                <li>Corsi di gruppo inclusi</li>
+                <li>Supporto dei coach in sala</li>
+              </ul>
+              <a class="pricing-card__button" href="#iscrizione" data-plan="mensile">Scegli mensile <span aria-hidden="true">→</span></a>
+            </article>
+
+            <article class="pricing-card">
+              <header class="pricing-card__header">
+                <p class="pricing-card__duration">3 mesi</p>
+                <h3>Trimestrale</h3>
+                <p class="pricing-card__price"><span aria-hidden="true">€</span><strong>160</strong><span>/trimestre</span></p>
+                <p class="pricing-card__saving"><strong>Circa €53/mese.</strong> Risparmi €50 rispetto a 3 rinnovi mensili.</p>
+              </header>
+              <ul class="pricing-card__features">
+                <li>Accesso alla palestra 24/7</li>
+                <li>Sala pesi e attrezzature</li>
+                <li>Corsi di gruppo inclusi</li>
+                <li>Supporto dei coach in sala</li>
+              </ul>
+              <a class="pricing-card__button" href="#iscrizione" data-plan="trimestrale">Scegli trimestrale <span aria-hidden="true">→</span></a>
+            </article>
+
+            <article class="pricing-card pricing-card--recommended">
+              <p class="pricing-card__badge">Consigliato · miglior valore</p>
+              <header class="pricing-card__header">
+                <p class="pricing-card__duration">12 mesi</p>
+                <h3>Annuale</h3>
+                <p class="pricing-card__price"><span aria-hidden="true">€</span><strong>350</strong><span>/anno</span></p>
+                <p class="pricing-card__saving"><strong>Circa €29/mese.</strong> Risparmi €490 rispetto a 12 rinnovi mensili.</p>
+              </header>
+              <ul class="pricing-card__features">
+                <li>Accesso alla palestra 24/7</li>
+                <li>Sala pesi e attrezzature</li>
+                <li>Corsi di gruppo inclusi</li>
+                <li>Supporto dei coach in sala</li>
+              </ul>
+              <a class="pricing-card__button" href="#iscrizione" data-plan="annuale">Scegli annuale <span aria-hidden="true">→</span></a>
+            </article>
+          </div>
+
+          <p class="pricing-note">Prezzi e servizi sono contenuti dimostrativi e dovranno essere confermati prima della pubblicazione.</p>
+        </div>
+      </section>
+
+      <section class="schedule-section" id="orari" aria-labelledby="schedule-title">
+        <div class="schedule-container">
+          <header class="schedule-heading">
+            <p class="schedule-eyebrow">Allenati quando vuoi.</p>
+            <h2 id="schedule-title">Orari</h2>
+            <p>La palestra è aperta 24 ore su 24, tutti i giorni. I corsi seguono il calendario settimanale indicativo.</p>
+          </header>
+
+          <div class="schedule-table-wrap">
+            <table class="schedule-table">
+              <caption>Orari settimanali e corsi principali FitZone</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Giorno</th>
+                  <th scope="col">Apertura</th>
+                  <th scope="col">Chiusura</th>
+                  <th scope="col">Corsi principali</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Lunedì</th>
+                  <td data-label="Apertura">00:00</td>
+                  <td data-label="Chiusura">24:00</td>
+                  <td data-label="Corsi principali"><span>Functional training</span><span>Yoga</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Martedì</th>
+                  <td data-label="Apertura">00:00</td>
+                  <td data-label="Chiusura">24:00</td>
+                  <td data-label="Corsi principali"><span>Spinning</span><span>Cross training</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Mercoledì</th>
+                  <td data-label="Apertura">00:00</td>
+                  <td data-label="Chiusura">24:00</td>
+                  <td data-label="Corsi principali"><span>Yoga</span><span>Functional training</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Giovedì</th>
+                  <td data-label="Apertura">00:00</td>
+                  <td data-label="Chiusura">24:00</td>
+                  <td data-label="Corsi principali"><span>Cross training</span><span>Spinning</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Venerdì</th>
+                  <td data-label="Apertura">00:00</td>
+                  <td data-label="Chiusura">24:00</td>
+                  <td data-label="Corsi principali"><span>Functional training</span><span>Yoga</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Sabato</th>
+                  <td data-label="Apertura">00:00</td>
+                  <td data-label="Chiusura">24:00</td>
+                  <td data-label="Corsi principali"><span>Spinning</span><span>Personal training</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Domenica</th>
+                  <td data-label="Apertura">00:00</td>
+                  <td data-label="Chiusura">24:00</td>
+                  <td data-label="Corsi principali"><span>Yoga</span><span>Sala pesi</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <button class="section-toggle" type="button" data-section-toggle="schedule-table" aria-expanded="false">Mostra tutta la settimana <span aria-hidden="true">↓</span></button>
+
+          <p class="schedule-note"><strong>Accesso palestra sempre attivo.</strong> Il calendario dei corsi è dimostrativo e potrà variare in base alla disponibilità dei coach.</p>
+        </div>
+      </section>
+
+      <section class="member-reviews-section" id="recensioni" aria-labelledby="member-reviews-title">
+        <div class="member-reviews-container">
+          <header class="member-reviews-heading">
+            <p class="member-reviews-eyebrow">Esperienze dalla community.</p>
+            <h2 id="member-reviews-title">Cosa dicono i nostri iscritti</h2>
+            <p>Tre esempi dimostrativi del tipo di esperienza che FitZone vuole offrire: supporto, continuità e allenamenti adatti alla persona.</p>
+          </header>
+
+          <div class="member-reviews-grid">
+            <figure class="member-review-card">
+              <span class="member-review-card__demo">Contenuto demo</span>
+              <div class="member-review-card__author">
+                <img src="assets/images/reviewer-1.png" alt="Ritratto dimostrativo di Martina" width="64" height="64" loading="lazy" decoding="async" />
+                <figcaption>
+                  <strong>Martina R.</strong>
+                  <span>Sala pesi</span>
+                </figcaption>
+              </div>
+              <div class="member-review-card__rating" aria-label="Valutazione dimostrativa: 5 stelle su 5">
+                <span aria-hidden="true">★★★★★</span>
+                <small>5.0</small>
+              </div>
+              <blockquote>“Ho iniziato con un programma adatto al mio livello e ora mi alleno con maggiore sicurezza e costanza.”</blockquote>
+            </figure>
+
+            <figure class="member-review-card">
+              <span class="member-review-card__demo">Contenuto demo</span>
+              <div class="member-review-card__author">
+                <img src="assets/images/reviewer-2.png" alt="Ritratto dimostrativo di Andrea" width="64" height="64" loading="lazy" decoding="async" />
+                <figcaption>
+                  <strong>Andrea L.</strong>
+                  <span>Functional training</span>
+                </figcaption>
+              </div>
+              <div class="member-review-card__rating" aria-label="Valutazione dimostrativa: 4 stelle su 5">
+                <span aria-hidden="true">★★★★<i>★</i></span>
+                <small>4.0</small>
+              </div>
+              <blockquote>“Le lezioni sono dinamiche e i coach spiegano ogni esercizio con attenzione, senza mettere pressione.”</blockquote>
+            </figure>
+
+            <figure class="member-review-card">
+              <span class="member-review-card__demo">Contenuto demo</span>
+              <div class="member-review-card__author">
+                <img src="assets/images/reviewer-3.png" alt="Ritratto dimostrativo di Chiara" width="64" height="64" loading="lazy" decoding="async" />
+                <figcaption>
+                  <strong>Chiara S.</strong>
+                  <span>Yoga</span>
+                </figcaption>
+              </div>
+              <div class="member-review-card__rating" aria-label="Valutazione dimostrativa: 5 stelle su 5">
+                <span aria-hidden="true">★★★★★</span>
+                <small>5.0</small>
+              </div>
+              <blockquote>“Gli orari flessibili e l'ambiente accogliente mi aiutano a mantenere l'allenamento nella mia routine.”</blockquote>
+            </figure>
+          </div>
+
+          <p class="member-reviews-note">Nomi, immagini, valutazioni e testi sono esempi dimostrativi da sostituire con recensioni autentiche e autorizzate prima della pubblicazione.</p>
+        </div>
+      </section>
+
+      <section class="trial-section" id="iscrizione" aria-labelledby="trial-title">
+        <div class="trial-container">
+          <div class="trial-intro">
+            <p class="trial-eyebrow">Il primo passo è semplice.</p>
+            <h2 id="trial-title">Fai il primo passo</h2>
+            <p>Lascia i tuoi dati. Ti ricontatteremo per organizzare la prova gratuita. Il modulo simula la richiesta senza inviare né conservare dati.</p>
+
+            <ul class="trial-benefits" aria-label="Cosa include la prova dimostrativa">
+              <li>Visita degli spazi FitZone</li>
+              <li>Confronto iniziale con un coach</li>
+              <li>Valutazione iniziale e indicazione del percorso più adatto</li>
+              <li>Nessun obbligo di iscrizione</li>
+            </ul>
+          </div>
+
+          <form class="trial-form" data-trial-form novalidate>
+            <p class="trial-form__notice"><strong>Simulazione sicura.</strong> La compilazione mostra il flusso e non trasmette alcun dato.</p>
+
+            <div class="trial-form__grid">
+              <div class="form-field form-field--full">
+                <label for="trial-plan">Piano di interesse</label>
+                <select id="trial-plan" name="plan" required aria-describedby="trial-plan-error">
+                  <option value="">Seleziona un piano</option>
+                  <option value="mensile">Mensile · €70</option>
+                  <option value="trimestrale">Trimestrale · €160</option>
+                  <option value="annuale">Annuale · €350</option>
+                </select>
+                <span class="form-error" id="trial-plan-error" data-error-for="trial-plan" aria-live="polite"></span>
+              </div>
+
+              <div class="form-field">
+                <label for="trial-name">Nome</label>
+                <input id="trial-name" name="name" type="text" autocomplete="given-name" minlength="2" maxlength="50" required aria-describedby="trial-name-error" placeholder="Es. Mario" />
+                <span class="form-error" id="trial-name-error" data-error-for="trial-name" aria-live="polite"></span>
+              </div>
+
+              <div class="form-field">
+                <label for="trial-surname">Cognome <span class="field-optional">(facoltativo)</span></label>
+                <input id="trial-surname" name="surname" type="text" autocomplete="family-name" maxlength="60" aria-describedby="trial-surname-error" placeholder="Es. Rossi" />
+                <span class="form-error" id="trial-surname-error" data-error-for="trial-surname" aria-live="polite"></span>
+              </div>
+
+              <div class="form-field">
+                <label for="trial-email">Email</label>
+                <input id="trial-email" name="email" type="email" autocomplete="email" maxlength="120" required aria-describedby="trial-email-error" placeholder="nome@esempio.it" />
+                <span class="form-error" id="trial-email-error" data-error-for="trial-email" aria-live="polite"></span>
+              </div>
+
+              <div class="form-field">
+                <label for="trial-phone">Telefono</label>
+                <input id="trial-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" pattern="[0-9+ .]{7,20}" maxlength="20" required aria-describedby="trial-phone-hint trial-phone-error" placeholder="Es. +39 02 0000 0000" />
+                <small class="form-hint" id="trial-phone-hint">Da 7 a 20 caratteri: numeri, spazi, + o punti.</small>
+                <span class="form-error" id="trial-phone-error" data-error-for="trial-phone" aria-live="polite"></span>
+              </div>
+
+              <div class="form-field">
+                <label for="trial-course">Corso di interesse <span class="field-optional">(facoltativo)</span></label>
+                <select id="trial-course" name="course" aria-describedby="trial-course-error">
+                  <option value="">Seleziona un corso</option>
+                  <option value="sala-pesi">Sala pesi</option>
+                  <option value="functional-training">Functional training</option>
+                  <option value="cross-training">Cross training</option>
+                  <option value="spinning">Spinning</option>
+                  <option value="yoga">Yoga</option>
+                  <option value="personal-training">Personal training</option>
+                </select>
+                <span class="form-error" id="trial-course-error" data-error-for="trial-course" aria-live="polite"></span>
+              </div>
+
+              <div class="form-field">
+                <label for="trial-time">Fascia oraria <span class="field-optional">(facoltativa)</span></label>
+                <select id="trial-time" name="time" aria-describedby="trial-time-error">
+                  <option value="">Seleziona una fascia</option>
+                  <option value="mattina">Mattina · 07:00–12:00</option>
+                  <option value="pomeriggio">Pomeriggio · 12:00–18:00</option>
+                  <option value="sera">Sera · 18:00–22:00</option>
+                </select>
+                <span class="form-error" id="trial-time-error" data-error-for="trial-time" aria-live="polite"></span>
+              </div>
+
+              <div class="form-field">
+                <label for="trial-day">Giorno preferito <span class="field-optional">(facoltativo)</span></label>
+                <select id="trial-day" name="day" aria-describedby="trial-day-error">
+                  <option value="">Seleziona un giorno</option>
+                  <option value="lunedi">Lunedì</option>
+                  <option value="martedi">Martedì</option>
+                  <option value="mercoledi">Mercoledì</option>
+                  <option value="giovedi">Giovedì</option>
+                  <option value="venerdi">Venerdì</option>
+                  <option value="sabato">Sabato</option>
+                  <option value="domenica">Domenica</option>
+                </select>
+                <span class="form-error" id="trial-day-error" data-error-for="trial-day" aria-live="polite"></span>
+              </div>
+
+              <div class="form-field">
+                <label for="trial-goal">Obiettivo</label>
+                <select id="trial-goal" name="goal" required aria-describedby="trial-goal-error">
+                  <option value="">Seleziona un obiettivo</option>
+                  <option value="iniziare">Iniziare ad allenarmi</option>
+                  <option value="dimagrire">Dimagrire e tonificare</option>
+                  <option value="forza">Migliorare forza e forma fisica</option>
+                  <option value="benessere">Migliorare mobilità e benessere</option>
+                  <option value="prestazione">Preparazione atletica</option>
+                </select>
+                <span class="form-error" id="trial-goal-error" data-error-for="trial-goal" aria-live="polite"></span>
+              </div>
+
+              <div class="form-field form-field--full">
+                <label for="trial-message">Messaggio <span class="field-optional">(facoltativo)</span></label>
+                <textarea id="trial-message" name="message" rows="4" maxlength="500" aria-describedby="trial-message-hint trial-message-error" placeholder="Raccontaci brevemente cosa stai cercando."></textarea>
+                <small class="form-hint" id="trial-message-hint">Massimo 500 caratteri.</small>
+                <span class="form-error" id="trial-message-error" data-error-for="trial-message" aria-live="polite"></span>
+              </div>
+
+              <div class="form-field form-field--full form-field--privacy">
+                <div class="privacy-control">
+                  <input id="trial-privacy" name="privacy" type="checkbox" required aria-describedby="trial-privacy-hint trial-privacy-error" />
+                  <label for="trial-privacy">Ho letto e accetto l’informativa sulla privacy.</label>
+                </div>
+                <small class="form-hint" id="trial-privacy-hint">I dati saranno utilizzati esclusivamente per ricontattarti in merito alla prova gratuita. In questa demo non vengono trasmessi né conservati.</small>
+                <span class="form-error" id="trial-privacy-error" data-error-for="trial-privacy" aria-live="polite"></span>
+              </div>
+            </div>
+
+            <button class="trial-form__submit" type="submit" data-submit-button>
+              <span data-submit-label>Invia richiesta demo</span><span aria-hidden="true">→</span>
+            </button>
+            <p class="trial-form__confirmation" data-form-confirmation role="status" aria-live="polite" tabindex="-1" hidden>Richiesta ricevuta! Ti ricontatteremo presto per organizzare la tua prova gratuita.</p>
+          </form>
+        </div>
+      </section>
+
+      <section class="faq-section" id="faq" aria-labelledby="faq-title">
+        <div class="faq-container">
+          <header class="faq-heading">
+            <p class="faq-eyebrow">Tutto quello che vuoi sapere.</p>
+            <h2 id="faq-title">Domande frequenti</h2>
+            <p>Le informazioni essenziali per iniziare il tuo percorso FitZone con maggiore consapevolezza.</p>
+          </header>
+
+          <div class="faq-list">
+            <details class="faq-item" name="fitzone-faq" open>
+              <summary>La prova è davvero gratuita?</summary>
+              <div class="faq-item__answer">
+                <p>Sì. Puoi compilare il modulo dimostrativo presente nella pagina per scegliere il corso e la fascia oraria che preferisci. La prenotazione reale sarà attivata prima della pubblicazione.</p>
+              </div>
+            </details>
+
+            <details class="faq-item" name="fitzone-faq">
+              <summary>Devo essere già allenato?</summary>
+              <div class="faq-item__answer">
+                <p>No. I corsi prevedono percorsi adatti anche a chi parte da zero. Il coach ti aiuterà a individuare livello, intensità e progressioni appropriate.</p>
+              </div>
+            </details>
+
+            <details class="faq-item" name="fitzone-faq">
+              <summary>Posso allenarmi anche se sono principiante?</summary>
+              <div class="faq-item__answer">
+                <p>Sì. La valutazione iniziale serve proprio a scegliere intensità, esercizi e progressioni coerenti con il tuo livello di partenza.</p>
+              </div>
+            </details>
+
+            <details class="faq-item" name="fitzone-faq">
+              <summary>Quanto dura una sessione?</summary>
+              <div class="faq-item__answer">
+                <p>Le sessioni mostrate nella sezione corsi durano indicativamente da 45 a 60 minuti. Il calendario definitivo sarà confermato dal futuro gestore.</p>
+              </div>
+            </details>
+
+            <details class="faq-item" name="fitzone-faq">
+              <summary>Sono disponibili personal trainer?</summary>
+              <div class="faq-item__answer">
+                <p>Il supporto generale dei coach in sala è incluso nei piani mostrati. Il personal training individuale è un servizio dedicato: disponibilità, prenotazione ed eventuali costi saranno confermati dal gestore.</p>
+              </div>
+            </details>
+
+            <details class="faq-item" name="fitzone-faq">
+              <summary>Posso partecipare ai corsi di gruppo?</summary>
+              <div class="faq-item__answer">
+                <p>Sì. Functional training, cross training, spinning e yoga sono proposte pensate anche per allenarsi in gruppo, con livelli e disponibilità da confermare.</p>
+              </div>
+            </details>
+
+            <details class="faq-item" name="fitzone-faq">
+              <summary>Posso sospendere l’abbonamento?</summary>
+              <div class="faq-item__answer">
+                <p>Le condizioni di sospensione, rinnovo e disdetta non sono ancora definitive. Saranno indicate chiaramente nel regolamento ufficiale prima dell’apertura commerciale.</p>
+              </div>
+            </details>
+
+            <details class="faq-item" name="fitzone-faq">
+              <summary>Ci sono spogliatoi e docce?</summary>
+              <div class="faq-item__answer">
+                <p>La configurazione definitiva dei servizi, inclusi spogliatoi e docce, deve essere confermata dal futuro gestore prima della pubblicazione del sito.</p>
+              </div>
+            </details>
+
+            <details class="faq-item" name="fitzone-faq">
+              <summary>Quali sono gli orari della palestra?</summary>
+              <div class="faq-item__answer">
+                <p>L’accesso alla palestra è disponibile tutti i giorni, 24 ore su 24. I corsi e la presenza dei coach seguono il calendario settimanale dedicato.</p>
+              </div>
+            </details>
+
+            <details class="faq-item" name="fitzone-faq">
+              <summary>Come posso essere ricontattato?</summary>
+              <div class="faq-item__answer">
+                <p>Compila il modulo indicando telefono ed email. In questa versione dimostrativa i dati non vengono inviati: il contatto reale sarà attivato solo dopo l’integrazione di un servizio sicuro.</p>
+              </div>
+            </details>
+          </div>
+
+          <p class="faq-note">Le condizioni commerciali e i servizi ancora da definire dovranno essere verificati prima della pubblicazione.</p>
+        </div>
+      </section>
+
+      <section class="contact-section" id="contatti" aria-labelledby="contact-title">
+        <div class="contact-container">
+          <header class="contact-heading">
+            <p class="contact-eyebrow">Parliamo del tuo percorso.</p>
+            <h2 id="contact-title">Contatti</h2>
+            <p>Hai una domanda su corsi, abbonamenti o prova gratuita? Questi recapiti sono dimostrativi e non appartengono a un’attività reale.</p>
+          </header>
+
+          <div class="contact-layout">
+            <div class="contact-content">
+              <address class="contact-details">
+                <div class="contact-detail">
+                  <span class="contact-detail__label">Indirizzo demo</span>
+                  <strong>Via dell’Energia 24</strong>
+                  <span>20100 Milano MI</span>
+                </div>
+                <div class="contact-detail">
+                  <span class="contact-detail__label">Telefono demo</span>
+                  <a href="tel:+390200002470">+39 02 0000 2470</a>
+                  <span>Recapito facsimile non attivo</span>
+                </div>
+                <div class="contact-detail">
+                  <span class="contact-detail__label">Email demo</span>
+                  <a href="mailto:ciao@fitzone.example">ciao@fitzone.example</a>
+                  <span>Dominio riservato agli esempi</span>
+                </div>
+                <div class="contact-detail">
+                  <span class="contact-detail__label">Orari</span>
+                  <strong>Aperti tutti i giorni, 24 ore su 24</strong>
+                  <span>I corsi seguono il calendario settimanale dimostrativo.</span>
+                </div>
+              </address>
+
+              <div class="contact-actions" aria-label="Azioni di contatto dimostrative">
+                <a href="tel:+390200002470">Chiama</a>
+                <a href="mailto:ciao@fitzone.example">Invia un’email</a>
+                <a href="https://wa.me/390200002470" rel="noopener" aria-label="Apri WhatsApp con il numero dimostrativo FitZone">WhatsApp demo</a>
+              </div>
+
+              <div class="contact-socials">
+                <p>Seguici sui social <span>· profili dimostrativi</span></p>
+                <div class="contact-socials__links">
+                  <a href="#contatti" aria-label="Instagram dimostrativo FitZone">Instagram <span>@fitzone.milano</span></a>
+                  <a href="#contatti" aria-label="Facebook dimostrativo FitZone">Facebook <span>FitZone Milano</span></a>
+                  <a href="#contatti" aria-label="TikTok dimostrativo FitZone">TikTok <span>@fitzone.milano</span></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-map" role="img" aria-label="Placeholder dimostrativo della posizione FitZone a Milano, senza integrazione con servizi di mappe">
+              <div class="contact-map__street contact-map__street--one"></div>
+              <div class="contact-map__street contact-map__street--two"></div>
+              <div class="contact-map__street contact-map__street--three"></div>
+              <div class="contact-map__pin" aria-hidden="true"><span>FZ</span></div>
+              <div class="contact-map__caption">
+                <strong>FitZone Milano</strong>
+                <span>Mappa dimostrativa · posizione non reale</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <a class="footer-logo" href="#home" aria-label="FitZone, torna alla home">
+            <img src="assets/images/logo.png" alt="" width="48" height="48" loading="lazy" decoding="async" />
+            <span>FitZone</span>
+          </a>
+          <p>Landing page dimostrativa per una palestra facsimile ambientata a Milano.</p>
+        </div>
+
+        <nav class="footer-links" aria-label="Collegamenti rapidi">
+          <p>Collegamenti rapidi</p>
+          <div>
+            <a href="#home">Home</a>
+            <a href="#corsi">Corsi</a>
+            <a href="#coach">Coach</a>
+            <a href="#prezzi">Prezzi</a>
+            <a href="#orari">Orari</a>
+            <a href="#faq">FAQ</a>
+            <a href="#contatti">Contatti</a>
+          </div>
+        </nav>
+
+        <div class="footer-legal">
+          <p id="privacy-note"><strong>Privacy demo:</strong> il sito non salva né trasmette dati. L’informativa legale completa dovrà essere predisposta prima della pubblicazione.</p>
+          <a href="#privacy-note">Informativa privacy</a>
         </div>
       </div>
 
-      <div class="hero-media">
-        <img src="../../assets/palestrato-site.png" alt="Atleta in palestra con manubri">
+      <div class="footer-bottom">
+        <p>© <span data-current-year>2026</span> FitZone. Progetto dimostrativo, non associato a una palestra reale.</p>
+        <a href="#home">Torna su <span aria-hidden="true">↑</span></a>
       </div>
-    </div>
-  </section>
+    </footer>
 
-</body>
+    <a class="mobile-cta" href="#iscrizione" data-mobile-cta>Prova gratuita <span aria-hidden="true">→</span></a>
+
+    <dialog class="video-dialog" aria-labelledby="video-title">
+      <button class="dialog-close" type="button" data-video-close aria-label="Chiudi">×</button>
+      <h2 id="video-title">Il tuo percorso inizia qui</h2>
+      <p>Il video di presentazione sarà disponibile a breve.</p>
+    </dialog>
+  </body>
 </html>
