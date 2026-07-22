@@ -48,7 +48,7 @@ La sezione Progetti viene generata da `data/projects.json`. Ogni progetto usa il
 
 ### Progetti business / marketing
 
-- Landing Page commerciale / FitZone palestra
+- FitZone — Landing Page Palestra (demo completa e case study)
 - Dashboard clienti
 
 ### Progetti AI / automation
