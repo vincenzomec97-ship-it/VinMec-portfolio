@@ -170,32 +170,59 @@ window.portfolioProjectFallback = {
     },
     {
       "id": "dashboard-clienti",
-      "title": "Dashboard clienti",
-      "type": "Business Dashboard",
-      "description": "Concept di dashboard per organizzare richieste, dati cliente, stato della trattativa e attività di follow-up in un unico flusso.",
-      "longDescription": "Progetto pianificato: servirà a mostrare gestione clienti, pipeline commerciale, stati di avanzamento e follow-up. La card è pronta per essere aggiornata quando demo, screenshot e repository saranno disponibili.",
-      "image": "",
-      "imageAlt": "Placeholder della Dashboard clienti pianificata",
+      "title": "ClientFlow",
+      "type": "Dashboard CRM per la gestione delle richieste",
+      "description": "Dashboard CRM dimostrativa per organizzare clienti, richieste di preventivo, stati commerciali, promemoria e attività.",
+      "longDescription": "Web app gestionale frontend con CRUD completo, ricerca, filtri combinabili, ordinamento, paginazione, statistiche, grafici SVG, timeline, note interne, promemoria, preferiti ed esportazione CSV. I dati restano nel browser e vengono gestiti con localStorage.",
+      "image": "assets/projects/clientflow-cover.webp",
+      "imageAlt": "Dashboard desktop di ClientFlow per la gestione di richieste e clienti",
+      "imageWidth": 1440,
+      "imageHeight": 1000,
       "tags": [
-        "Dashboard",
-        "CRM",
+        "HTML",
+        "CSS",
         "JavaScript",
-        "UI/UX",
-        "Business workflow"
+        "localStorage",
+        "Blob API",
+        "CRUD",
+        "State management",
+        "Filtering",
+        "Data visualization",
+        "Responsive design",
+        "Accessibility"
       ],
-      "badge": "Gestione richieste",
-      "status": "Progetto pianificato",
+      "badge": "Dashboard CRM",
+      "status": "Pubblicato",
       "featured": false,
       "published": true,
       "priority": 4,
       "order": 4,
       "group": "business",
       "groupLabel": "Progetti business / marketing",
-      "liveUrl": "",
-      "githubUrl": "",
+      "liveUrl": "https://vincenzomec97-ship-it.github.io/clientflow-dashboard/",
+      "liveLabel": "Guarda il progetto",
+      "githubUrl": "https://github.com/vincenzomec97-ship-it/clientflow-dashboard",
       "figmaUrl": "",
+      "detailUrl": "projects/clientflow/",
+      "links": [
+        {
+          "label": "Guarda il progetto",
+          "href": "https://vincenzomec97-ship-it.github.io/clientflow-dashboard/",
+          "variant": "primary"
+        },
+        {
+          "label": "Case study",
+          "href": "projects/clientflow/",
+          "variant": "secondary"
+        },
+        {
+          "label": "Codice GitHub",
+          "href": "https://github.com/vincenzomec97-ship-it/clientflow-dashboard",
+          "variant": "secondary"
+        }
+      ],
       "year": "2026",
-      "category": "Business Dashboard"
+      "category": "Dashboard CRM / Business workflow"
     },
     {
       "id": "chatbot-aziendale",
