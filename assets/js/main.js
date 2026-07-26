@@ -111,6 +111,11 @@ const defaultProjectGroups = [
     description: "Progetti pensati per mostrare uso pratico di AI tools, automazioni e assistenti digitali applicati ad aziende reali o simulate."
   },
   {
+    key: "demo3d",
+    label: "Demo 3D / Esperimenti",
+    description: "Prototipi web interattivi creati per sperimentare profondità, movimento, grafica 3D e nuove modalità di presentazione."
+  },
+  {
     key: "figma",
     label: "Progetti UI/Figma",
     description: "Concept grafici realizzati in Figma per mostrare studio dell'interfaccia, composizione visuale, gerarchia e prototipazione."

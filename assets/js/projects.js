@@ -5,14 +5,14 @@
   Per aggiungere o completare un progetto:
   1. modifica l'oggetto corrispondente in data/projects.json
   2. aggiorna status, descrizioni, screenshot e link reali
-  3. scegli group: main, business, ai, figma oppure practice
+  3. scegli group: main, business, ai, demo3d, figma oppure practice
   4. non inserire link demo o GitHub se non sono disponibili.
 */
 
 window.portfolioProjectFallback = {
   "_instructions": [
     "Per aggiungere o completare un progetto, modifica solo l'oggetto corrispondente dentro projects.",
-    "Usa group per decidere il gruppo: main, business, ai, figma, practice.",
+    "Usa group per decidere il gruppo: main, business, ai, demo3d, figma, practice.",
     "Usa priority per ordinare i progetti. Non inserire link finti: lascia liveUrl, githubUrl o figmaUrl vuoti se non esistono.",
     "Quando un progetto roadmap viene completato aggiorna: status, description, longDescription, image, liveUrl, githubUrl, eventuale case study e README."
   ],
@@ -31,6 +31,11 @@ window.portfolioProjectFallback = {
       "key": "ai",
       "label": "Progetti AI / automation",
       "description": "Progetti pensati per mostrare uso pratico di AI tools, automazioni e assistenti digitali applicati ad aziende reali o simulate."
+    },
+    {
+      "key": "demo3d",
+      "label": "Demo 3D / Esperimenti",
+      "description": "Prototipi web interattivi creati per sperimentare profondità, movimento, grafica 3D e nuove modalità di presentazione."
     },
     {
       "key": "figma",
@@ -280,15 +285,15 @@ window.portfolioProjectFallback = {
       "category": "Web app conversazionale / Real estate"
     },
     {
-      "id": "shoes-concept",
-      "title": "Shoes Concept",
-      "type": "UI/UX Design + base frontend 3D",
-      "description": "Concept e-commerce nato in Figma e trasformato in una base web responsive per sperimentare profondità, movimento e interazioni 3D nella hero.",
-      "longDescription": "Progetto in evoluzione: dal prototipo Figma è stata realizzata una base frontend dimostrativa con navigazione, store, ricerca, carrello locale e una sneaker interattiva con effetto di profondità. Non viene presentato come e-commerce completo, ma come esperimento per mostrare il passaggio dal design al codice e l'integrazione di elementi 3D.",
-      "image": "assets/projects/shoes-preview.jpg",
-      "imageAlt": "Concept Figma Shoes collegato alla base web sperimentale 3D",
-      "imageWidth": 1233,
-      "imageHeight": 1600,
+      "id": "shoes-3d-demo",
+      "title": "Shoes M.V. — Demo 3D",
+      "type": "Demo web 3D / Figma to Code",
+      "description": "Base sperimentale responsive nata dal concept Shoes in Figma, realizzata per mostrare profondità, movimento e una presentazione prodotto interattiva.",
+      "longDescription": "Progetto demo in evoluzione: combina una hero interattiva, effetto di profondità sulla sneaker, navigazione, ricerca, store e carrello locale. Non è un e-commerce completo né un modello 3D definitivo; mostra una base tecnica e visiva per sperimentare React, Three.js, React Three Fiber e GSAP partendo dal design Figma.",
+      "image": "assets/projects/shoes-3d-demo.jpg",
+      "imageAlt": "Homepage della demo web Shoes M.V. con sneaker interattiva",
+      "imageWidth": 1440,
+      "imageHeight": 900,
       "tags": [
         "Figma",
         "React",
@@ -296,20 +301,51 @@ window.portfolioProjectFallback = {
         "React Three Fiber",
         "GSAP"
       ],
-      "badge": "Figma to 3D Web",
+      "badge": "Demo 3D",
       "status": "Base sperimentale",
+      "featured": false,
+      "published": true,
+      "priority": 6,
+      "order": 6,
+      "group": "demo3d",
+      "groupLabel": "Demo 3D / Esperimenti",
+      "liveUrl": "https://vincenzomec97-ship-it.github.io/shoely-3d-store/",
+      "liveLabel": "Vedi la demo 3D",
+      "githubUrl": "https://github.com/vincenzomec97-ship-it/shoely-3d-store",
+      "figmaUrl": "https://www.figma.com/proto/G09Tq8i37addPsCe293DVz/Untitled?node-id=2-2&t=9UxqkVse9NypvUl0-1",
+      "year": "2026",
+      "category": "Demo web 3D / Esperimento"
+    },
+    {
+      "id": "shoes-concept",
+      "title": "Shoes Concept",
+      "type": "UI Design / Figma Concept",
+      "description": "Prototipo Figma di uno store di sneaker, creato per studiare navigazione, ricerca, card prodotto e gerarchia visiva.",
+      "longDescription": "Concept solo Figma: esercizio di interfaccia, gerarchia visiva e prototipazione collegato alla successiva demo web 3D.",
+      "image": "assets/projects/shoes-preview.jpg",
+      "imageAlt": "Mockup Figma del concept e-commerce Shoes",
+      "imageWidth": 1233,
+      "imageHeight": 1600,
+      "tags": [
+        "Figma",
+        "UI Design",
+        "E-commerce",
+        "Visual Design",
+        "Prototype"
+      ],
+      "badge": "Figma Concept",
+      "status": "Figma Concept",
       "featured": false,
       "published": true,
       "priority": 6,
       "order": 6,
       "group": "figma",
       "groupLabel": "Progetti UI/Figma",
-      "liveUrl": "https://vincenzomec97-ship-it.github.io/shoely-3d-store/",
-      "liveLabel": "Vedi la base 3D",
-      "githubUrl": "https://github.com/vincenzomec97-ship-it/shoely-3d-store",
+      "liveUrl": "",
+      "githubUrl": "",
       "figmaUrl": "https://www.figma.com/proto/G09Tq8i37addPsCe293DVz/Untitled?node-id=2-2&t=9UxqkVse9NypvUl0-1",
       "year": "2026",
-      "category": "UI/Figma + 3D Web Experiment"
+      "category": "UI/Figma"
     },
     {
       "id": "cleaning-figma-concept",

@@ -55,6 +55,10 @@ La sezione Progetti viene generata da `data/projects.json`. Ogni progetto usa il
 
 - CasaBot — Assistente virtuale immobiliare
 
+### Demo 3D / Esperimenti
+
+- Shoes M.V. — Demo 3D (base sperimentale collegata al concept Figma)
+
 ### Progetti UI/Figma
 
 - Shoes Concept
