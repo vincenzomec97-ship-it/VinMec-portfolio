@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CasaBot — Case Study | Portfolio</title>
+  <meta name="description" content="Case study di CasaBot, assistente virtuale immobiliare sviluppato con HTML, CSS e JavaScript.">
+  <meta name="author" content="Vincenzo Meccariello">
+  <link rel="canonical" href="https://vincenzomec97-ship-it.github.io/VinMec-portfolio/projects/casabot/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="CasaBot — Case Study | Portfolio">
+  <meta property="og:description" content="UX conversazionale, gestione dello stato e privacy by design in un assistente immobiliare dimostrativo.">
+  <meta property="og:url" content="https://vincenzomec97-ship-it.github.io/VinMec-portfolio/projects/casabot/">
+  <meta property="og:image" content="https://vincenzomec97-ship-it.github.io/VinMec-portfolio/assets/projects/casabot-cover.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CasaBot — Case Study | Portfolio">
+  <meta name="twitter:description" content="Assistente immobiliare dimostrativo sviluppato con HTML, CSS e JavaScript.">
+  <meta name="twitter:image" content="https://vincenzomec97-ship-it.github.io/VinMec-portfolio/assets/projects/casabot-cover.webp">
+  <link rel="icon" href="../../assets/brand/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="case-study.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Salta al contenuto</a>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Navigazione case study">
+      <a class="brand" href="../../index.html" aria-label="Torna alla home del portfolio"><span class="brand-mark"><img src="../../assets/brand/vinmec-logo.png" alt="" aria-hidden="true"></span><span class="brand-text">Vincenzo Meccariello</span></a>
+      <a class="button button-ghost" href="../../index.html#progetti">Torna ai progetti</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="detail-hero">
+      <div class="container detail-hero-grid">
+        <div>
+          <span class="project-badge">Web app conversazionale</span>
+          <h1>CasaBot</h1>
+          <p class="detail-eyebrow">Assistente virtuale immobiliare</p>
+          <p class="detail-lead">Un assistente dimostrativo che raccoglie in modo guidato le esigenze di chi cerca un immobile e prepara una richiesta chiara.</p>
+          <ul class="tag-list" aria-label="Tecnologie"><li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>localStorage</li><li>Blob API</li><li>GitHub Pages</li></ul>
+          <div class="detail-actions">
+            <a class="button button-primary" href="https://vincenzomec97-ship-it.github.io/casabot-immobiliare/" target="_blank" rel="noopener noreferrer">Visita la demo</a>
+            <a class="button button-secondary" href="https://github.com/vincenzomec97-ship-it/casabot-immobiliare" target="_blank" rel="noopener noreferrer">Visualizza il codice</a>
+          </div>
+        </div>
+        <img src="../../assets/projects/casabot-cover.webp" alt="Interfaccia desktop di CasaBot con area informativa e chatbot immobiliare" width="1440" height="1000" fetchpriority="high">
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container detail-grid">
+        <article><span class="section-kicker">Panoramica</span><h2>Da richiesta generica a brief strutturato</h2><p>CasaBot guida l’utente nella scelta di operazione, immobile, città, zona, budget, locali, superficie, caratteristiche e tempistica. Al termine genera un riepilogo modificabile, raccoglie contatti in memoria temporanea e simula l’invio a un consulente.</p></article>
+        <aside class="detail-facts"><div><strong>Ruolo</strong><span>UX, flusso conversazionale e sviluppo frontend</span></div><div><strong>Target</strong><span>Utenti di una piccola agenzia immobiliare dimostrativa</span></div><div><strong>Stato</strong><span>Pubblicato, senza backend e senza vera AI</span></div></aside>
+      </div>
+    </section>
+
+    <section class="section surface">
+      <div class="container detail-grid">
+        <article><span class="section-kicker">Il problema</span><h2>Le richieste immobiliari arrivano spesso incomplete</h2><p>Messaggi come “Cerco casa a Milano” non indicano budget, zona, locali, superficie, caratteristiche o tempistica. L’agenzia deve quindi ripetere molte domande prima di capire davvero l’esigenza.</p></article>
+        <article><span class="section-kicker">La soluzione</span><h2>Una domanda alla volta</h2><p>CasaBot trasforma la richiesta in un percorso breve e progressivo. Controlla le risposte, mantiene lo stato durante la navigazione e costruisce un riepilogo finale facile da verificare e modificare.</p></article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading"><span class="section-kicker">Obiettivi</span><h2>Un flusso realistico, semplice e rispettoso dei dati</h2></div>
+        <div class="feature-grid">
+          <article class="info-card"><h3>Guidare l’utente</h3><p>Rendere comprensibili anche richieste complesse con domande brevi e risposte rapide.</p></article>
+          <article class="info-card"><h3>Ridurre le informazioni mancanti</h3><p>Raccogliere le preferenze necessarie prima del contatto con un ipotetico consulente.</p></article>
+          <article class="info-card"><h3>Funzionare su mobile</h3><p>Mantenere chat, azioni e campo di testo utilizzabili anche negli schermi più piccoli.</p></article>
+          <article class="info-card"><h3>Proteggere i dati</h3><p>Evitare rete, database e persistenza dei contatti o delle preferenze personali.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section surface">
+      <div class="container">
+        <div class="section-heading"><span class="section-kicker">Flusso utente</span><h2>Dal primo messaggio alla conferma</h2></div>
+        <ol class="flow flow-wide" aria-label="Flusso di CasaBot">
+          <li><strong>Apertura</strong><span>Chat e azioni rapide</span></li>
+          <li><strong>Ricerca</strong><span>Operazione e immobile</span></li>
+          <li><strong>Preferenze</strong><span>Città, zona e budget</span></li>
+          <li><strong>Requisiti</strong><span>Locali, superficie e caratteristiche</span></li>
+          <li><strong>Riepilogo</strong><span>Verifica e modifica</span></li>
+          <li><strong>Contatti</strong><span>Validazione e consenso</span></li>
+          <li><strong>Conferma</strong><span>Invio simulato e download</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading"><span class="section-kicker">Funzionalità</span><h2>Interazioni progettate come un piccolo prodotto</h2></div>
+        <div class="feature-grid">
+          <article class="info-card"><h3>Conversazione guidata</h3><p>Risposte rapide, parole chiave, barra di avanzamento, pulsante Indietro e modifica mirata di una risposta.</p></article>
+          <article class="info-card"><h3>Stato e validazione</h3><p>Stati separati per chat, ricerca e contatti, selezioni multiple e messaggi di errore contestuali.</p></article>
+          <article class="info-card"><h3>Privacy dimostrativa</h3><p>Consenso esplicito, contatti mascherati e storico limitato ai soli messaggi generici.</p></article>
+          <article class="info-card"><h3>Accessibilità</h3><p>Focus visibile, uso da tastiera, attributi ARIA, regioni live e movimento ridotto.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section surface">
+      <div class="container">
+        <div class="section-heading"><span class="section-kicker">Interfaccia</span><h2>Il percorso nelle schermate principali</h2></div>
+        <div class="case-gallery">
+          <figure><img src="../../assets/projects/casabot-chat.webp" alt="Chat iniziale di CasaBot con i pulsanti rapidi" width="1440" height="1000" loading="lazy"><figcaption>Avvio della conversazione e azioni rapide.</figcaption></figure>
+          <figure><img src="../../assets/projects/casabot-search-flow.webp" alt="Percorso guidato di ricerca immobiliare in CasaBot" width="1440" height="1000" loading="lazy"><figcaption>Ricerca guidata con avanzamento visibile.</figcaption></figure>
+          <figure><img src="../../assets/projects/casabot-features.webp" alt="Selezione multipla delle caratteristiche desiderate in CasaBot" width="1440" height="1000" loading="lazy"><figcaption>Selezione multipla accessibile delle caratteristiche.</figcaption></figure>
+          <figure><img src="../../assets/projects/casabot-summary.webp" alt="Riepilogo finale della ricerca immobiliare in CasaBot" width="1440" height="1000" loading="lazy"><figcaption>Riepilogo modificabile della ricerca.</figcaption></figure>
+          <figure><img src="../../assets/projects/casabot-contact-form.webp" alt="Modulo contatti dimostrativo integrato nella chat di CasaBot" width="1440" height="1000" loading="lazy"><figcaption>Contatti, validazione e consenso privacy.</figcaption></figure>
+          <figure><img src="../../assets/projects/casabot-confirmation.webp" alt="Conferma simulata della richiesta immobiliare in CasaBot" width="1440" height="1000" loading="lazy"><figcaption>Conferma simulata e riepilogo scaricabile.</figcaption></figure>
+          <figure class="case-gallery-mobile"><img src="../../assets/projects/casabot-mobile.webp" alt="Versione mobile dell’interfaccia CasaBot" width="390" height="844" loading="lazy"><figcaption>Esperienza adattata agli smartphone.</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container detail-grid">
+        <article><span class="section-kicker">Difficoltà</span><h2>Mantenere coerenza in un flusso a più passaggi</h2><p>Le sfide principali sono state conservare le risposte durante Indietro e Modifica, aggiornare un solo campo, coordinare le selezioni multiple, separare dati generici e personali e gestire correttamente il focus su desktop e mobile.</p></article>
+        <aside class="detail-facts"><div><strong>Stato</strong><span>Oggetti JavaScript separati per ricerca e contatti</span></div><div><strong>Sicurezza UI</strong><span><code>textContent</code> per i dati inseriti dall’utente</span></div><div><strong>Persistenza</strong><span><code>localStorage</code> limitato ai contenuti non sensibili</span></div></aside>
+      </div>
+    </section>
+
+    <section class="section surface">
+      <div class="container detail-grid">
+        <article><span class="section-kicker">Soluzioni adottate</span><h2>Responsabilità separate e pulizia controllata</h2><p>Funzioni dedicate gestiscono domande, validazione, riepilogo e contatti. Gli stati temporanei vengono cancellati nei momenti corretti, il layout è adattivo, gli attributi ARIA supportano la navigazione e la Blob API genera localmente il file di riepilogo.</p></article>
+        <article><span class="section-kicker">Privacy</span><h2>Nessun invio e nessun database</h2><p>Il progetto non invia dati, non salva i contatti e non conserva le preferenze personali. L’informativa è dimostrativa: un prodotto reale richiederebbe backend sicuro, gestione del consenso e privacy policy completa.</p></article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container detail-grid">
+        <article><span class="section-kicker">Risultato</span><h2>Un’esigenza aziendale trasformata in interfaccia</h2><p>CasaBot dimostra la capacità di progettare UX conversazionale, logica applicativa e validazione in JavaScript puro, con attenzione a privacy, accessibilità e responsive design.</p></article>
+        <aside class="detail-facts"><div><strong>Tecnologie</strong><span>HTML5, CSS3, JavaScript, localStorage e Blob API</span></div><div><strong>Pubblicazione</strong><span>Git e GitHub Pages</span></div><div><strong>Test</strong><span>Flussi affitto e acquisto, responsive, console e download</span></div></aside>
+      </div>
+    </section>
+
+    <section class="section surface">
+      <div class="container">
+        <div class="section-heading"><span class="section-kicker">Sviluppi futuri</span><h2>Da demo frontend a servizio reale</h2></div>
+        <ul class="future-list"><li>AI tramite backend sicuro</li><li>Database e annunci reali</li><li>Dashboard agenti</li><li>Invio email e notifiche</li><li>Autenticazione</li><li>Analytics rispettosi della privacy</li><li>Protezione antispam</li><li>Gestione privacy completa</li></ul>
+        <div class="detail-actions detail-actions-center">
+          <a class="button button-primary" href="https://vincenzomec97-ship-it.github.io/casabot-immobiliare/" target="_blank" rel="noopener noreferrer">Visita la demo</a>
+          <a class="button button-secondary" href="https://github.com/vincenzomec97-ship-it/casabot-immobiliare" target="_blank" rel="noopener noreferrer">Visualizza il codice</a>
+          <a class="button button-ghost" href="../../index.html#progetti">Torna ai progetti</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container"><p>© Vincenzo Meccariello</p><a href="../../index.html#contatti">Contatti</a></div></footer>
+</body>
+</html>

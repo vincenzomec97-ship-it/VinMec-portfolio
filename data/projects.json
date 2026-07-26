@@ -110,6 +110,60 @@
       "category": "AI Web App / Educational Platform"
     },
     {
+      "id": "casabot",
+      "title": "CasaBot",
+      "type": "Assistente virtuale immobiliare",
+      "description": "Chatbot immobiliare dimostrativo che guida l’utente nella ricerca di una casa, raccoglie le preferenze e genera una richiesta strutturata.",
+      "longDescription": "Web app frontend che trasforma una richiesta immobiliare generica in un percorso conversazionale accessibile. Gestisce stato, validazione, modifica delle risposte, selezioni multiple, privacy dimostrativa e download locale del riepilogo senza backend o vera intelligenza artificiale.",
+      "image": "assets/projects/casabot-cover.webp",
+      "imageAlt": "Interfaccia desktop di CasaBot, assistente virtuale immobiliare",
+      "imageWidth": 1440,
+      "imageHeight": 1000,
+      "tags": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "localStorage",
+        "Blob API",
+        "Chatbot UX",
+        "Form validation",
+        "State management",
+        "Responsive design",
+        "Accessibility",
+        "Privacy by design"
+      ],
+      "badge": "Web app conversazionale",
+      "status": "Pubblicato",
+      "featured": true,
+      "published": true,
+      "priority": 3,
+      "order": 3,
+      "group": "main",
+      "groupLabel": "Progetti principali",
+      "liveUrl": "https://vincenzomec97-ship-it.github.io/casabot-immobiliare/",
+      "githubUrl": "https://github.com/vincenzomec97-ship-it/casabot-immobiliare",
+      "detailUrl": "projects/casabot/",
+      "links": [
+        {
+          "label": "Guarda il progetto",
+          "href": "https://vincenzomec97-ship-it.github.io/casabot-immobiliare/",
+          "variant": "primary"
+        },
+        {
+          "label": "Case study",
+          "href": "projects/casabot/",
+          "variant": "secondary"
+        },
+        {
+          "label": "Codice GitHub",
+          "href": "https://github.com/vincenzomec97-ship-it/casabot-immobiliare",
+          "variant": "secondary"
+        }
+      ],
+      "year": "2026",
+      "category": "Web app conversazionale / Real estate"
+    },
+    {
       "id": "fitzone",
       "title": "FitZone — Landing Page Palestra",
       "type": "Landing page / Fitness marketing",
