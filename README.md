@@ -45,7 +45,6 @@ La sezione Progetti viene generata da `data/projects.json`. Ogni progetto usa il
 
 - C.M. Pulizie
 - English Quiz Lab
-- CasaBot — Assistente virtuale immobiliare
 
 ### Progetti business / marketing
 
@@ -54,7 +53,7 @@ La sezione Progetti viene generata da `data/projects.json`. Ogni progetto usa il
 
 ### Progetti AI / automation
 
-- Chatbot aziendale
+- CasaBot — Assistente virtuale immobiliare
 
 ### Progetti UI/Figma
 
