@@ -451,3 +451,15 @@ const initProjects = async () => {
 };
 
 initProjects();
+
+const contactForm = document.querySelector("[data-contact-form]");
+
+contactForm?.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const formData = new FormData(contactForm);
+  const subject = encodeURIComponent(`Richiesta portfolio da ${formData.get("Nome") || "un visitatore"}`);
+  const body = encodeURIComponent(
+    `Nome: ${formData.get("Nome") || ""}\nEmail: ${formData.get("Email") || ""}\n\n${formData.get("Messaggio") || ""}`
+  );
+  window.location.href = `mailto:Vincenzomec97@gmail.com?subject=${subject}&body=${body}`;
+});
