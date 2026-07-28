@@ -1,6 +1,6 @@
 # Portfolio - Vincenzo Meccariello
 
-Portfolio personale di Vincenzo Meccariello, Junior Web Developer, UI/UX Designer e AI Automation Junior.
+Portfolio personale di Vincenzo Meccariello, Junior Frontend Developer e UI/UX Designer.
 
 ## Live
 
@@ -8,24 +8,24 @@ Portfolio:
 https://vincenzomec97-ship-it.github.io/VinMec-portfolio/
 
 Progetto principale:
-C.M. Pulizie:
-https://vincenzomec97-ship-it.github.io/cm-pulizie/
+English Quiz Lab:
+https://english-quiz-lab-one.vercel.app/
 
 ## Profilo
 
-Creo siti web, landing page e piccole web app da Figma al codice, unendo Frontend, UI/UX, AI tools, Vibe Coding e Digital Marketing.
+Creo siti web, landing page e piccole web app da Figma al codice. Uso strumenti AI e automazioni quando aggiungono un vantaggio concreto al processo o al prodotto.
 
 ## Tecnologie
 
 - HTML5
 - CSS3
 - JavaScript
+- Node.js
+- Supabase
 - Figma
 - GitHub Pages
 - AI-assisted workflow
-- Vibe Coding
 - SEO base
-- Digital Marketing
 
 ## Struttura progetti
 
@@ -43,17 +43,17 @@ La sezione Progetti viene generata da `data/projects.json`. Ogni progetto usa il
 
 ### Progetti principali
 
-- C.M. Pulizie
 - English Quiz Lab
+- C.M. Pulizie
 
 ### Progetti business / marketing
 
-- FitZone — Landing Page Palestra (demo completa e case study)
 - ClientFlow — Dashboard CRM per la gestione delle richieste
+- FitZone — Landing Page Palestra (demo completa e case study)
 
 ### Progetti AI / automation
 
-- CasaBot — Assistente virtuale immobiliare
+- CasaBot — Assistente conversazionale rule-based
 
 ### Demo 3D / Esperimenti
 
@@ -99,6 +99,7 @@ I progetti indicati come In sviluppo o Da sviluppare sono presenti nella roadmap
    - `main`
    - `business`
    - `ai`
+   - `demo3d`
    - `figma`
    - `practice`
 

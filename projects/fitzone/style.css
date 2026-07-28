@@ -732,7 +732,7 @@ button:focus-visible {
 .course-card__media {
   min-height: 220px;
   aspect-ratio: 16 / 10;
-  background-image: url('assets/images/courses-grid.png');
+  background-image: url('assets/images/courses-grid.webp');
   background-repeat: no-repeat;
   background-size: 300% 200%;
 }
@@ -1104,7 +1104,7 @@ button:focus-visible {
 .coach-card__photo {
   min-height: 310px;
   aspect-ratio: 4 / 5;
-  background-image: url('assets/images/coaches-grid.png');
+  background-image: url('assets/images/coaches-grid.webp');
   background-repeat: no-repeat;
   background-size: 300% 100%;
 }

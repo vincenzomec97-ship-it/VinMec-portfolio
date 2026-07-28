@@ -689,7 +689,15 @@ textarea:focus-visible {
 .project-filter.is-active .project-filter-count,
 .project-filter:hover .project-filter-count,
 .project-filter:focus-visible .project-filter-count {
-  background: rgba(var(--white-rgb), 0.18);
+  color: var(--night);
+  background: var(--white);
+}
+
+.cv-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
 }
 
 .project-empty,
