@@ -9,7 +9,7 @@
     {
       "key": "main",
       "label": "Progetti principali",
-      "description": "I progetti più completi del portfolio: un sito per un'attività locale e una web app educativa con AI e logica applicativa."
+      "description": "I progetti più completi del portfolio: identità digitali, siti professionali e web app sviluppati dalla strategia alla pubblicazione."
     },
     {
       "key": "business",
@@ -38,6 +38,55 @@
     }
   ],
   "projects": [
+    {
+      "id": "adriana-architettura",
+      "title": "Adriana Napolitano — Architettura e restauro",
+      "type": "Sito professionale / Brand, UX e frontend",
+      "description": "Identità digitale e sito multipagina per un’architetta emergente, con case study trasparenti, funnel di consulenza, SEO tecnica, analytics e accessibilità.",
+      "longDescription": "Progetto multidisciplinare costruito da zero: discovery, strategia del brand, architettura informativa, UI/UX, frontend Next.js, motion editoriale, SEO, piano marketing, analytics e QA. La demo pubblica presenta progetti accademici dichiarati come non realizzati e un modulo che non trasmette dati.",
+      "problem": "Costruire credibilità professionale senza inventare incarichi o risultati, trasformando CV e portfolio accademico in un’esperienza utile per proprietari di immobili importanti e storici.",
+      "solution": "Un sito editoriale accessibile, responsive e orientato alla prima consulenza, con metodo, servizi, case study, contenuti informativi, guida gratuita e misurazione predisposta.",
+      "role": "Web Designer con profilo multidisciplinare: strategia, UI/UX, frontend, SEO, CRO, analytics e pubblicazione",
+      "features": [
+        "21 route statiche e quattro pagine progetto",
+        "Design system editoriale e motion con movimento ridotto",
+        "Modulo dimostrativo accessibile predisposto per endpoint reale",
+        "SEO tecnica, sitemap, robots, Open Graph e JSON-LD",
+        "17 eventi analytics anonimi predisposti",
+        "Documentazione completa e workflow GitHub Pages"
+      ],
+      "image": "assets/projects/adriana-architecture-cover.png",
+      "imageAlt": "Homepage desktop del sito Adriana Napolitano Architettura e restauro",
+      "imageWidth": 1425,
+      "imageHeight": 891,
+      "tags": [
+        "Next.js",
+        "TypeScript",
+        "UI/UX",
+        "Web Design",
+        "SEO",
+        "CRO",
+        "Analytics",
+        "Accessibilità",
+        "Performance",
+        "GitHub Actions"
+      ],
+      "badge": "Progetto multidisciplinare",
+      "status": "Pubblicato",
+      "featured": true,
+      "published": true,
+      "priority": 0,
+      "order": 0,
+      "group": "main",
+      "groupLabel": "Progetti principali",
+      "liveUrl": "https://vincenzomec97-ship-it.github.io/adriana-napolitano-architettura/",
+      "liveLabel": "Visita il sito",
+      "githubUrl": "https://github.com/vincenzomec97-ship-it/adriana-napolitano-architettura",
+      "figmaUrl": "",
+      "detailUrl": "projects/adriana-architettura/",
+      "year": "2026",
+      "category": "Sito professionale / Architettura"
+    },
     {
       "id": "cm-pulizie",
       "title": "C.M. Pulizie",

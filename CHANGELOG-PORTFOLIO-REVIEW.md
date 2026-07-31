@@ -1,5 +1,14 @@
 # Changelog — Portfolio professional review
 
+## 31 luglio 2026 — Progetto architettura
+
+- aggiunto Adriana Napolitano — Architettura e restauro come primo progetto principale;
+- creato un case study multidisciplinare dedicato;
+- collegati sito live e repository pubblico;
+- aggiunte schermate desktop e mobile ottimizzate;
+- documentati risultati tecnici verificabili senza metriche commerciali inventate;
+- aggiornati fallback JavaScript, sitemap e README senza modificare gli altri progetti.
+
 ## In preparazione
 
 ### Contenuti e credibilità
