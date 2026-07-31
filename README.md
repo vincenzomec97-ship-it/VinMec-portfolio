@@ -43,6 +43,7 @@ La sezione Progetti viene generata da `data/projects.json`. Ogni progetto usa il
 
 ### Progetti principali
 
+- Adriana Napolitano — Architettura e restauro
 - English Quiz Lab
 - C.M. Pulizie
 
