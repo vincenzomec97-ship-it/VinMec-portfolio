@@ -6,6 +6,8 @@ Progetto e sviluppo siti, landing page e piccole web app responsive, trasformand
 
 [Portfolio online](https://vincenzomec97-ship-it.github.io/VinMec-portfolio/) · [LinkedIn](https://www.linkedin.com/in/vincenzo-meccariello-4140b9386/) · [GitHub](https://github.com/vincenzomec97-ship-it)
 
+![Anteprima del portfolio di Vincenzo Meccariello](assets/brand/vincenzo-social-preview.png)
+
 ## Obiettivi
 
 - presentare progetti frontend e UI/UX con stato e limitazioni reali;
@@ -28,13 +30,13 @@ I singoli progetti dimostrano inoltre React, Next.js, TypeScript, Supabase, Thre
 
 | Progetto | Stato | Collegamenti |
 | --- | --- | --- |
-| Adriana Napolitano — Architettura e restauro | Demo destinata a evolvere in sito professionale reale | [Demo](https://vincenzomec97-ship-it.github.io/adriana-napolitano-architettura/) · [Case study](projects/adriana-architettura/) · [Repository](https://github.com/vincenzomec97-ship-it/adriana-napolitano-architettura) |
-| English Quiz Lab | Web app pubblica, repository privata | [Demo](https://english-quiz-lab-one.vercel.app/) · [Case study](projects/english-quiz-lab/) |
-| C.M. Pulizie | Demo pubblica; automazioni esterne predisposte ma non attive | [Demo](https://vincenzomec97-ship-it.github.io/cm-pulizie/) · [Case study](projects/cm-pulizie/) · [Repository](https://github.com/vincenzomec97-ship-it/cm-pulizie) |
-| Shoes M.V. | Demo 3D sperimentale | [Demo](https://vincenzomec97-ship-it.github.io/shoely-3d-store/) · [Case study](projects/shoes-mv/) · [Repository](https://github.com/vincenzomec97-ship-it/shoely-3d-store) |
-| ClientFlow | Dashboard frontend con dati locali | [Demo](https://vincenzomec97-ship-it.github.io/clientflow-dashboard/) · [Case study](projects/clientflow/) · [Repository](https://github.com/vincenzomec97-ship-it/clientflow-dashboard) |
-| FitZone | Landing per palestra immaginaria; contatti e invii dimostrativi | [Demo](https://vincenzomec97-ship-it.github.io/gym-landing-page/) · [Case study](projects/fitzone-case-study/) · [Repository](https://github.com/vincenzomec97-ship-it/gym-landing-page) |
-| CasaBot | Assistente rule-based, senza AI esterna o trasmissione dati | [Demo](https://vincenzomec97-ship-it.github.io/casabot-immobiliare/) · [Case study](projects/casabot/) · [Repository](https://github.com/vincenzomec97-ship-it/casabot-immobiliare) |
+| Adriana Napolitano — Architettura e restauro | Demo destinata a evolvere in sito professionale reale | [Demo](https://vincenzomec97-ship-it.github.io/adriana-napolitano-architettura/) · [Case study](https://vincenzomec97-ship-it.github.io/VinMec-portfolio/projects/adriana-architettura/) · [Repository](https://github.com/vincenzomec97-ship-it/adriana-napolitano-architettura) |
+| English Quiz Lab | Web app pubblica, repository privata | [Demo](https://english-quiz-lab-one.vercel.app/) · [Case study](https://vincenzomec97-ship-it.github.io/VinMec-portfolio/projects/english-quiz-lab/) |
+| C.M. Pulizie | Demo pubblica; automazioni esterne predisposte ma non attive | [Demo](https://vincenzomec97-ship-it.github.io/cm-pulizie/) · [Case study](https://vincenzomec97-ship-it.github.io/VinMec-portfolio/projects/cm-pulizie/) · [Repository](https://github.com/vincenzomec97-ship-it/cm-pulizie) |
+| Shoes M.V. | Demo 3D sperimentale | [Demo](https://vincenzomec97-ship-it.github.io/shoely-3d-store/) · [Case study](https://vincenzomec97-ship-it.github.io/VinMec-portfolio/projects/shoes-mv/) · [Repository](https://github.com/vincenzomec97-ship-it/shoely-3d-store) |
+| ClientFlow | Dashboard frontend con dati locali | [Demo](https://vincenzomec97-ship-it.github.io/clientflow-dashboard/) · [Case study](https://vincenzomec97-ship-it.github.io/VinMec-portfolio/projects/clientflow/) · [Repository](https://github.com/vincenzomec97-ship-it/clientflow-dashboard) |
+| FitZone | Landing per palestra immaginaria; contatti e invii dimostrativi | [Demo](https://vincenzomec97-ship-it.github.io/gym-landing-page/) · [Case study](https://vincenzomec97-ship-it.github.io/VinMec-portfolio/projects/fitzone-case-study/) · [Repository](https://github.com/vincenzomec97-ship-it/gym-landing-page) |
+| CasaBot | Assistente rule-based, senza AI esterna o trasmissione dati | [Demo](https://vincenzomec97-ship-it.github.io/casabot-immobiliare/) · [Case study](https://vincenzomec97-ship-it.github.io/VinMec-portfolio/projects/casabot/) · [Repository](https://github.com/vincenzomec97-ship-it/casabot-immobiliare) |
 
 Shoes Concept documenta la fase iniziale UI/UX di Shoes M.V.; Registration Form resta un esercizio secondario nella categoria Practice.
 
@@ -44,12 +46,12 @@ Shoes Concept documenta la fase iniziale UI/UX di Shoes M.V.; Registration Form 
 assets/
   brand/                   identità, ritratto e social preview
   css/                     stile globale
-  js/                      miglioramento progressivo e fallback generato
+  js/                      miglioramento progressivo e artefatto generato
   projects/                anteprime dei progetti
 data/projects.json         unica fonte editoriale delle card
 projects/                  demo e case study
 scripts/
-  generate-projects.mjs    genera card statiche e fallback dal JSON
+  generate-projects.mjs    genera card statiche e artefatto compatibile dal JSON
   audit-site.mjs           controlla pagine, metadati, asset e link locali
 index.html                 home e HTML statico generato
 robots.txt
@@ -61,7 +63,8 @@ sitemap.xml
 `data/projects.json` è l’unica fonte da modificare. `npm run generate` produce:
 
 1. le card statiche dentro `index.html`, indicizzabili e disponibili senza JavaScript;
-2. `assets/js/projects.js`, mantenuto come fallback sincronizzato.
+2. `assets/js/projects.js`, mantenuto come artefatto di compatibilità sincronizzato
+   ma non caricato dalla home.
 
 `assets/js/main.js` non carica più i contenuti con `fetch`: aggiunge soltanto filtri, menu mobile, microinterazioni e gestione del modulo contatti. In questo modo non esistono due fonti da aggiornare manualmente.
 
