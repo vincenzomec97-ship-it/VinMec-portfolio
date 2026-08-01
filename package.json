@@ -1,0 +1,11 @@
+{
+  "name": "vinmec-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate": "node scripts/generate-projects.mjs",
+    "check:generated": "node scripts/generate-projects.mjs --check",
+    "test": "node scripts/audit-site.mjs && npm run check:generated"
+  }
+}

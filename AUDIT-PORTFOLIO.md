@@ -1,4 +1,6 @@
-# Audit professionale del portfolio
+# Audit professionale del portfolio — documento storico
+
+> Questa è la revisione del 28 luglio 2026. Per lo stato corrente usare `PORTFOLIO-PROFESSIONAL-UPGRADE.md`.
 
 Data revisione: 28 luglio 2026  
 Branch di lavoro: `portfolio-professional-review`

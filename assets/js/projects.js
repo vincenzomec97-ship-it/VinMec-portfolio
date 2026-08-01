@@ -1,97 +1,78 @@
-/*
-  Fallback locale per file://.
-  La fonte principale dei progetti è data/projects.json.
-
-  Per aggiungere o completare un progetto:
-  1. modifica l'oggetto corrispondente in data/projects.json
-  2. aggiorna status, descrizioni, screenshot e link reali
-  3. scegli group: main, business, ai, demo3d, figma oppure practice
-  4. non inserire link demo o GitHub se non sono disponibili.
-*/
-
+/* File generato da data/projects.json con npm run generate. */
 window.portfolioProjectFallback = {
   "_instructions": [
-    "Per aggiungere o completare un progetto, modifica solo l'oggetto corrispondente dentro projects.",
-    "Usa group per decidere il gruppo: main, business, ai, demo3d, figma, practice.",
-    "Usa priority per ordinare i progetti. Non inserire link finti: lascia liveUrl, githubUrl o figmaUrl vuoti se non esistono.",
-    "Quando un progetto roadmap viene completato aggiorna: status, description, longDescription, image, liveUrl, githubUrl, eventuale case study e README."
+    "Questo file è l'unica fonte editoriale delle card del portfolio.",
+    "Dopo ogni modifica esegui npm run generate e npm test.",
+    "Mantieni al massimo cinque tecnologie in tags; documenta lo stack completo nel case study.",
+    "Non inserire link finti o funzionalità non attive. Lascia vuoti i collegamenti non disponibili."
   ],
   "groups": [
     {
-      "key": "main",
-      "label": "Progetti principali",
-      "description": "I progetti più completi del portfolio: identità digitali, siti professionali e web app sviluppati dalla strategia alla pubblicazione."
+      "key": "featured",
+      "label": "In evidenza"
+    },
+    {
+      "key": "webapp",
+      "label": "Web app"
+    },
+    {
+      "key": "professional",
+      "label": "Siti professionali"
     },
     {
       "key": "business",
-      "label": "Progetti business / marketing",
-      "description": "Progetti che mostrano struttura commerciale, landing page, acquisizione contatti e gestione clienti."
+      "label": "Business e marketing"
     },
     {
       "key": "ai",
-      "label": "Progetti AI / automation",
-      "description": "Progetti pensati per mostrare uso pratico di AI tools, automazioni e assistenti digitali applicati ad aziende reali o simulate."
+      "label": "AI e automazioni"
     },
     {
-      "key": "demo3d",
-      "label": "Demo 3D / Esperimenti",
-      "description": "Prototipi web interattivi creati per sperimentare profondità, movimento, grafica 3D e nuove modalità di presentazione."
+      "key": "experimental",
+      "label": "3D e sperimentazione"
     },
     {
       "key": "figma",
-      "label": "Progetti UI/Figma",
-      "description": "Concept grafici realizzati in Figma per mostrare studio dell'interfaccia, composizione visuale, gerarchia e prototipazione."
+      "label": "UI/Figma"
     },
     {
       "key": "practice",
-      "label": "Practice / Frontend",
-      "description": "Esercizi e componenti frontend realizzati per consolidare HTML, CSS, responsive design e struttura delle interfacce."
+      "label": "Practice"
     }
   ],
   "projects": [
     {
       "id": "adriana-architettura",
       "title": "Adriana Napolitano — Architettura e restauro",
-      "type": "Sito professionale / Brand, UX e frontend",
-      "description": "Identità digitale e sito multipagina per un’architetta emergente, con case study trasparenti, funnel di consulenza, SEO tecnica, analytics e accessibilità.",
-      "longDescription": "Progetto multidisciplinare costruito da zero: discovery, strategia del brand, architettura informativa, UI/UX, frontend Next.js, motion editoriale, SEO, piano marketing, analytics e QA. La demo pubblica presenta progetti accademici dichiarati come non realizzati e un modulo che non trasmette dati.",
-      "problem": "Costruire credibilità professionale senza inventare incarichi o risultati, trasformando CV e portfolio accademico in un’esperienza utile per proprietari di immobili importanti e storici.",
-      "solution": "Un sito editoriale accessibile, responsive e orientato alla prima consulenza, con metodo, servizi, case study, contenuti informativi, guida gratuita e misurazione predisposta.",
-      "role": "Web Designer con profilo multidisciplinare: strategia, UI/UX, frontend, SEO, CRO, analytics e pubblicazione",
-      "features": [
-        "21 route statiche e quattro pagine progetto",
-        "Design system editoriale e motion con movimento ridotto",
-        "Modulo dimostrativo accessibile predisposto per endpoint reale",
-        "SEO tecnica, sitemap, robots, Open Graph e JSON-LD",
-        "17 eventi analytics anonimi predisposti",
-        "Documentazione completa e workflow GitHub Pages"
-      ],
+      "type": "Sito professionale multidisciplinare",
+      "description": "Identità digitale e sito multipagina per una professionista reale, progettati per trasformare materiali accademici dichiarati in una futura presenza professionale.",
+      "problem": "Presentare formazione e progetti accademici con credibilità, senza farli apparire come incarichi o opere costruite.",
+      "solution": "Un sito editoriale accessibile con servizi, metodo, quattro pagine progetto, tre case study completi e percorso verso la prima consulenza.",
+      "role": "Strategia, architettura informativa, UI/UX, sviluppo frontend, SEO, QA e handover",
       "image": "assets/projects/adriana-architecture-cover.png",
       "imageAlt": "Homepage desktop del sito Adriana Napolitano Architettura e restauro",
       "imageWidth": 1425,
       "imageHeight": 891,
       "tags": [
         "Next.js",
+        "React",
         "TypeScript",
-        "UI/UX",
-        "Web Design",
-        "SEO",
-        "CRO",
-        "Analytics",
-        "Accessibilità",
-        "Performance",
-        "GitHub Actions"
+        "CSS Modules",
+        "Accessibilità"
       ],
-      "badge": "Progetto multidisciplinare",
-      "status": "Pubblicato",
+      "badge": "Progetto in evidenza",
+      "status": "Demo pubblica — evoluzione verso sito professionale reale",
       "featured": true,
+      "primary": true,
       "published": true,
       "priority": 0,
-      "order": 0,
-      "group": "main",
-      "groupLabel": "Progetti principali",
+      "group": "professional",
+      "filters": [
+        "featured",
+        "professional"
+      ],
       "liveUrl": "https://vincenzomec97-ship-it.github.io/adriana-napolitano-architettura/",
-      "liveLabel": "Visita il sito",
+      "liveLabel": "Visita la demo",
       "githubUrl": "https://github.com/vincenzomec97-ship-it/adriana-napolitano-architettura",
       "figmaUrl": "",
       "detailUrl": "projects/adriana-architettura/",
@@ -99,13 +80,53 @@ window.portfolioProjectFallback = {
       "category": "Sito professionale / Architettura"
     },
     {
+      "id": "english-quiz-lab",
+      "title": "English Quiz Lab",
+      "type": "Web app educativa full-stack con AI",
+      "description": "Piattaforma per creare, revisionare e svolgere quiz di inglese assistiti da AI, con flussi distinti per docenti e studenti.",
+      "problem": "Generare quiz da fonti diverse mantenendo revisione umana, ruoli separati e controllo dei risultati.",
+      "solution": "Flusso completo con Gemini, validazione dei dati, Supabase, Edge Functions e calcolo lato server.",
+      "role": "Progettazione dei flussi, sviluppo frontend e backend, integrazione AI e test",
+      "image": "assets/projects/english-quiz-lab-preview.png",
+      "imageAlt": "Schermata di accesso dell'app English Quiz Lab",
+      "imageWidth": 1440,
+      "imageHeight": 1000,
+      "tags": [
+        "JavaScript",
+        "Node.js",
+        "Gemini",
+        "Supabase",
+        "Edge Functions"
+      ],
+      "badge": "Web app full-stack",
+      "status": "Demo pubblica — repository privata",
+      "primary": true,
+      "published": true,
+      "priority": 1,
+      "group": "webapp",
+      "filters": [
+        "featured",
+        "webapp",
+        "ai"
+      ],
+      "liveUrl": "https://english-quiz-lab-one.vercel.app/",
+      "liveLabel": "Visita l’app",
+      "githubUrl": "",
+      "figmaUrl": "",
+      "detailUrl": "projects/english-quiz-lab/",
+      "year": "2026",
+      "category": "Web app / Education"
+    },
+    {
       "id": "cm-pulizie",
       "title": "C.M. Pulizie",
-      "type": "Sito web completo / Local business",
-      "description": "Sito multipagina per un'impresa di pulizie a Napoli, progettato in Figma e sviluppato con preventivo guidato, contatti rapidi e responsive design.",
-      "longDescription": "Dal prototipo Figma ho sviluppato un sito multipagina con gerarchia dei contenuti, servizi, preventivo guidato, contatti e WhatsApp. La demo pubblica include validazione, privacy di base e SEO tecnica; il flusso Google Apps Script per salvataggio, email e PDF è predisposto nel progetto ma non è attivo nella demo.",
+      "type": "Sito per local business",
+      "description": "Sito multipagina progettato in Figma e sviluppato per rendere servizi, contatti e richieste di preventivo più facili da consultare.",
+      "problem": "Organizzare molti servizi e semplificare il contatto da smartphone per un’attività locale.",
+      "solution": "Pagine servizio responsive, CTA riconoscibili, preventivo guidato e integrazione Apps Script predisposta ma non attiva nella demo.",
+      "role": "UI/UX design, sviluppo frontend, contenuti, SEO tecnica di base e pubblicazione",
       "image": "assets/projects/cm-pulizie-preview.jpg",
-      "imageAlt": "Screenshot del sito C.M. Pulizie",
+      "imageAlt": "Homepage desktop del sito C.M. Pulizie",
       "imageWidth": 1600,
       "imageHeight": 1039,
       "tags": [
@@ -113,119 +134,74 @@ window.portfolioProjectFallback = {
         "HTML",
         "CSS",
         "JavaScript",
-        "UI/UX",
-        "Responsive Design",
-        "Integrazione Apps Script predisposta",
-        "Form validation",
-        "SEO base",
-        "GitHub Pages"
+        "Responsive Design"
       ],
       "badge": "Sito web completo",
-      "status": "Pubblicato",
-      "featured": true,
+      "status": "Demo pubblica — automazioni esterne non attive",
+      "primary": true,
       "published": true,
       "priority": 2,
-      "order": 2,
-      "group": "main",
-      "groupLabel": "Progetti principali",
+      "group": "professional",
+      "filters": [
+        "featured",
+        "professional",
+        "business",
+        "figma"
+      ],
       "liveUrl": "https://vincenzomec97-ship-it.github.io/cm-pulizie/",
+      "liveLabel": "Visita il sito",
       "githubUrl": "https://github.com/vincenzomec97-ship-it/cm-pulizie",
       "figmaUrl": "https://www.figma.com/proto/Qlefn1I3qe1WEOijl20qUR/Untitled?t=QmHGINTnjDozetfi-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&node-id=1-75",
       "detailUrl": "projects/cm-pulizie/",
       "year": "2026",
-      "category": "Sito web completo / Local business"
+      "category": "Sito web / Local business"
     },
     {
-      "id": "english-quiz-lab",
-      "title": "English Quiz Lab",
-      "type": "AI Web App / Educational Platform",
-      "description": "Web app full-stack per creare, revisionare e svolgere quiz di inglese assistiti dall'AI, con flussi distinti per docenti e studenti.",
-      "longDescription": "La piattaforma usa Gemini per produrre quiz strutturati da testo e contenuti multimediali. Valida i dati prima del rendering, gestisce ruoli e approvazioni, salva fonti e risultati con Supabase e calcola il punteggio lato server. Il codice è in un repository privato.",
-      "image": "assets/projects/english-quiz-lab-preview.png",
-      "imageAlt": "Schermata di accesso dell'app English Quiz Lab",
-      "imageWidth": 1440,
-      "imageHeight": 1000,
-      "tags": [
-        "HTML",
-        "CSS",
-        "JavaScript",
-        "Node.js",
-        "Google Gemini",
-        "Supabase",
-        "Supabase Edge Functions",
-        "RLS",
-        "Vercel"
-      ],
-      "badge": "AI Web App full-stack",
-      "status": "Pubblicato",
-      "featured": true,
-      "published": true,
-      "priority": 1,
-      "order": 1,
-      "group": "main",
-      "groupLabel": "Progetti principali",
-      "liveUrl": "https://english-quiz-lab-one.vercel.app/",
-      "liveLabel": "Visita l’app",
-      "githubUrl": "",
-      "figmaUrl": "",
-      "detailUrl": "projects/english-quiz-lab/",
-      "year": "2026",
-      "category": "AI Web App / Educational Platform"
-    },
-    {
-      "id": "fitzone",
-      "title": "FitZone — Landing Page Palestra",
-      "type": "Landing page / Fitness marketing",
-      "description": "Landing page completa per una palestra immaginaria, sviluppata da Figma al codice con percorsi commerciali, prova gratuita simulata e interazioni accessibili.",
-      "longDescription": "Il problema era trasformare una hero Figma in un'esperienza completa capace di presentare corsi, coach, metodo, risultati, prezzi e orari senza perdere identità visiva. La soluzione è una landing responsive in HTML, CSS e JavaScript puro, con navigazione accessibile, CTA coerenti, FAQ, form validato e contenuti dimostrativi chiaramente dichiarati.",
-      "problem": "Estendere una hero Figma in una landing commerciale completa, coerente e credibile, evitando sezioni scollegate e un percorso di conversione confuso.",
-      "solution": "Un sistema visivo nero, giallo e bianco applicato a sezioni riutilizzabili, navigazione ad ancora, contenuti orientati alla prova gratuita e interazioni accessibili su ogni dispositivo.",
-      "role": "UI/UX Designer e Frontend Developer",
-      "features": [
-        "Menu mobile accessibile e navigazione attiva",
-        "Corsi, coach, metodo, risultati, prezzi e orari responsive",
-        "Form demo con validazione, caricamento e conferma",
-        "FAQ accessibili e modale video",
-        "CTA mobile adattiva e supporto prefers-reduced-motion",
-        "SEO base, Open Graph e GitHub Pages ready"
-      ],
-      "image": "assets/projects/fitzone-preview.png",
-      "imageAlt": "Hero desktop della landing page FitZone",
+      "id": "shoes-3d-demo",
+      "title": "Shoes M.V. — Demo 3D",
+      "type": "Demo sperimentale React e Three.js",
+      "description": "Evoluzione interattiva di un concept Figma per sperimentare profondità, movimento e presentazione prodotto sul web.",
+      "problem": "Trasformare un prototipo statico di sneaker store in un’esperienza web più immersiva.",
+      "solution": "Hero interattiva, navigazione, ricerca, store e carrello locale con React, Three.js e animazioni controllate.",
+      "role": "UI implementation, sviluppo React e sperimentazione 3D",
+      "image": "assets/projects/shoes-3d-demo.jpg",
+      "imageAlt": "Homepage della demo Shoes M.V. con sneaker interattiva",
       "imageWidth": 1440,
       "imageHeight": 900,
       "tags": [
-        "HTML",
-        "CSS",
-        "JavaScript",
-        "Figma",
-        "UI/UX",
-        "Accessibilità",
-        "Responsive Design",
-        "Landing Page",
-        "SEO base"
+        "React",
+        "Three.js",
+        "React Three Fiber",
+        "GSAP",
+        "Figma"
       ],
-      "badge": "Landing page completa",
-      "status": "Completato",
-      "featured": false,
+      "badge": "Demo 3D",
+      "status": "Demo sperimentale pubblicata — non è un e-commerce completo",
+      "primary": true,
       "published": true,
       "priority": 3,
-      "order": 3,
-      "group": "business",
-      "groupLabel": "Progetti business / marketing",
-      "liveUrl": "https://vincenzomec97-ship-it.github.io/gym-landing-page/",
-      "liveLabel": "Visita la demo",
-      "githubUrl": "https://github.com/vincenzomec97-ship-it/gym-landing-page",
-      "figmaUrl": "https://www.figma.com/proto/CgFRuCSFPFhb6KcRTZqYZa/Untitled?node-id=1-12&p=f&t=c04ReWw6m3h8teUK-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1",
-      "detailUrl": "projects/fitzone-case-study/",
+      "group": "experimental",
+      "filters": [
+        "featured",
+        "experimental",
+        "figma"
+      ],
+      "liveUrl": "https://vincenzomec97-ship-it.github.io/shoely-3d-store/",
+      "liveLabel": "Apri la demo 3D",
+      "githubUrl": "https://github.com/vincenzomec97-ship-it/shoely-3d-store",
+      "figmaUrl": "https://www.figma.com/proto/G09Tq8i37addPsCe293DVz/Untitled?node-id=2-2&t=9UxqkVse9NypvUl0-1",
+      "detailUrl": "projects/shoes-mv/",
       "year": "2026",
-      "category": "Landing page / Fitness marketing"
+      "category": "Demo 3D / Esperimento"
     },
     {
       "id": "dashboard-clienti",
       "title": "ClientFlow",
-      "type": "Dashboard CRM per la gestione delle richieste",
-      "description": "Dashboard CRM dimostrativa per organizzare clienti, richieste di preventivo, stati commerciali, promemoria e attività.",
-      "longDescription": "Web app gestionale frontend con CRUD completo, ricerca, filtri combinabili, ordinamento, paginazione, statistiche, grafici SVG, timeline, note interne, promemoria, preferiti ed esportazione CSV. I dati restano nel browser e vengono gestiti con localStorage.",
+      "type": "Dashboard CRM frontend",
+      "description": "Dashboard dimostrativa per organizzare clienti, richieste, stati commerciali, note e promemoria.",
+      "problem": "Rendere leggibili e gestibili richieste commerciali distribuite tra molti stati e attività.",
+      "solution": "CRUD, ricerca, filtri, ordinamento, grafici SVG, timeline ed esportazione CSV con dati salvati nel browser.",
+      "role": "UI/UX e sviluppo frontend JavaScript",
       "image": "assets/projects/clientflow-cover.webp",
       "imageAlt": "Dashboard desktop di ClientFlow per la gestione di richieste e clienti",
       "imageWidth": 1440,
@@ -235,55 +211,74 @@ window.portfolioProjectFallback = {
         "CSS",
         "JavaScript",
         "localStorage",
-        "Blob API",
-        "CRUD",
-        "State management",
-        "Filtering",
-        "Data visualization",
-        "Responsive design",
-        "Accessibility"
+        "SVG"
       ],
-      "badge": "Dashboard CRM",
-      "status": "Pubblicato",
-      "featured": false,
+      "badge": "Dashboard",
+      "status": "Demo frontend pubblicata — dati soltanto locali",
+      "primary": true,
       "published": true,
       "priority": 4,
-      "order": 4,
       "group": "business",
-      "groupLabel": "Progetti business / marketing",
+      "filters": [
+        "featured",
+        "webapp",
+        "business"
+      ],
       "liveUrl": "https://vincenzomec97-ship-it.github.io/clientflow-dashboard/",
-      "liveLabel": "Guarda il progetto",
+      "liveLabel": "Apri la dashboard",
       "githubUrl": "https://github.com/vincenzomec97-ship-it/clientflow-dashboard",
       "figmaUrl": "",
       "detailUrl": "projects/clientflow/",
-      "links": [
-        {
-          "label": "Guarda il progetto",
-          "href": "https://vincenzomec97-ship-it.github.io/clientflow-dashboard/",
-          "variant": "primary"
-        },
-        {
-          "label": "Case study",
-          "href": "projects/clientflow/",
-          "variant": "secondary"
-        },
-        {
-          "label": "Codice GitHub",
-          "href": "https://github.com/vincenzomec97-ship-it/clientflow-dashboard",
-          "variant": "secondary"
-        }
-      ],
       "year": "2026",
-      "category": "Dashboard CRM / Business workflow"
+      "category": "Dashboard / Business workflow"
+    },
+    {
+      "id": "fitzone",
+      "title": "FitZone",
+      "type": "Landing page fitness",
+      "description": "Landing page per una palestra immaginaria, estesa da una hero Figma a un percorso commerciale responsive e accessibile.",
+      "problem": "Trasformare una singola schermata in una pagina completa con contenuti e CTA coerenti.",
+      "solution": "Corsi, coach, prezzi, orari, FAQ, form dimostrativo e navigazione mobile accessibile.",
+      "role": "UI/UX design e sviluppo frontend",
+      "image": "assets/projects/fitzone-preview.png",
+      "imageAlt": "Hero desktop della landing page FitZone",
+      "imageWidth": 1440,
+      "imageHeight": 900,
+      "tags": [
+        "Figma",
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Accessibilità"
+      ],
+      "badge": "Landing page",
+      "status": "Demo pubblicata — palestra, contatti e invii sono dimostrativi",
+      "primary": true,
+      "published": true,
+      "priority": 5,
+      "group": "business",
+      "filters": [
+        "business",
+        "figma"
+      ],
+      "liveUrl": "https://vincenzomec97-ship-it.github.io/gym-landing-page/",
+      "liveLabel": "Visita la demo",
+      "githubUrl": "https://github.com/vincenzomec97-ship-it/gym-landing-page",
+      "figmaUrl": "https://www.figma.com/proto/CgFRuCSFPFhb6KcRTZqYZa/Untitled?node-id=1-12&p=f&t=c04ReWw6m3h8teUK-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1",
+      "detailUrl": "projects/fitzone-case-study/",
+      "year": "2026",
+      "category": "Landing page / Fitness"
     },
     {
       "id": "chatbot-aziendale",
       "title": "CasaBot",
-      "type": "Assistente conversazionale rule-based",
-      "description": "Assistente immobiliare rule-based in JavaScript che raccoglie preferenze, guida il percorso e genera una richiesta strutturata.",
-      "longDescription": "Web app frontend che trasforma una richiesta immobiliare generica in un percorso conversazionale accessibile. Gestisce stato, validazione, modifica delle risposte, selezioni multiple, privacy dimostrativa e download locale del riepilogo senza backend o vera intelligenza artificiale.",
+      "type": "Web app conversazionale rule-based",
+      "description": "Assistente immobiliare in JavaScript che raccoglie preferenze e costruisce una richiesta strutturata senza servizi AI esterni.",
+      "problem": "Guidare una richiesta immobiliare generica senza sovraccaricare l’utente con un form lungo.",
+      "solution": "Percorso conversazionale accessibile con stato, validazione, riepilogo modificabile e download locale.",
+      "role": "Conversational UX e sviluppo frontend",
       "image": "assets/projects/casabot-cover.webp",
-      "imageAlt": "Interfaccia desktop di CasaBot, assistente virtuale immobiliare",
+      "imageAlt": "Interfaccia desktop di CasaBot, assistente immobiliare rule-based",
       "imageWidth": 1440,
       "imageHeight": 1000,
       "tags": [
@@ -291,177 +286,71 @@ window.portfolioProjectFallback = {
         "CSS",
         "JavaScript",
         "localStorage",
-        "Blob API",
-        "Chatbot UX",
-        "Form validation",
-        "State management",
-        "Responsive design",
-        "Accessibility",
-        "Privacy by design"
+        "Chatbot UX"
       ],
       "badge": "Web app conversazionale",
-      "status": "Pubblicato",
-      "featured": false,
+      "status": "Demo rule-based — nessuna AI o trasmissione dati",
+      "primary": true,
       "published": true,
-      "priority": 5,
-      "order": 5,
+      "priority": 6,
       "group": "ai",
-      "groupLabel": "Progetti AI / automation",
+      "filters": [
+        "webapp",
+        "ai"
+      ],
       "liveUrl": "https://vincenzomec97-ship-it.github.io/casabot-immobiliare/",
+      "liveLabel": "Apri la demo",
       "githubUrl": "https://github.com/vincenzomec97-ship-it/casabot-immobiliare",
       "figmaUrl": "",
       "detailUrl": "projects/casabot/",
-      "links": [
-        {
-          "label": "Guarda il progetto",
-          "href": "https://vincenzomec97-ship-it.github.io/casabot-immobiliare/",
-          "variant": "primary"
-        },
-        {
-          "label": "Case study",
-          "href": "projects/casabot/",
-          "variant": "secondary"
-        },
-        {
-          "label": "Codice GitHub",
-          "href": "https://github.com/vincenzomec97-ship-it/casabot-immobiliare",
-          "variant": "secondary"
-        }
-      ],
       "year": "2026",
-      "category": "Web app conversazionale / Real estate"
-    },
-    {
-      "id": "shoes-3d-demo",
-      "title": "Shoes M.V. — Demo 3D",
-      "type": "Demo web 3D / Figma to Code",
-      "description": "Base sperimentale responsive nata dal concept Shoes in Figma, realizzata per mostrare profondità, movimento e una presentazione prodotto interattiva.",
-      "longDescription": "Progetto demo in evoluzione: combina una hero interattiva, effetto di profondità sulla sneaker, navigazione, ricerca, store e carrello locale. Non è un e-commerce completo né un modello 3D definitivo; mostra una base tecnica e visiva per sperimentare React, Three.js, React Three Fiber e GSAP partendo dal design Figma.",
-      "image": "assets/projects/shoes-3d-demo.jpg",
-      "imageAlt": "Homepage della demo web Shoes M.V. con sneaker interattiva",
-      "imageWidth": 1440,
-      "imageHeight": 900,
-      "tags": [
-        "Figma",
-        "React",
-        "Three.js",
-        "React Three Fiber",
-        "GSAP"
-      ],
-      "badge": "Demo 3D",
-      "status": "Base sperimentale",
-      "featured": false,
-      "published": true,
-      "priority": 6,
-      "order": 6,
-      "group": "demo3d",
-      "groupLabel": "Demo 3D / Esperimenti",
-      "liveUrl": "https://vincenzomec97-ship-it.github.io/shoely-3d-store/",
-      "liveLabel": "Vedi la demo 3D",
-      "githubUrl": "https://github.com/vincenzomec97-ship-it/shoely-3d-store",
-      "figmaUrl": "https://www.figma.com/proto/G09Tq8i37addPsCe293DVz/Untitled?node-id=2-2&t=9UxqkVse9NypvUl0-1",
-      "year": "2026",
-      "category": "Demo web 3D / Esperimento"
+      "category": "Web app / Real estate"
     },
     {
       "id": "shoes-concept",
       "title": "Shoes Concept",
-      "type": "UI Design / Figma Concept",
-      "description": "Prototipo Figma di uno store di sneaker, creato per studiare navigazione, ricerca, card prodotto e gerarchia visiva.",
-      "longDescription": "Concept solo Figma: esercizio di interfaccia, gerarchia visiva e prototipazione collegato alla successiva demo web 3D.",
+      "type": "Fase iniziale UI/UX di Shoes M.V.",
+      "description": "Il prototipo Figma da cui è nata la successiva demo interattiva Shoes M.V.; non è un progetto duplicato.",
+      "problem": "Definire gerarchia, navigazione, ricerca e card prodotto prima dello sviluppo.",
+      "solution": "Concept e prototipo UI collegati a un percorso evolutivo documentato fino a React e Three.js.",
+      "role": "UI design, prototipazione e definizione del flusso",
       "image": "assets/projects/shoes-preview.jpg",
-      "imageAlt": "Mockup Figma del concept e-commerce Shoes",
+      "imageAlt": "Prototipo Figma originale dello store Shoes",
       "imageWidth": 1233,
       "imageHeight": 1600,
+      "imageVariant": "figma",
       "tags": [
         "Figma",
         "UI Design",
-        "E-commerce",
-        "Visual Design",
-        "Prototype"
+        "Wireframe",
+        "Prototipazione"
       ],
-      "badge": "Figma Concept",
-      "status": "Figma Concept",
-      "featured": false,
-      "published": true,
-      "priority": 6,
-      "order": 6,
-      "group": "figma",
-      "groupLabel": "Progetti UI/Figma",
-      "liveUrl": "",
-      "githubUrl": "",
-      "figmaUrl": "https://www.figma.com/proto/G09Tq8i37addPsCe293DVz/Untitled?node-id=2-2&t=9UxqkVse9NypvUl0-1",
-      "year": "2026",
-      "category": "UI/Figma"
-    },
-    {
-      "id": "cleaning-figma-concept",
-      "title": "C.M. Pulizie - Figma Concept",
-      "type": "UI Design / Figma Concept",
-      "description": "Prototipo Figma per C.M. Pulizie che mostra architettura delle sezioni, componenti e priorità dei contenuti prima dello sviluppo.",
-      "longDescription": "Concept solo Figma collegato alla fase di progettazione visuale: mostra struttura, componenti e gerarchia prima dello sviluppo del sito.",
-      "image": "assets/projects/cm-pulizie-preview.jpg",
-      "imageAlt": "Concept Figma del sito C.M. Pulizie",
-      "imageWidth": 1600,
-      "imageHeight": 1039,
-      "tags": [
-        "Figma",
-        "UI Design",
-        "Web Design",
-        "Prototype",
-        "Local business"
-      ],
-      "badge": "Figma Concept",
-      "status": "Figma Concept",
-      "featured": false,
+      "badge": "Fase UI/UX",
+      "status": "Prototipo Figma completato",
+      "primary": true,
       "published": true,
       "priority": 7,
-      "order": 7,
       "group": "figma",
-      "groupLabel": "Progetti UI/Figma",
-      "liveUrl": "",
-      "githubUrl": "",
-      "figmaUrl": "https://www.figma.com/proto/Qlefn1I3qe1WEOijl20qUR/Untitled?t=QmHGINTnjDozetfi-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&node-id=1-75",
-      "year": "2026",
-      "category": "UI/Figma"
-    },
-    {
-      "id": "fitness-figma-concept",
-      "title": "Fitness Landing - Figma Concept",
-      "type": "UI Design / Figma Concept",
-      "description": "Prototipo Figma di una landing fitness focalizzato su hero, call to action, ritmo visivo e coerenza dei componenti.",
-      "longDescription": "Concept solo Figma: mostra studio di layout, colori, spaziature e direzione visuale per una landing page commerciale.",
-      "image": "assets/projects/fitzone-preview.jpg",
-      "imageAlt": "Concept Figma per landing page fitness",
-      "imageWidth": 1600,
-      "imageHeight": 1040,
-      "tags": [
-        "Figma",
-        "UI Design",
-        "Landing Page",
-        "Visual Design",
-        "Prototype"
+      "filters": [
+        "figma",
+        "experimental"
       ],
-      "badge": "Figma Concept",
-      "status": "Figma Concept",
-      "featured": false,
-      "published": true,
-      "priority": 8,
-      "order": 8,
-      "group": "figma",
-      "groupLabel": "Progetti UI/Figma",
-      "liveUrl": "",
+      "liveUrl": "https://vincenzomec97-ship-it.github.io/shoely-3d-store/",
+      "liveLabel": "Vedi l’evoluzione 3D",
       "githubUrl": "",
-      "figmaUrl": "https://www.figma.com/proto/CgFRuCSFPFhb6KcRTZqYZa/Untitled?node-id=1-12&p=f&t=c04ReWw6m3h8teUK-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1",
+      "figmaUrl": "https://www.figma.com/proto/G09Tq8i37addPsCe293DVz/Untitled?node-id=2-2&t=9UxqkVse9NypvUl0-1",
+      "detailUrl": "projects/shoes-concept/",
       "year": "2026",
       "category": "UI/Figma"
     },
     {
       "id": "registration-form",
-      "title": "Pagina registrazione / Registration Form",
-      "type": "Practice / Frontend",
-      "description": "Form di registrazione responsive con campi accessibili e validazione HTML5, realizzato per consolidare struttura e styling frontend.",
-      "longDescription": "Esercizio frontend realizzato per consolidare struttura HTML, styling CSS, gestione dei campi form, validazione nativa e responsive design.",
+      "title": "Registration Form",
+      "type": "Esercizio frontend",
+      "description": "Form responsive realizzato per consolidare HTML semantico, CSS e validazione nativa.",
+      "problem": "Esercitare struttura e leggibilità di un modulo su schermi piccoli.",
+      "solution": "Campi etichettati, validazione HTML5 e layout responsive essenziale.",
+      "role": "Sviluppo frontend",
       "image": "assets/projects/registration-preview.png",
       "imageAlt": "Screenshot del form di registrazione responsive",
       "imageWidth": 1082,
@@ -470,22 +359,97 @@ window.portfolioProjectFallback = {
         "HTML",
         "CSS",
         "Form",
-        "Responsive Design",
-        "Validazione HTML5"
+        "Responsive Design"
       ],
-      "badge": "Frontend Practice",
-      "status": "Completato",
-      "featured": false,
+      "badge": "Practice",
+      "status": "Esercizio completato",
+      "compact": true,
+      "primary": true,
       "published": true,
-      "priority": 9,
-      "order": 9,
+      "priority": 8,
       "group": "practice",
-      "groupLabel": "Practice / Frontend",
+      "filters": [
+        "practice"
+      ],
       "liveUrl": "projects/registration-form/",
+      "liveLabel": "Apri l’esercizio",
       "githubUrl": "",
       "figmaUrl": "",
+      "detailUrl": "",
       "year": "2026",
       "category": "Practice / Frontend"
+    },
+    {
+      "id": "cleaning-figma-concept",
+      "title": "C.M. Pulizie — Concept Figma",
+      "type": "Materiale di processo collegato",
+      "description": "Prototipo usato per definire struttura e componenti prima dello sviluppo del sito C.M. Pulizie.",
+      "problem": "Validare gerarchia e priorità dei contenuti prima del codice.",
+      "solution": "Prototipo navigabile collegato al progetto frontend pubblicato.",
+      "role": "UI design e prototipazione",
+      "image": "assets/projects/cm-pulizie-preview.jpg",
+      "imageAlt": "Concept Figma del sito C.M. Pulizie",
+      "imageWidth": 1600,
+      "imageHeight": 1039,
+      "tags": [
+        "Figma",
+        "UI Design",
+        "Prototipazione"
+      ],
+      "badge": "Concept collegato",
+      "status": "Prototipo Figma",
+      "compact": true,
+      "primary": false,
+      "published": true,
+      "priority": 9,
+      "group": "figma",
+      "filters": [
+        "figma",
+        "professional"
+      ],
+      "liveUrl": "https://vincenzomec97-ship-it.github.io/cm-pulizie/",
+      "liveLabel": "Vedi il sito",
+      "githubUrl": "",
+      "figmaUrl": "https://www.figma.com/proto/Qlefn1I3qe1WEOijl20qUR/Untitled?t=QmHGINTnjDozetfi-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&node-id=1-75",
+      "detailUrl": "",
+      "year": "2026",
+      "category": "UI/Figma"
+    },
+    {
+      "id": "fitness-figma-concept",
+      "title": "FitZone — Concept Figma",
+      "type": "Materiale di processo collegato",
+      "description": "Concept della hero che ha guidato l’estensione della landing page FitZone.",
+      "problem": "Definire direzione visiva, ritmo e CTA iniziali.",
+      "solution": "Prototipo collegato alla demo completa e al relativo case study.",
+      "role": "UI design e prototipazione",
+      "image": "assets/projects/fitzone-preview.jpg",
+      "imageAlt": "Concept Figma della landing page FitZone",
+      "imageWidth": 1600,
+      "imageHeight": 1040,
+      "tags": [
+        "Figma",
+        "UI Design",
+        "Landing Page"
+      ],
+      "badge": "Concept collegato",
+      "status": "Prototipo Figma",
+      "compact": true,
+      "primary": false,
+      "published": true,
+      "priority": 10,
+      "group": "figma",
+      "filters": [
+        "figma",
+        "business"
+      ],
+      "liveUrl": "https://vincenzomec97-ship-it.github.io/gym-landing-page/",
+      "liveLabel": "Vedi la demo",
+      "githubUrl": "",
+      "figmaUrl": "https://www.figma.com/proto/CgFRuCSFPFhb6KcRTZqYZa/Untitled?node-id=1-12&p=f&t=c04ReWw6m3h8teUK-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1",
+      "detailUrl": "projects/fitzone-case-study/",
+      "year": "2026",
+      "category": "UI/Figma"
     }
   ]
 };

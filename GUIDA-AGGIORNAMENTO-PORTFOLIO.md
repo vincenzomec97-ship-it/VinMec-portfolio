@@ -1,37 +1,75 @@
 # Guida di aggiornamento del portfolio
 
-## Regola principale
+## Fonte dei progetti
 
-La fonte primaria dei progetti è `data/projects.json`. Il file `assets/js/projects.js` è il fallback necessario quando la home viene aperta con `file://`: dopo ogni modifica ai dati, deve restare sincronizzato.
+Modificare soltanto `data/projects.json`, poi eseguire:
 
-## Aggiungere o aggiornare un progetto
+```powershell
+npm run generate
+npm test
+```
 
-1. Aggiornare titolo, descrizioni, stato, immagini, stack e soli link reali.
-2. Usare il gruppo esistente appropriato: `main`, `business`, `ai`, `demo3d`, `figma` o `practice`.
-3. Usare `priority` e `order` senza cambiare la distinzione tra progetti principali e secondari.
-4. Lasciare vuoto un link non disponibile; non usare `#`.
-5. Dichiarare chiaramente `Prototipo`, `In sviluppo`, `Versione dimostrativa` o `Funzionalità in evoluzione`.
-6. Sincronizzare il fallback e verificare sia tramite server locale sia aprendo `index.html` direttamente.
-7. Aggiornare case study, sitemap e changelog se cambia una pagina pubblica.
+Il generatore aggiorna automaticamente le card statiche in `index.html` e il fallback `assets/js/projects.js`. Non modificare a mano il contenuto compreso tra `<!-- PROJECTS:START -->` e `<!-- PROJECTS:END -->`.
+
+## Campi essenziali
+
+Ogni progetto deve dichiarare:
+
+- identificatore e titolo univoci;
+- categoria, descrizione, problema, soluzione e ruolo;
+- stato reale e limitazioni;
+- immagine con testo alternativo e dimensioni;
+- massimo cinque tecnologie principali nella card;
+- soli link realmente disponibili;
+- ordine tramite `priority`;
+- categorie filtro tramite `filters`.
+
+I filtri ammessi sono `featured`, `webapp`, `professional`, `business`, `ai`, `experimental`, `figma` e `practice`.
+
+## Regole editoriali
+
+- Non usare `#`, localhost o URL inventati.
+- Distinguere demo, prototipo, progetto personale, esercizio e sito professionale.
+- Non descrivere come attivi moduli, analytics, automazioni o servizi non collegati.
+- Registration Form e i concept collegati devono mantenere `compact: true`.
+- Adriana resta il primo progetto, con `featured: true`.
+- Shoes Concept va presentato come fase UI/UX di Shoes M.V.
 
 ## Immagini
 
-- Preferire WebP o JPEG ottimizzati per fotografie e anteprime.
-- Mantenere una copia sorgente solo se serve davvero.
-- Indicare sempre `width`, `height` e un testo alternativo contestuale.
+- Preferire WebP o JPEG ottimizzati quando compatibili.
+- Dichiarare `width`, `height` e un alt contestuale.
 - Usare `loading="lazy"` fuori dalla prima schermata.
-- Verificare ritaglio, rapporto e leggibilità a 320, 375, 430, 768, 1024 e 1440 px.
+- Non caricare nelle card i PNG sorgente più pesanti se esiste una versione ottimizzata.
+- Non eliminare i file sorgente senza una verifica dei riferimenti e approvazione.
 
-## Controlli prima di pubblicare
+## Controlli browser
 
-Avviare dalla radice:
+Avviare:
 
 ```powershell
 python -m http.server 4173
 ```
 
-Aprire `http://127.0.0.1:4173/`, controllare console, menu, filtri, card, modali, form, CV, case study e link esterni. Eseguire Lighthouse in navigazione privata. Non pubblicare direttamente su `main`: usare un branch e revisionare il diff.
+Verificare home e case study a 320, 375, 430, 768, 1024 e 1440 px. Controllare menu, filtri, tastiera, focus, form, immagini, link, console e movimento ridotto.
 
-## Informazioni sensibili
+## Form contatti
 
-Non inserire chiavi API, file `.env`, token, password o dati personali di utenti. Le chiamate AI devono restare lato server; i progetti demo devono usare dati fittizi chiaramente indicati.
+Con `data-form-endpoint=""` il form prepara una email e non salva dati. Inserire un endpoint Formspree soltanto dopo aver creato e verificato l’account, aggiornato la nota informativa e provato un invio reale.
+
+## Sicurezza
+
+Non inserire token, password, chiavi API, file `.env`, dati di utenti o documenti privati. Le integrazioni AI con credenziali devono rimanere lato server.
+
+## Git e pubblicazione
+
+Lavorare su un branch dedicato. Prima di proporre il merge:
+
+```powershell
+npm run generate
+npm test
+git diff --check
+git status --short
+```
+
+Non pubblicare o unire su `main` senza approvazione.

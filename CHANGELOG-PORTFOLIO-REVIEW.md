@@ -1,5 +1,7 @@
 # Changelog — Portfolio professional review
 
+> Documento storico. Il rapporto corrente è `PORTFOLIO-PROFESSIONAL-UPGRADE.md`.
+
 ## 31 luglio 2026 — Progetto architettura
 
 - aggiunto Adriana Napolitano — Architettura e restauro come primo progetto principale;
