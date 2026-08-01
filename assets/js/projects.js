@@ -10,7 +10,7 @@ window.portfolioProjectFallback = {
   "groups": [
     {
       "key": "featured",
-      "label": "3 principali"
+      "label": "Principali"
     },
     {
       "key": "sites",

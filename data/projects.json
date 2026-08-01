@@ -7,7 +7,7 @@
     "Non inserire link finti o funzionalità non attive. Lascia vuoti i collegamenti non disponibili."
   ],
   "groups": [
-    { "key": "featured", "label": "3 principali" },
+    { "key": "featured", "label": "Principali" },
     { "key": "sites", "label": "Siti e landing page" },
     { "key": "webapp", "label": "Web app e dashboard" },
     { "key": "experimental", "label": "3D e interazione" },

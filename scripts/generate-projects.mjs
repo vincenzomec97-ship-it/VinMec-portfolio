@@ -102,7 +102,7 @@ const generatedBlock = `<!-- PROJECTS:START -->
           ${filters}
         </div>
       </div>
-      <p class="project-filter-note">Ogni lavoro appartiene a una sola tipologia. “3 principali” raccoglie Adriana, English Quiz Lab e C.M. Pulizie.</p>
+      <p class="project-filter-note">Ogni lavoro appartiene a una sola tipologia. “Principali” raccoglie Adriana, English Quiz Lab e C.M. Pulizie.</p>
       <p class="project-results" data-project-results role="status" aria-live="polite">${projects.length} progetti mostrati</p>
       <div class="project-grid portfolio-project-grid" data-project-list>
 ${projects.map(renderCard).join("\n")}
