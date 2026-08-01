@@ -19,7 +19,7 @@ const payload = JSON.parse(readFileSync(dataPath, "utf8"));
 const projects = payload.projects
   .filter((project) => project.published !== false)
   .sort((a, b) => Number(a.priority) - Number(b.priority));
-const primaryProjects = projects.filter((project) => project.primary !== false);
+const featuredProjects = projects.filter((project) => (project.filters || []).includes("featured"));
 const groupKeys = new Set(payload.groups.map((group) => group.key));
 
 const ids = new Set();
@@ -37,6 +37,7 @@ for (const project of projects) {
   }
   if (!existsSync(resolve(root, project.image))) throw new Error(`${project.id}: immagine non trovata: ${project.image}`);
 }
+if (featuredProjects.length !== 3) throw new Error(`La selezione principale deve contenere 3 progetti, trovati ${featuredProjects.length}`);
 
 const externalAttributes = (href) => /^https:\/\//i.test(href)
   ? ' target="_blank" rel="noopener noreferrer"'
@@ -46,7 +47,11 @@ const getLinks = (project) => [
   project.detailUrl && { label: "Case study", href: project.detailUrl, variant: project.featured ? "primary" : "secondary" },
   project.liveUrl && { label: project.liveLabel || "Demo online", href: project.liveUrl, variant: project.detailUrl ? "secondary" : "primary" },
   project.githubUrl && { label: "GitHub", href: project.githubUrl, variant: "secondary" },
-  project.figmaUrl && { label: "Figma", href: project.figmaUrl, variant: "ghost" }
+  project.figmaUrl && {
+    label: "Apri in Figma",
+    href: project.figmaUrl,
+    variant: project.detailUrl || project.liveUrl || project.githubUrl ? "ghost" : "primary"
+  }
 ].filter(Boolean);
 
 const renderCard = (project) => {
@@ -97,7 +102,7 @@ const generatedBlock = `<!-- PROJECTS:START -->
           ${filters}
         </div>
       </div>
-      <p class="project-filter-note">Ogni progetto appartiene a una sola tipologia. “In evidenza” è una selezione dei lavori più rappresentativi.</p>
+      <p class="project-filter-note">Ogni lavoro appartiene a una sola tipologia. “3 principali” raccoglie Adriana, English Quiz Lab e C.M. Pulizie.</p>
       <p class="project-results" data-project-results role="status" aria-live="polite">${projects.length} progetti mostrati</p>
       <div class="project-grid portfolio-project-grid" data-project-list>
 ${projects.map(renderCard).join("\n")}
@@ -113,9 +118,9 @@ if (!originalIndex.includes("<!-- PROJECTS:START -->") || !originalIndex.include
 
 let generatedIndex = originalIndex.replace(/<!-- PROJECTS:START -->[\s\S]*?<!-- PROJECTS:END -->/, generatedBlock);
 generatedIndex = generatedIndex
-  .replace(/(<strong data-project-total>)[^<]*(<\/strong>)/, `$1${primaryProjects.length}$2`)
-  .replace(/(<strong data-project-figma>)[^<]*(<\/strong>)/, `$1${primaryProjects.filter((project) => project.figmaUrl).length}$2`)
-  .replace(/(<strong data-project-live>)[^<]*(<\/strong>)/, `$1${primaryProjects.filter((project) => project.liveUrl).length}$2`);
+  .replace(/(<strong data-project-total>)[^<]*(<\/strong>)/, `$1${featuredProjects.length}$2`)
+  .replace(/(<strong data-project-figma>)[^<]*(<\/strong>)/, `$1${projects.filter((project) => project.group === "figma").length}$2`)
+  .replace(/(<strong data-project-live>)[^<]*(<\/strong>)/, `$1${projects.filter((project) => project.liveUrl).length}$2`);
 
 const fallback = `/* File generato da data/projects.json con npm run generate. */\nwindow.portfolioProjectFallback = ${JSON.stringify(payload, null, 2)};\nwindow.portfolioProjects = window.portfolioProjectFallback.projects;\n`;
 
