@@ -1,8 +1,9 @@
 # Portfolio professional upgrade
 
 Data verifica: 1 agosto 2026  
-Branch: `portfolio-professional-upgrade`  
-Branch principale modificato: no
+Branch di lavoro: `portfolio-professional-upgrade` e `github-professional-upgrade`  
+Branch principale modificato: sì, dopo autorizzazione del 1 agosto 2026  
+Versione pubblica: https://vincenzomec97-ship-it.github.io/VinMec-portfolio/
 
 ## Risultato
 
@@ -85,7 +86,7 @@ Il comando Lighthouse ha prodotto correttamente il report, ma su Windows ha rest
 - alcune immagini sorgente legacy, non caricate dalla home, restano pesanti per preservare il materiale originale;
 - il CSS mantiene regole legacy non rimosse per ridurre il rischio di regressioni;
 - il punteggio Performance locale può variare per rete, cache e macchina di test;
-- la versione pubblica rimane quella precedente finché il branch non viene approvato e unito.
+- la demo Shoes M.V. mantiene un chunk 3D consistente, caricato in modo differito.
 
 ## Passaggio manuale per Formspree
 
@@ -111,31 +112,28 @@ python -m http.server 4173
 
 e visitare `http://127.0.0.1:4173/`.
 
-## Annullare le modifiche
+## Annullare la pubblicazione
 
-Finché il branch non è stato unito, tornare al branch principale senza cancellare nulla:
-
-```bash
-git switch main
-```
-
-Per rimuovere in seguito il branch locale, soltanto dopo aver verificato di non averne più bisogno:
-
-```bash
-git branch -d portfolio-professional-upgrade
-```
-
-Non usare `git reset --hard` per annullare questo lavoro.
-
-## Unione dopo approvazione
+Le modifiche sono state unite tramite pull request. Per annullarle senza
+riscrivere la cronologia, creare un nuovo branch da `main` e usare `git revert`
+sul merge della PR, quindi aprire una nuova pull request:
 
 ```bash
 git switch main
 git pull --ff-only
-git merge --no-ff portfolio-professional-upgrade
-npm test
-git push origin main
+git switch -c revert-portfolio-professional-upgrade
+git revert -m 1 3f6c19b
 ```
 
-Merge, push e pubblicazione non fanno parte di questa consegna e richiedono approvazione esplicita.
+I branch di sicurezza non sono stati eliminati.
+
+Non usare `git reset --hard` per annullare questo lavoro.
+
+## Pubblicazione completata
+
+La PR [#5](https://github.com/vincenzomec97-ship-it/VinMec-portfolio/pull/5)
+è stata unita dopo autorizzazione. GitHub Pages ha completato il deploy con
+esito positivo. La verifica online a 375 e 1440 px non ha rilevato overflow,
+immagini rotte o errori console; il menu mobile è stato verificato anche con
+tastiera ed Escape.
 
