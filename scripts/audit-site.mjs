@@ -58,12 +58,16 @@ for (const [title, duplicates] of titles) {
 }
 
 const projects = JSON.parse(readFileSync(resolve(root, "data/projects.json"), "utf8")).projects;
+const publishedProjects = projects.filter((item) => item.published !== false);
 const index = readFileSync(resolve(root, "index.html"), "utf8");
-for (const project of projects.filter((item) => item.published !== false)) {
+for (const project of publishedProjects) {
   if (!index.includes(`id="project-${project.id}"`)) errors.push(`Card statica mancante: ${project.id}`);
 }
+for (const project of projects.filter((item) => item.published === false)) {
+  if (index.includes(`id="project-${project.id}"`)) errors.push(`Card non pubblicata ancora presente: ${project.id}`);
+}
 
-console.log(`Audit: ${htmlFiles.length} pagine HTML, ${projects.length} progetti, ${warnings.length} avvisi.`);
+console.log(`Audit: ${htmlFiles.length} pagine HTML, ${publishedProjects.length} progetti pubblicati, ${warnings.length} avvisi.`);
 for (const warning of warnings) console.warn(`AVVISO: ${warning}`);
 if (errors.length) {
   for (const error of errors) console.error(`ERRORE: ${error}`);

@@ -15,7 +15,7 @@ La grafica originale, la palette, il font e l'impostazione generale sono stati m
 
 - hero più breve con ruolo, stack, disponibilità junior e tre CTA;
 - navigazione ridotta a Home, Progetti, Competenze, Chi sono e Contatti;
-- nove progetti principali ordinati come richiesto e due materiali di processo secondari;
+- nove progetti unici ordinati come richiesto, senza card Figma duplicate per C.M. Pulizie e FitZone;
 - Adriana Napolitano come progetto in evidenza con card ampia e case study in 20 sezioni;
 - Shoes Concept presentato come fase UI/UX di Shoes M.V., con collegamenti reciproci;
 - Registration Form mantenuto in Practice con peso visivo ridotto;
@@ -53,7 +53,7 @@ La grafica originale, la palette, il font e l'impostazione generale sono stati m
 
 ## Controlli eseguiti
 
-- `npm test`: 16 pagine HTML, 11 progetti, 0 avvisi;
+- `npm test`: 16 pagine HTML, 9 progetti pubblicati, 0 avvisi;
 - `git diff --check`: nessun errore di whitespace;
 - card presenti nella risposta HTML anche senza esecuzione JavaScript;
 - responsive a 320, 375, 430, 768, 1024 e 1440 px senza overflow;
@@ -73,6 +73,7 @@ Il comando Lighthouse ha prodotto correttamente il report, ma su Windows ha rest
 - ordine e peso visivo dei progetti incoerenti;
 - hero generica e troppo densa su smartphone;
 - numero eccessivo di tag nelle card;
+- progetti presenti in troppe categorie e concept Figma ripetuti come card autonome;
 - assenza di pagine dedicate per Shoes M.V. e Shoes Concept;
 - case study Adriana incompleto e con metriche obsolete;
 - menu mobile con focus anticipato durante la transizione;

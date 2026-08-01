@@ -20,6 +20,7 @@ const projects = payload.projects
   .filter((project) => project.published !== false)
   .sort((a, b) => Number(a.priority) - Number(b.priority));
 const primaryProjects = projects.filter((project) => project.primary !== false);
+const groupKeys = new Set(payload.groups.map((group) => group.key));
 
 const ids = new Set();
 for (const project of projects) {
@@ -29,6 +30,11 @@ for (const project of projects) {
   if (ids.has(project.id)) throw new Error(`ID progetto duplicato: ${project.id}`);
   ids.add(project.id);
   if (!Array.isArray(project.tags) || project.tags.length > 5) throw new Error(`${project.id}: tags deve contenere da 0 a 5 voci`);
+  if (!groupKeys.has(project.group) || project.group === "featured") throw new Error(`${project.id}: tipologia principale non valida: ${project.group}`);
+  const categoryFilters = (project.filters || []).filter((filter) => filter !== "featured");
+  if (categoryFilters.length !== 1 || categoryFilters[0] !== project.group) {
+    throw new Error(`${project.id}: assegna una sola tipologia principale coerente con group`);
+  }
   if (!existsSync(resolve(root, project.image))) throw new Error(`${project.id}: immagine non trovata: ${project.image}`);
 }
 
@@ -86,11 +92,12 @@ const filters = [
 
 const generatedBlock = `<!-- PROJECTS:START -->
       <div class="project-toolbar">
-        <p>Filtra per categoria</p>
+        <p>Esplora per tipologia</p>
         <div class="project-filters" data-project-filters aria-label="Filtri progetti">
           ${filters}
         </div>
       </div>
+      <p class="project-filter-note">Ogni progetto appartiene a una sola tipologia. “In evidenza” è una selezione dei lavori più rappresentativi.</p>
       <p class="project-results" data-project-results role="status" aria-live="polite">${projects.length} progetti mostrati</p>
       <div class="project-grid portfolio-project-grid" data-project-list>
 ${projects.map(renderCard).join("\n")}
@@ -107,7 +114,7 @@ if (!originalIndex.includes("<!-- PROJECTS:START -->") || !originalIndex.include
 let generatedIndex = originalIndex.replace(/<!-- PROJECTS:START -->[\s\S]*?<!-- PROJECTS:END -->/, generatedBlock);
 generatedIndex = generatedIndex
   .replace(/(<strong data-project-total>)[^<]*(<\/strong>)/, `$1${primaryProjects.length}$2`)
-  .replace(/(<strong data-project-figma>)[^<]*(<\/strong>)/, `$1${primaryProjects.filter((project) => (project.filters || []).includes("figma")).length}$2`)
+  .replace(/(<strong data-project-figma>)[^<]*(<\/strong>)/, `$1${primaryProjects.filter((project) => project.figmaUrl).length}$2`)
   .replace(/(<strong data-project-live>)[^<]*(<\/strong>)/, `$1${primaryProjects.filter((project) => project.liveUrl).length}$2`);
 
 const fallback = `/* File generato da data/projects.json con npm run generate. */\nwindow.portfolioProjectFallback = ${JSON.stringify(payload, null, 2)};\nwindow.portfolioProjects = window.portfolioProjectFallback.projects;\n`;

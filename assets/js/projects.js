@@ -3,6 +3,7 @@ window.portfolioProjectFallback = {
   "_instructions": [
     "Questo file è l'unica fonte editoriale delle card del portfolio.",
     "Dopo ogni modifica esegui npm run generate e npm test.",
+    "Assegna ogni progetto pubblicato a una sola tipologia principale; usa featured soltanto come selezione trasversale.",
     "Mantieni al massimo cinque tecnologie in tags; documenta lo stack completo nel case study.",
     "Non inserire link finti o funzionalità non attive. Lascia vuoti i collegamenti non disponibili."
   ],
@@ -12,28 +13,20 @@ window.portfolioProjectFallback = {
       "label": "In evidenza"
     },
     {
+      "key": "sites",
+      "label": "Siti e landing page"
+    },
+    {
       "key": "webapp",
-      "label": "Web app"
-    },
-    {
-      "key": "professional",
-      "label": "Siti professionali"
-    },
-    {
-      "key": "business",
-      "label": "Business e marketing"
-    },
-    {
-      "key": "ai",
-      "label": "AI e automazioni"
+      "label": "Web app e dashboard"
     },
     {
       "key": "experimental",
-      "label": "3D e sperimentazione"
+      "label": "3D e interazione"
     },
     {
       "key": "figma",
-      "label": "UI/Figma"
+      "label": "Processo UI/UX"
     },
     {
       "key": "practice",
@@ -66,10 +59,10 @@ window.portfolioProjectFallback = {
       "primary": true,
       "published": true,
       "priority": 0,
-      "group": "professional",
+      "group": "sites",
       "filters": [
         "featured",
-        "professional"
+        "sites"
       ],
       "liveUrl": "https://vincenzomec97-ship-it.github.io/adriana-napolitano-architettura/",
       "liveLabel": "Visita la demo",
@@ -106,8 +99,7 @@ window.portfolioProjectFallback = {
       "group": "webapp",
       "filters": [
         "featured",
-        "webapp",
-        "ai"
+        "webapp"
       ],
       "liveUrl": "https://english-quiz-lab-one.vercel.app/",
       "liveLabel": "Visita l’app",
@@ -141,12 +133,10 @@ window.portfolioProjectFallback = {
       "primary": true,
       "published": true,
       "priority": 2,
-      "group": "professional",
+      "group": "sites",
       "filters": [
         "featured",
-        "professional",
-        "business",
-        "figma"
+        "sites"
       ],
       "liveUrl": "https://vincenzomec97-ship-it.github.io/cm-pulizie/",
       "liveLabel": "Visita il sito",
@@ -183,8 +173,7 @@ window.portfolioProjectFallback = {
       "group": "experimental",
       "filters": [
         "featured",
-        "experimental",
-        "figma"
+        "experimental"
       ],
       "liveUrl": "https://vincenzomec97-ship-it.github.io/shoely-3d-store/",
       "liveLabel": "Apri la demo 3D",
@@ -218,11 +207,9 @@ window.portfolioProjectFallback = {
       "primary": true,
       "published": true,
       "priority": 4,
-      "group": "business",
+      "group": "webapp",
       "filters": [
-        "featured",
-        "webapp",
-        "business"
+        "webapp"
       ],
       "liveUrl": "https://vincenzomec97-ship-it.github.io/clientflow-dashboard/",
       "liveLabel": "Apri la dashboard",
@@ -256,10 +243,9 @@ window.portfolioProjectFallback = {
       "primary": true,
       "published": true,
       "priority": 5,
-      "group": "business",
+      "group": "sites",
       "filters": [
-        "business",
-        "figma"
+        "sites"
       ],
       "liveUrl": "https://vincenzomec97-ship-it.github.io/gym-landing-page/",
       "liveLabel": "Visita la demo",
@@ -293,10 +279,9 @@ window.portfolioProjectFallback = {
       "primary": true,
       "published": true,
       "priority": 6,
-      "group": "ai",
+      "group": "webapp",
       "filters": [
-        "webapp",
-        "ai"
+        "webapp"
       ],
       "liveUrl": "https://vincenzomec97-ship-it.github.io/casabot-immobiliare/",
       "liveLabel": "Apri la demo",
@@ -332,8 +317,7 @@ window.portfolioProjectFallback = {
       "priority": 7,
       "group": "figma",
       "filters": [
-        "figma",
-        "experimental"
+        "figma"
       ],
       "liveUrl": "https://vincenzomec97-ship-it.github.io/shoely-3d-store/",
       "liveLabel": "Vedi l’evoluzione 3D",
@@ -400,12 +384,11 @@ window.portfolioProjectFallback = {
       "status": "Prototipo Figma",
       "compact": true,
       "primary": false,
-      "published": true,
+      "published": false,
       "priority": 9,
       "group": "figma",
       "filters": [
-        "figma",
-        "professional"
+        "figma"
       ],
       "liveUrl": "https://vincenzomec97-ship-it.github.io/cm-pulizie/",
       "liveLabel": "Vedi il sito",
@@ -436,12 +419,11 @@ window.portfolioProjectFallback = {
       "status": "Prototipo Figma",
       "compact": true,
       "primary": false,
-      "published": true,
+      "published": false,
       "priority": 10,
       "group": "figma",
       "filters": [
-        "figma",
-        "business"
+        "figma"
       ],
       "liveUrl": "https://vincenzomec97-ship-it.github.io/gym-landing-page/",
       "liveLabel": "Vedi la demo",

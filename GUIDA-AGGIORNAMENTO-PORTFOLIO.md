@@ -22,9 +22,12 @@ Ogni progetto deve dichiarare:
 - massimo cinque tecnologie principali nella card;
 - soli link realmente disponibili;
 - ordine tramite `priority`;
-- categorie filtro tramite `filters`.
+- una tipologia principale tramite `group` e `filters`;
+- `featured` opzionale soltanto per la selezione trasversale In evidenza.
 
-I filtri ammessi sono `featured`, `webapp`, `professional`, `business`, `ai`, `experimental`, `figma` e `practice`.
+Le tipologie ammesse sono `sites`, `webapp`, `experimental`, `figma` e
+`practice`. Ogni progetto pubblicato deve usarne esattamente una; `featured`
+può essere aggiunto senza cambiare la tipologia principale.
 
 ## Regole editoriali
 
