@@ -23,11 +23,12 @@ Ogni progetto deve dichiarare:
 - soli link realmente disponibili;
 - ordine tramite `priority`;
 - una tipologia principale tramite `group` e `filters`;
-- `featured` opzionale soltanto per la selezione trasversale In evidenza.
+- `featured` opzionale soltanto per la selezione trasversale 3 principali.
 
 Le tipologie ammesse sono `sites`, `webapp`, `experimental`, `figma` e
 `practice`. Ogni progetto pubblicato deve usarne esattamente una; `featured`
-può essere aggiunto senza cambiare la tipologia principale.
+può essere aggiunto senza cambiare la tipologia principale. La selezione deve
+contenere esattamente Adriana, English Quiz Lab e C.M. Pulizie.
 
 ## Regole editoriali
 

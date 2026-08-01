@@ -10,7 +10,7 @@ window.portfolioProjectFallback = {
   "groups": [
     {
       "key": "featured",
-      "label": "In evidenza"
+      "label": "3 principali"
     },
     {
       "key": "sites",
@@ -26,7 +26,7 @@ window.portfolioProjectFallback = {
     },
     {
       "key": "figma",
-      "label": "Processo UI/UX"
+      "label": "UI/UX e Figma"
     },
     {
       "key": "practice",
@@ -172,7 +172,6 @@ window.portfolioProjectFallback = {
       "priority": 3,
       "group": "experimental",
       "filters": [
-        "featured",
         "experimental"
       ],
       "liveUrl": "https://vincenzomec97-ship-it.github.io/shoely-3d-store/",
@@ -319,11 +318,11 @@ window.portfolioProjectFallback = {
       "filters": [
         "figma"
       ],
-      "liveUrl": "https://vincenzomec97-ship-it.github.io/shoely-3d-store/",
-      "liveLabel": "Vedi l’evoluzione 3D",
+      "liveUrl": "",
+      "liveLabel": "",
       "githubUrl": "",
       "figmaUrl": "https://www.figma.com/proto/G09Tq8i37addPsCe293DVz/Untitled?node-id=2-2&t=9UxqkVse9NypvUl0-1",
-      "detailUrl": "projects/shoes-concept/",
+      "detailUrl": "",
       "year": "2026",
       "category": "UI/Figma"
     },
@@ -350,7 +349,7 @@ window.portfolioProjectFallback = {
       "compact": true,
       "primary": true,
       "published": true,
-      "priority": 8,
+      "priority": 10,
       "group": "practice",
       "filters": [
         "practice"
@@ -384,14 +383,14 @@ window.portfolioProjectFallback = {
       "status": "Prototipo Figma",
       "compact": true,
       "primary": false,
-      "published": false,
-      "priority": 9,
+      "published": true,
+      "priority": 8,
       "group": "figma",
       "filters": [
         "figma"
       ],
-      "liveUrl": "https://vincenzomec97-ship-it.github.io/cm-pulizie/",
-      "liveLabel": "Vedi il sito",
+      "liveUrl": "",
+      "liveLabel": "",
       "githubUrl": "",
       "figmaUrl": "https://www.figma.com/proto/Qlefn1I3qe1WEOijl20qUR/Untitled?t=QmHGINTnjDozetfi-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&node-id=1-75",
       "detailUrl": "",
@@ -419,17 +418,17 @@ window.portfolioProjectFallback = {
       "status": "Prototipo Figma",
       "compact": true,
       "primary": false,
-      "published": false,
-      "priority": 10,
+      "published": true,
+      "priority": 9,
       "group": "figma",
       "filters": [
         "figma"
       ],
-      "liveUrl": "https://vincenzomec97-ship-it.github.io/gym-landing-page/",
-      "liveLabel": "Vedi la demo",
+      "liveUrl": "",
+      "liveLabel": "",
       "githubUrl": "",
       "figmaUrl": "https://www.figma.com/proto/CgFRuCSFPFhb6KcRTZqYZa/Untitled?node-id=1-12&p=f&t=c04ReWw6m3h8teUK-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1",
-      "detailUrl": "projects/fitzone-case-study/",
+      "detailUrl": "",
       "year": "2026",
       "category": "UI/Figma"
     }
