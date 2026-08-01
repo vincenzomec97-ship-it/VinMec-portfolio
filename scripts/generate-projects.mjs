@@ -6,6 +6,7 @@ const dataPath = resolve(root, "data/projects.json");
 const indexPath = resolve(root, "index.html");
 const fallbackPath = resolve(root, "assets/js/projects.js");
 const checkOnly = process.argv.includes("--check");
+const normalizeLineEndings = (value) => value.replace(/\r\n?/g, "\n");
 
 const escapeHtml = (value = "") => String(value)
   .replaceAll("&", "&amp;")
@@ -113,8 +114,12 @@ const fallback = `/* File generato da data/projects.json con npm run generate. *
 
 if (checkOnly) {
   const errors = [];
-  if (generatedIndex !== originalIndex) errors.push("index.html non è sincronizzato con data/projects.json");
-  if (!existsSync(fallbackPath) || readFileSync(fallbackPath, "utf8") !== fallback) errors.push("assets/js/projects.js non è sincronizzato con data/projects.json");
+  if (normalizeLineEndings(generatedIndex) !== normalizeLineEndings(originalIndex)) {
+    errors.push("index.html non è sincronizzato con data/projects.json");
+  }
+  if (!existsSync(fallbackPath) || normalizeLineEndings(readFileSync(fallbackPath, "utf8")) !== fallback) {
+    errors.push("assets/js/projects.js non è sincronizzato con data/projects.json");
+  }
   if (errors.length) throw new Error(errors.join("\n"));
   console.log(`Contenuti generati verificati: ${projects.length} progetti.`);
 } else {
