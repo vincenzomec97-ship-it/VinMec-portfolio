@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 900" role="img" aria-labelledby="title desc">
+  <title id="title">AUREA Extrait de Parfum</title>
+  <desc id="desc">Flacone contemporaneo in vetro ambrato con tappo scultoreo ed etichetta crema.</desc>
+  <defs>
+    <linearGradient id="glass" x1="0" x2="1">
+      <stop stop-color="#190d09"/><stop offset=".12" stop-color="#87502c"/><stop offset=".25" stop-color="#d99b4d" stop-opacity=".7"/><stop offset=".47" stop-color="#70261c"/><stop offset=".74" stop-color="#a93525"/><stop offset=".9" stop-color="#e4a542" stop-opacity=".65"/><stop offset="1" stop-color="#1a0b08"/>
+    </linearGradient>
+    <linearGradient id="liquid" x1="0" x2=".8" y2="1"><stop stop-color="#f1a43a"/><stop offset=".4" stop-color="#b94324"/><stop offset=".8" stop-color="#7f1f22"/><stop offset="1" stop-color="#39120d"/></linearGradient>
+    <linearGradient id="cap"><stop stop-color="#080403"/><stop offset=".22" stop-color="#563526"/><stop offset=".52" stop-color="#24130e"/><stop offset=".78" stop-color="#69422d"/><stop offset="1" stop-color="#070403"/></linearGradient>
+    <linearGradient id="gold"><stop stop-color="#8c5616"/><stop offset=".25" stop-color="#f7dc93"/><stop offset=".55" stop-color="#b87718"/><stop offset=".8" stop-color="#ffe6a3"/><stop offset="1" stop-color="#8a5315"/></linearGradient>
+    <linearGradient id="base" y2="1"><stop stop-color="#fff4da" stop-opacity=".08"/><stop offset="1" stop-color="#f3e7d1" stop-opacity=".75"/></linearGradient>
+    <filter id="shadow" x="-40%" width="180%"><feGaussianBlur stdDeviation="22"/></filter>
+    <filter id="soft"><feGaussianBlur stdDeviation="7"/></filter>
+    <clipPath id="body"><path d="M65 315Q65 247 130 228h260q65 19 65 87v432q0 70-70 76H135q-70-6-70-76z"/></clipPath>
+  </defs>
+  <ellipse cx="260" cy="842" rx="190" ry="28" fill="#120e0b" opacity=".35" filter="url(#shadow)"/>
+  <path d="M153 72Q163 36 205 26h110q42 10 52 46l17 122q-124 42-248 0z" fill="url(#cap)" stroke="#080403" stroke-width="4"/>
+  <path d="M175 88q18-30 49-35" fill="none" stroke="#fff" stroke-width="8" opacity=".12" stroke-linecap="round"/>
+  <ellipse cx="260" cy="191" rx="123" ry="27" fill="#110a07"/>
+  <rect x="136" y="189" width="248" height="43" rx="7" fill="url(#gold)"/>
+  <path d="M119 244q27-25 67-31h148q40 6 67 31l24 41H95z" fill="#7e291c"/>
+  <path d="M65 315Q65 247 130 228h260q65 19 65 87v432q0 70-70 76H135q-70-6-70-76z" fill="url(#glass)" stroke="#f1c47b" stroke-opacity=".34" stroke-width="6"/>
+  <g clip-path="url(#body)">
+    <path d="M78 337q182-32 364 0v394q0 58-58 66H136q-58-8-58-66z" fill="url(#liquid)"/>
+    <path d="M79 337q181 30 362 0" fill="none" stroke="#ffd17f" stroke-width="8" opacity=".4"/>
+    <path d="M106 253h80L145 773H74z" fill="#fff" opacity=".16" filter="url(#soft)"/>
+    <path d="M122 271h22l-25 384H91z" fill="#fff" opacity=".24"/>
+    <path d="M405 285h29v421h-29z" fill="#ffe4a2" opacity=".2" filter="url(#soft)"/>
+    <rect x="69" y="704" width="382" height="113" fill="url(#base)"/>
+    <path d="M96 790q164 31 328 0" fill="none" stroke="#fff5d8" stroke-width="9" opacity=".4"/>
+  </g>
+  <g filter="drop-shadow(0 5px 4px rgba(18,14,11,.18))">
+    <rect x="119" y="397" width="282" height="247" rx="3" fill="#f3e7d1"/>
+    <path d="M129 407h262v227H129z" fill="none" stroke="#d0ae68"/>
+    <circle cx="260" cy="449" r="18" fill="none" stroke="#8f2428" stroke-width="2"/>
+    <path d="M250 462 260 437l10 25M254 454h12" fill="none" stroke="#8f2428" stroke-width="2"/>
+    <text x="260" y="523" text-anchor="middle" fill="#2b160f" font-family="Arial,sans-serif" font-size="48" font-weight="700" letter-spacing="9">AUREA</text>
+    <path d="M155 542h210" stroke="#d7952b"/>
+    <text x="260" y="574" text-anchor="middle" fill="#2b160f" font-family="Arial,sans-serif" font-size="15" letter-spacing="4">EXTRAIT DE PARFUM</text>
+    <text x="260" y="603" text-anchor="middle" fill="#2b160f" font-family="Arial,sans-serif" font-size="11" letter-spacing="3">75 ML · PARIS — MILANO</text>
+  </g>
+</svg>
